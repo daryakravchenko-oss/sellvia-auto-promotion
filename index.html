@@ -182,7 +182,9 @@ button { cursor: pointer; font-family: var(--font); outline: none; border: none;
   background: #0b0b0d;
   --bx: 15%;
   --by: 30%;
-  animation: hero-blob-path 30s linear infinite;
+  --bx2: 70%;
+  --by2: 88%;
+  animation: hero-blob-path 30s linear infinite, hero-blob-path-2 30s linear -15s infinite;
   min-height: 80svh;
   display: flex;
   flex-direction: column;
@@ -199,6 +201,8 @@ button { cursor: pointer; font-family: var(--font); outline: none; border: none;
 /* ── Tiled-logo background: hidden grid revealed by a moving neon blob ── */
 @property --bx { syntax: '<percentage>'; inherits: true; initial-value: 50%; }
 @property --by { syntax: '<percentage>'; inherits: true; initial-value: 50%; }
+@property --bx2 { syntax: '<percentage>'; inherits: true; initial-value: 50%; }
+@property --by2 { syntax: '<percentage>'; inherits: true; initial-value: 50%; }
 @keyframes hero-blob-path {
   0%   { --bx: 15%; --by: 30%; }
   14%  { --bx: 50%; --by: 13%; }
@@ -209,6 +213,17 @@ button { cursor: pointer; font-family: var(--font); outline: none; border: none;
   86%  { --bx: 9%;  --by: 63%; }
   100% { --bx: 15%; --by: 30%; }
 }
+/* second spot – same trajectory, started half a cycle later so it sits opposite */
+@keyframes hero-blob-path-2 {
+  0%   { --bx2: 15%; --by2: 30%; }
+  14%  { --bx2: 50%; --by2: 13%; }
+  28%  { --bx2: 85%; --by2: 27%; }
+  43%  { --bx2: 91%; --by2: 62%; }
+  57%  { --bx2: 70%; --by2: 88%; }
+  71%  { --bx2: 33%; --by2: 89%; }
+  86%  { --bx2: 9%;  --by2: 63%; }
+  100% { --bx2: 15%; --by2: 30%; }
+}
 /* tile grid — invisible except where the moving mask reveals it */
 .hero-tiles {
   position: absolute;
@@ -218,8 +233,12 @@ button { cursor: pointer; font-family: var(--font); outline: none; border: none;
   gap: 16px;
   padding: 16px;
   pointer-events: none;
-  -webkit-mask-image: radial-gradient(circle 300px at var(--bx) var(--by), #000 0%, rgba(0,0,0,0.42) 60%, transparent 100%);
-          mask-image: radial-gradient(circle 300px at var(--bx) var(--by), #000 0%, rgba(0,0,0,0.42) 60%, transparent 100%);
+  -webkit-mask-image:
+    radial-gradient(circle 300px at var(--bx) var(--by), #000 0%, rgba(0,0,0,0.42) 60%, transparent 100%),
+    radial-gradient(circle 300px at var(--bx2) var(--by2), #000 0%, rgba(0,0,0,0.42) 60%, transparent 100%);
+          mask-image:
+    radial-gradient(circle 300px at var(--bx) var(--by), #000 0%, rgba(0,0,0,0.42) 60%, transparent 100%),
+    radial-gradient(circle 300px at var(--bx2) var(--by2), #000 0%, rgba(0,0,0,0.42) 60%, transparent 100%);
 }
 /* each tile glows in its logo's brand colour — --c (an "r g b" triple) is set per tile by JS */
 .hero-tile {
@@ -667,7 +686,7 @@ button { cursor: pointer; font-family: var(--font); outline: none; border: none;
   right: calc(22.5% + 6.5px);
   bottom: 0;
   aspect-ratio: 155 / 36;
-  background: url('img/Hero/arrow.svg') no-repeat center bottom / contain;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 155 36'%3E%3Cpath d='M5 17 C45 32 110 32 150 13' fill='none' stroke='%23FF9900' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center bottom / contain;
   pointer-events: none;
 }
 .hero-sub {
@@ -1162,7 +1181,7 @@ section { padding: 120px 24px; }
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: url('https://www.figma.com/api/mcp/asset/43ca848c-084e-4267-aea1-8a0ce6f17da8') no-repeat center/16px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.6l3 3 6-7' fill='none' stroke='%23F5A623' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center/16px;
   background-color: rgba(245,166,35,0.1);
   flex-shrink: 0;
   margin-top: 2px;
@@ -1883,7 +1902,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1 class="hero-h1">Claim your <em>FREE</em><br>store with<br>auto-promotion!</h1>
     <p class="hero-sub">Let us build you a perfect ecommerce website with hands-free advertising! It will run on autopilot and generate profits for years to come.</p>
     <div class="hero-actions">
-      <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="btn btn-filled">Get my free store + Amazon Kit</a>
+      <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="btn btn-filled">Get my free store + Bonus</a>
       <p class="hero-fine">Get started in less than 60 seconds • Cancel anytime</p>
       <button type="button" onclick="SellviaChat.open()" class="hero-link-cta">
         Get free consultation
@@ -2030,8 +2049,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   /* Image native ratio 1535:3853 → at 280px wide ≈ 703px tall.
      Phone screen is 604px → scroll range ≈ -100px. */
   animation: pvScreenScroll 18s ease-in-out 0.6s infinite;
+  animation-play-state: paused;
   will-change: transform;
 }
+/* auto-scroll loop starts only once the section is scrolled into view */
+.freebasic-section.pv-in-view .pv-screen-img { animation-play-state: running; }
 @keyframes pvScreenScroll {
   0%,   8%   { transform: translateY(0); }                                    /* hold at top */
   50%, 58%   { transform: translateY(calc(-100% + var(--pv-phone-h, 604px))); } /* hold at bottom */
@@ -2279,10 +2301,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="pv-phone-wrap">
 
         <!-- Stat overlays on top of phone -->
-        <img class="pv-stat pv-stat-new"   src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/freebasic/New%20order.webp"      alt="New order received" width="640" height="196" loading="lazy">
+        <img class="pv-stat pv-stat-new"   src="images-for-landings/free-ecommerce-store-plus-amazon-package/freebasic/New%20order.webp"      alt="New order received" width="640" height="196" loading="lazy">
         <picture>
-          <source media="(max-width: 768px)" srcset="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/freebasic/Today's%20Orders_m.webp">
-          <img class="pv-stat pv-stat-today" src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/freebasic/Today's%20Orders.webp" alt="Today's orders summary" width="700" height="937" loading="lazy">
+          <source media="(max-width: 768px)" srcset="images-for-landings/free-ecommerce-store-plus-amazon-package/freebasic/Today's%20Orders_m.webp">
+          <img class="pv-stat pv-stat-today" src="images-for-landings/free-ecommerce-store-plus-amazon-package/freebasic/Today's%20Orders.webp" alt="Today's orders summary" width="700" height="937" loading="lazy">
         </picture>
 
         <!-- Top-right floating card: revenue (Figma: dollar-circle) -->
@@ -2338,7 +2360,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Phone -->
         <div class="pv-phone">
           <div class="pv-phone-screen">
-            <img class="pv-screen-img" src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/sellvia-auto-promotion/freebasic/screen2.webp" alt="Mobile store screen" width="1200" height="3011" loading="lazy">
+            <img class="pv-screen-img" src="images-for-landings/sellvia-auto-promotion/freebasic/screen2.webp" alt="Mobile store screen" width="1200" height="3011" loading="lazy">
           </div>
         </div>
 
@@ -2389,6 +2411,339 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   background: #f5f5f7;
   padding: 120px 24px;
   width: 100%;
+}
+
+/* ════ BONUS – Stripe-style modular bento (dark) ════ */
+.bonus-section.is-bento {
+  background: #0e1014;
+  position: relative;
+  overflow: hidden;
+}
+.bonus-section.is-bento .sec-in { position: relative; z-index: 2; max-width: 1280px; }
+.bonus-section.is-bento .sec-title-xl  { color: #fff; }
+.bonus-section.is-bento .sec-body      { color: rgba(255,255,255,0.72); }
+.bonus-section.is-bento .bonus-heading { color: #fff; }
+.bonus-section.is-bento .bonus-sub     { color: rgba(255,255,255,0.72); }
+.bonus-section.is-bento .bonus-pill {
+  background: rgba(255,255,255,0.10);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+/* ── Section title block ── */
+.get-head {
+  max-width: 720px;
+  margin-bottom: 64px;
+}
+.get-head .bonus-pill { margin-bottom: 24px; }
+.get-head .bonus-sub { max-width: 560px; }
+
+/* ── Bundle bento grid ── */
+.bundle-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 18px;
+}
+.bcard {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #1f2127;
+  border: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  transition: transform .25s var(--ease),
+              box-shadow .25s var(--ease);
+  animation: cardborder 9s linear infinite;
+}
+.bcard.d2 { animation-delay: -2.25s; }
+.bcard.d3 { animation-delay: -4.5s; }
+.bcard.d4 { animation-delay: -6.75s; }
+/* faint dark-grey iridescence – barely-there shimmer of the logo hues */
+@keyframes cardborder {
+  0%   { border-color: #2b2622; }
+  14%  { border-color: #2b2228; }
+  28%  { border-color: #262229; }
+  43%  { border-color: #22262b; }
+  57%  { border-color: #222b25; }
+  71%  { border-color: #2b2922; }
+  86%  { border-color: #2b2323; }
+  100% { border-color: #2b2622; }
+}
+.bcard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 22px 1px rgba(56,198,255,.28),
+              0 0 54px 12px rgba(56,198,255,.15),
+              0 14px 32px -10px rgba(0,0,0,.4);
+}
+
+/* Layout slots */
+.bcard.tall  { grid-column: 1;          grid-row: 1 / span 2; }
+.bcard.wide  { grid-column: 2 / span 2; grid-row: 1; aspect-ratio: 2.1 / 1; }
+.bcard.small { aspect-ratio: 1 / 1; }
+.bcard.s1    { grid-column: 2; grid-row: 2; }
+.bcard.s2    { grid-column: 3; grid-row: 2; }
+
+/* Background image (cover) */
+.bcard .bg {
+  position: absolute; inset: 0; z-index: 0;
+  background-size: cover; background-position: center;
+  filter: saturate(.95) contrast(1.04);
+  transition: transform .6s var(--ease);
+}
+.bcard.tall { isolation: isolate; }
+.bcard.tall::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity .4s var(--ease);
+}
+.bcard.tall::before {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/></svg>");
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  opacity: 0.22;
+  mix-blend-mode: overlay;
+}
+.bcard .body { position: relative; z-index: 2; }
+
+.bcard .stat {
+  display: inline-block;
+  font-family: 'Cambria', 'Cochin', 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(255,255,255,.78);
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -.015em;
+  margin-bottom: 14px;
+  transition: color .35s var(--ease);
+}
+.bcard.tall .stat { font-size: 96px; }
+.bcard h3 {
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -.01em;
+  margin: 0 0 8px;
+  color: #ffffff;
+  max-width: 24ch;
+  text-wrap: balance;
+  transition: color .35s var(--ease);
+}
+.bcard.tall h3 { font-size: 28px; }
+.bcard p {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255,255,255,.72);
+  line-height: 1.5;
+  max-width: 300px;
+  text-wrap: pretty;
+  transition: color .35s var(--ease);
+}
+
+/* Tall card hover */
+.bcard.tall:hover::after { opacity: 0; }
+.bcard.tall:hover .bg    { transform: scale(1.04); }
+.bcard.tall:hover .stat  { color: var(--c-amber); }
+
+/* Small / wide cards with a photo backdrop */
+.bcard.reveal-bg .bg { opacity: 1; transition: transform .6s var(--ease); }
+.bcard.reveal-bg::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  transition: opacity .4s var(--ease);
+}
+.bcard.reveal-bg:hover::after { opacity: 0; }
+.bcard.reveal-bg:hover .bg    { transform: scale(1.04); }
+.bcard.reveal-bg:hover .stat  { color: var(--c-amber); }
+
+/* Scroll-triggered demo state */
+.bcard.tall.demo-on::after,
+.bcard.reveal-bg.demo-on::after { opacity: 0; }
+.bcard.demo-on .bg              { transform: scale(1.04); }
+.bcard.demo-on .stat            { color: var(--c-amber); }
+
+@media (prefers-reduced-motion: reduce) {
+  .bcard .bg, .bcard.tall::after, .bcard.reveal-bg::after,
+  .bcard .stat, .bcard h3, .bcard p { transition: none; }
+  .bcard.tall:hover .bg, .bcard.reveal-bg:hover .bg { transform: none; }
+}
+
+@media (max-width: 1100px) {
+  .bundle-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .bcard.tall  { grid-column: 1 / span 2; grid-row: auto; aspect-ratio: 16 / 9; }
+  .bcard.wide  { grid-column: 1 / span 2; grid-row: auto; aspect-ratio: 2 / 1; }
+  .bcard.s1    { grid-column: 1; grid-row: auto; }
+  .bcard.s2    { grid-column: 2; grid-row: auto; }
+}
+@media (max-width: 600px) {
+  .bundle-grid { grid-template-columns: 1fr; gap: 14px; }
+  .bcard { padding: 24px; }
+  .bcard.tall  { aspect-ratio: 4 / 3; grid-column: auto; }
+  .bcard.wide  { aspect-ratio: auto; grid-column: auto; }
+  .bcard.small { grid-column: auto; }
+  .get-head    { margin-bottom: 40px; text-align: center; }
+  .get-head .bonus-pill { margin-left: auto; margin-right: auto; }
+}
+@media (max-width: 375px) {
+  .bonus-section.is-bento .bcard.tall {
+    aspect-ratio: auto;
+    height: calc((100vw - 32px) * 0.75 + 15px);
+  }
+}
+
+/* ════ Bento card content – animated variants ════ */
+.bcard.is-dark { background: #0a0b0e; border-color: rgba(255,255,255,0.07); }
+
+/* ── Card 2: ad-channels load animation ── */
+.bcard.ads { justify-content: space-between; gap: 20px; }
+.ads-anim {
+  display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
+}
+.ads-logos { display: flex; align-items: center; }
+.ads-logo {
+  width: 60px; height: 60px; border-radius: 50%;
+  margin-left: -15px;
+  opacity: 0; transform: scale(.3);
+  transition: opacity .4s var(--ease), transform .5s var(--ease-spring);
+}
+.ads-logo:first-child { margin-left: 0; }
+.ads-logo.on { opacity: 1; transform: scale(1); }
+.ads-logo img,
+.ads-logo svg { width: 100%; height: 100%; display: block; border-radius: 50%; }
+.ads-calc {
+  flex: 1 1 336px;
+  margin-left: 30px;
+  background: #121319;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 17px;
+  padding: 17px 19px;
+}
+.ads-calc-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 13px;
+}
+.ads-calc-label { font: 600 14px var(--font); color: rgba(255,255,255,.55); }
+.ads-pct { font: 700 18px var(--font); color: #fff; }
+.ads-bar { display: flex; gap: 7px; }
+.ads-seg {
+  flex: 1; height: 17px; border-radius: 6px;
+  background: rgba(255,255,255,0.06);
+  transition: background .35s var(--ease), box-shadow .35s var(--ease);
+}
+.ads-seg.on {
+  background: linear-gradient(180deg, #9fe8ff, #1ea2ff);
+  box-shadow: 0 0 8px 1px rgba(56,198,255,.85),
+              0 0 18px 3px rgba(56,198,255,.45),
+              inset 0 0 5px rgba(255,255,255,.7);
+}
+
+/* ── Card 3: data-viz ray burst ── */
+.bcard.burst { padding: 0; overflow: hidden; align-items: center; justify-content: center; }
+.rays {
+  position: relative; width: 100%; height: 100%;
+  display: grid; place-items: center;
+}
+.rays svg { width: 96%; height: 96%; overflow: visible; }
+.rays-rot { transform-box: view-box; transform-origin: 50% 50%; }
+/* colours drift smoothly along a harmonious arc (no red, no green);
+   the three zones sit only a hair apart, so neighbouring rays never clash */
+.ray-zone { color: #38c6ff; animation: zonehue 24s linear infinite; }
+.ray-zone.z1 { animation-delay: -2s; }
+.ray-zone.z2 { animation-delay: -4s; }
+@keyframes zonehue {
+  0%    { color: #38c6ff; }
+  12.5% { color: #9d6bff; }
+  25%   { color: #ff6fb3; }
+  37.5% { color: #ff9a3c; }
+  50%   { color: #ffd24a; }
+  62.5% { color: #ff9a3c; }
+  75%   { color: #ff6fb3; }
+  87.5% { color: #9d6bff; }
+  100%  { color: #38c6ff; }
+}
+.ray { animation: raytwinkle 3.4s ease-in-out infinite var(--td, 0s); }
+@keyframes raytwinkle {
+  0%, 100% { opacity: var(--o); }
+  50%      { opacity: calc(var(--o) * 0.2); }
+}
+/* glassy cash badges floating in the ray-free gaps */
+.cash-badge {
+  position: absolute; z-index: 4;
+  padding: 6px 13px;
+  font: 700 14px/1 var(--font);
+  color: #fff;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 999px;
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(.82) translateY(5px);
+  transition: opacity .45s var(--ease), transform .55s var(--ease-spring);
+}
+.cash-badge.show { opacity: 1; transform: scale(1) translateY(0); }
+
+/* hover: card stat words turn brand-amber */
+.bcard.ads:hover .stat,
+.bcard.ring:hover .stat { color: var(--c-amber); }
+
+/* ── Card 4: neon progress ring ── */
+.bcard.ring { justify-content: space-between; }
+.neon-ring {
+  position: relative; width: 104px; height: 104px;
+  align-self: flex-start; margin-top: 14px;
+}
+.ring-label {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  font: 700 17px var(--font);
+  color: #bdeeff;
+  text-shadow: 0 0 9px rgba(56,198,255,.85);
+  opacity: 0;
+  animation: ringlabel 8s var(--ease) infinite;
+}
+@keyframes ringlabel {
+  0%, 48%   { opacity: 0; }
+  56%, 86%  { opacity: 1; }
+  94%, 100% { opacity: 0; }
+}
+.neon-ring svg { width: 100%; height: 100%; overflow: visible; transform: rotate(-90deg); }
+.ring-track { fill: none; stroke: rgba(255,255,255,0.07); stroke-width: 10; }
+.ring-prog {
+  fill: none; stroke: url(#ringGrad); stroke-width: 10; stroke-linecap: round;
+  stroke-dasharray: 289;
+  stroke-dashoffset: 289;
+  filter: drop-shadow(0 0 5px rgba(56,198,255,.8))
+          drop-shadow(0 0 13px rgba(56,198,255,.4));
+  animation: ringfill 8s var(--ease) infinite;
+}
+/* fill (~4.2s, half the old speed) → hold full (~3s gap) → reset */
+@keyframes ringfill {
+  0%   { stroke-dashoffset: 289; }
+  52%  { stroke-dashoffset: 9; }
+  90%  { stroke-dashoffset: 9; }
+  100% { stroke-dashoffset: 289; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ads-logo, .ads-seg { transition: none; }
+  .ray, .ray-zone { animation: none; }
+  .ray { opacity: var(--o); }
+  .ring-prog { animation: none; stroke-dashoffset: 9; }
+  .ring-label { animation: none; opacity: 1; }
+  .bcard { animation: none; }
+  .cash-badge { transition: none; }
 }
 
 .bonus-inner {
@@ -2688,126 +3043,93 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 @media(max-width:480px){ .bonus-section{padding:56px 16px} .bullet-item { gap: 10px; } }
 </style>
 
-<section class="bonus-section" id="bonus">
-  <div class="bonus-inner">
-
-    <!-- LEFT -->
-    <div class="bonus-left">
-      <span class="bonus-pill">STEP 2 – AMAZON KIT</span>
-      <h2 class="bonus-heading">Get an Amazon<br>Seller Kit for FREE</h2>
-      <p class="bonus-sub">When you act here and now!</p>
-      <ul class="bullets" id="bulletList">
-        <li class="bullet-item active" data-panel="0">
-          <span class="bullet-text">Fast and easy start of your own Amazon store</span>
-          <svg class="bullet-arrow" viewBox="0 0 24 24" fill="none"><path d="M8.91 19.92l6.52-6.52c.77-.77.77-2.03 0-2.8L8.91 4.08" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </li>
-        <li class="bullet-item" data-panel="1">
-          <span class="bullet-text">Access to 300 million active marketplace users</span>
-          <svg class="bullet-arrow" viewBox="0 0 24 24" fill="none"><path d="M8.91 19.92l6.52-6.52c.77-.77.77-2.03 0-2.8L8.91 4.08" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </li>
-        <li class="bullet-item" data-panel="2">
-          <span class="bullet-text">A share of Amazon's $514 billion in revenue</span>
-          <svg class="bullet-arrow" viewBox="0 0 24 24" fill="none"><path d="M8.91 19.92l6.52-6.52c.77-.77.77-2.03 0-2.8L8.91 4.08" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </li>
-      </ul>
-      <div class="cta-wrap"><a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="btn btn-filled">Get my free store + Amazon Kit</a></div>
+<section class="bonus-section is-bento" id="bonus">
+  <div class="sec-in">
+    <div class="get-head appear">
+      <span class="bonus-pill">STEP 2 – ACCESSORY BUNDLE</span>
+      <h2 class="bonus-heading">1,000 Apple accessories. <em>Loaded on day one.</em></h2>
+      <p class="bonus-sub">Sell trendy must-haves for iPhone, iPad, and AirPods to 2.2 billion Apple fans.</p>
     </div>
 
-    <!-- RIGHT -->
-    <div class="bonus-right" id="panelWrap">
-
-      <!-- PANEL 0 -->
-      <div class="panel visible" id="panel-0">
-        <img class="panel-photo" src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/Bonus/2148.webp" alt="Woman with laptop" style="top:-100px; height:calc(100% + 100px); object-position:center top;" width="1400" height="1875" loading="lazy">
-        <div class="lcard card-steps" data-brownian data-delay="0.7">
-          <div class="card-label">Setup complete</div>
-          <div class="step-row"><div class="step-num">1</div><div class="step-text">Create account</div><span class="step-check">✓</span></div>
-          <div class="step-row"><div class="step-num">2</div><div class="step-text">List your products</div><span class="step-check">✓</span></div>
-          <div class="step-row"><div class="step-num">3</div><div class="step-text">Store published</div><span class="step-check">✓</span></div>
+    <div class="bundle-grid">
+      <!-- Card 1 – tall: person photo + bullet -->
+      <div class="bcard tall appear d1">
+        <div class="bg" style="background-image:url('images-for-landings/sellvia-auto-promotion/bonus/1.webp?v=2')"></div>
+        <div class="body">
+          <span class="stat">Huge</span>
+          <h3>Audience of motivated buyers.</h3>
+          <p>Instant access to a huge pool of shoppers who are ready to spend.</p>
         </div>
       </div>
 
-      <!-- PANEL 1 – ТОЛЬКО ОДНА ПЛАШКА (bottom-left), аватарки с реальными фото -->
-      <div class="panel" id="panel-1">
-        <img class="panel-photo" src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/Bonus/2149.webp?v=3" alt="Man with phone" style="top:-60px; height:calc(100% + 60px); object-position:center top;" width="1400" height="1673" loading="lazy">
-        <div class="lcard card-users" data-brownian data-delay="0.3">
-          <!-- Аватарки с реальными лицами, без обводок -->
-          <div class="av-row">
-            <div class="av"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/Bonus/2122.webp" alt="" width="1024" height="1024" loading="lazy"></div>
-            <div class="av"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/Bonus/2125.webp" alt="" width="1024" height="1024" loading="lazy"></div>
-            <div class="av"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/Bonus/2126.webp" alt="" width="1024" height="1024" loading="lazy"></div>
-            <div class="av"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/Bonus/2127.webp" alt="" width="1024" height="1024" loading="lazy"></div>
-            <div class="av"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/Bonus/2129.webp" alt="" width="1024" height="1024" loading="lazy"></div>
+      <!-- Card 2 – wide: ad-channels load animation + bullet -->
+      <div class="bcard wide is-dark ads appear d2" id="adsCard">
+        <div class="ads-anim">
+          <div class="ads-logos" id="adsLogos">
+            <span class="ads-logo"><img src="images-for-landings/sellvia-auto-promotion/bonus/amazon.svg" alt="Amazon" width="60" height="60" loading="lazy"></span>
+            <span class="ads-logo"><img src="images-for-landings/sellvia-auto-promotion/bonus/google.svg" alt="Google" width="60" height="60" loading="lazy"></span>
+            <span class="ads-logo"><img src="images-for-landings/sellvia-auto-promotion/bonus/facebook.svg" alt="Facebook" width="60" height="60" loading="lazy"></span>
+            <span class="ads-logo"><img src="images-for-landings/sellvia-auto-promotion/bonus/tiktok.svg" alt="TikTok" width="60" height="60" loading="lazy"></span>
+            <span class="ads-logo"><img src="images-for-landings/sellvia-auto-promotion/bonus/insta.svg" alt="Instagram" width="60" height="60" loading="lazy"></span>
           </div>
-          <!-- Разделитель -->
-          <div class="av-divider"></div>
-          <!-- Всё что под чертой -->
-          <div class="users-count">300M</div>
-          <div class="users-label">Active buyers worldwide</div>
-          <div class="online-row">
-            <div class="online-dot"></div>
-            <span class="online-txt">Right now online</span>
-            <span class="online-num">2.4M</span>
+          <div class="ads-calc">
+            <div class="ads-calc-head">
+              <span class="ads-calc-label">Progress</span>
+              <span class="ads-pct" id="adsPct">0%</span>
+            </div>
+            <div class="ads-bar" id="adsBar">
+              <i class="ads-seg"></i><i class="ads-seg"></i><i class="ads-seg"></i><i class="ads-seg"></i><i class="ads-seg"></i>
+            </div>
           </div>
+        </div>
+        <div class="body">
+          <span class="stat">Ads</span>
+          <h3>On every major platform.</h3>
+          <p>Your store promoted across Amazon, Google, Facebook, TikTok and Instagram.</p>
         </div>
       </div>
 
-      <!-- PANEL 2 -->
-      <div class="panel" id="panel-2">
-        <img class="panel-photo panel-2-photo" src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/Bonus/2119.webp" alt="Happy woman" style="top:-30px; height:calc(100% + 30px); object-position:center top;" width="1400" height="1875" loading="lazy">
-        <div class="lcard card-rev" data-brownian style="top:auto;right:auto;bottom:32px;left:20px;width:206px;">
-          <div class="rev-amount">$8,240</div>
-          <div class="rev-period">This month's earnings</div>
-          <div class="rev-chart">
-            <div class="rbar low" style="height:24%"></div>
-            <div class="rbar low" style="height:38%"></div>
-            <div class="rbar mid" style="height:32%"></div>
-            <div class="rbar mid" style="height:55%"></div>
-            <div class="rbar hi"  style="height:48%"></div>
-            <div class="rbar hi"  style="height:72%"></div>
-            <div class="rbar top" style="height:100%"></div>
-          </div>
-          <div class="rev-trend">
-            <span class="trend-badge">↑ 43%</span>
-            <span class="trend-lbl">vs last month</span>
-          </div>
-        </div>
+      <!-- Card 3 – small: data-viz ray burst, no bullet -->
+      <div class="bcard small s1 is-dark burst appear d3">
+        <div class="rays" id="rayBurst"></div>
       </div>
 
-      <!--<div class="dot-nav">-->
-      <!--  <div class="dot active" data-dot="0"></div>-->
-      <!--  <div class="dot" data-dot="1"></div>-->
-      <!--  <div class="dot" data-dot="2"></div>-->
-      <!--</div>-->
+      <!-- Card 4 – small: neon progress ring + bullet -->
+      <div class="bcard small s2 is-dark ring appear d4">
+        <div class="neon-ring">
+          <svg viewBox="0 0 120 120">
+            <defs>
+              <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1e6fff"/>
+                <stop offset="55%" stop-color="#3ec6ff"/>
+                <stop offset="100%" stop-color="#7af0ff"/>
+              </linearGradient>
+            </defs>
+            <circle class="ring-track" cx="60" cy="60" r="46"/>
+            <circle class="ring-prog" cx="60" cy="60" r="46"/>
+          </svg>
+          <span class="ring-label">Done</span>
+        </div>
+        <div class="body">
+          <span class="stat">100%</span>
+          <h3>Automated.</h3>
+          <p>No setup, no analysis, no stress.</p>
+        </div>
+      </div>
     </div>
-
+    <div style="text-align:center;margin-top:64px" class="appear">
+      <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="btn btn-filled">Get my free store + Bonus</a>
+      <p style="margin-top:14px;font-size:13px;color:rgba(255,255,255,0.55)">Get started in less than 60 seconds • Cancel anytime</p>
+    </div>
   </div>
 </section>
 
 <script>
-/* ── Bonus block – isolated scope to avoid variable conflicts ── */
+/* ── Bonus / bento bundle block – isolated scope to avoid variable conflicts ── */
 ;(function() {
 
-  /* ── Panel switching (scoped per .bonus-section so multiple instances coexist) ── */
-  document.querySelectorAll('.bonus-section').forEach(section => {
-    const bullets = section.querySelectorAll('.bullet-item');
-    const panels  = section.querySelectorAll('.panel');
-    function activate(i) {
-      bullets.forEach(b => b.classList.remove('active'));
-      panels.forEach(p  => p.classList.remove('visible'));
-      bullets[i].classList.add('active');
-      panels[i].classList.add('visible');
-    }
-    bullets.forEach((b, i) => {
-      b.addEventListener('mouseenter', () => activate(i));
-      b.addEventListener('click', () => activate(i));
-    });
-  });
-
-  /* ── Brownian motion ──
-     Each card gets its own independent Ornstein-Uhlenbeck process:
-     smooth random walk that keeps cards close to their anchor position.
-  */
+  /* Brownian motion kept for any data-brownian elements elsewhere on the page.
+     The bento has none, so the tick loop runs over an empty array. */
   class Brownian {
     constructor(el) {
       this.el = el;
@@ -2849,6 +3171,263 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 })();
+
+/* ── Bento scroll-in demo: replay the hover state on each card once,
+   in sequence, the first time the section reaches the viewport. ── */
+;(function() {
+  const section = document.querySelector('.bonus-section.is-bento');
+  if (!section) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const cards = Array.from(section.querySelectorAll('.bcard'));
+  if (!cards.length) return;
+
+  const HOLD_MS    = 700; // how long each card stays in the "hover" state
+  const STAGGER_MS = 320; // delay between starting consecutive cards
+
+  function runDemo() {
+    cards.forEach(function(card, i) {
+      setTimeout(function() {
+        card.classList.add('demo-on');
+        setTimeout(function() { card.classList.remove('demo-on'); }, HOLD_MS);
+      }, i * STAGGER_MS);
+    });
+  }
+
+  if (!('IntersectionObserver' in window)) {
+    runDemo();
+    return;
+  }
+
+  const io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        io.unobserve(section);
+        setTimeout(runDemo, 220);
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '0px 0px -10% 0px' });
+
+  io.observe(section);
+})();
+
+/* ── Card 2: ad-channels load – each logo pops in and fills one neon segment ── */
+;(function() {
+  const card = document.getElementById('adsCard');
+  if (!card) return;
+  const logos = Array.from(card.querySelectorAll('.ads-logo'));
+  const segs  = Array.from(card.querySelectorAll('.ads-seg'));
+  const pct   = document.getElementById('adsPct');
+  if (!logos.length || !segs.length || !pct) return;
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) {
+    logos.forEach(l => l.classList.add('on'));
+    segs.forEach(s => s.classList.add('on'));
+    pct.textContent = '100%';
+    return;
+  }
+
+  const STEP_MS = 760;   // gap between consecutive logos
+  const HOLD_MS = 1700;  // pause at 100% before looping
+  let timer = null;
+
+  function clear() {
+    logos.forEach(l => l.classList.remove('on'));
+    segs.forEach(s => s.classList.remove('on'));
+    pct.textContent = '0%';
+  }
+  function run(i) {
+    if (i < logos.length) {
+      logos[i].classList.add('on');
+      segs[i].classList.add('on');
+      pct.textContent = Math.round((i + 1) / logos.length * 100) + '%';
+      timer = setTimeout(function () { run(i + 1); }, STEP_MS);
+    } else {
+      timer = setTimeout(function () { clear(); run(0); }, HOLD_MS);
+    }
+  }
+
+  let started = false;
+  const io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting && !started) { started = true; clear(); run(0); }
+    });
+  }, { threshold: 0.35 });
+  io.observe(card);
+})();
+
+/* ── Card 3: data-viz ray burst – 3 colour zones, cursor-reactive rotation ── */
+;(function() {
+  const host = document.getElementById('rayBurst');
+  if (!host) return;
+  const card = host.closest('.bcard');
+  const NS = 'http://www.w3.org/2000/svg';
+  const CX = 100, CY = 100, N = 72;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const svg = document.createElementNS(NS, 'svg');
+  svg.setAttribute('viewBox', '0 0 200 200');
+  const g = document.createElementNS(NS, 'g');
+  g.setAttribute('class', 'rays-rot');
+
+  const zones = [0, 1, 2].map(function (z) {
+    const zg = document.createElementNS(NS, 'g');
+    zg.setAttribute('class', 'ray-zone' + (z ? ' z' + z : ''));
+    return zg;
+  });
+  zones.forEach(function (zg) { g.appendChild(zg); });
+
+  for (let i = 0; i < N; i++) {
+    const a   = Math.random() * Math.PI * 2;
+    const len = 34 + Math.random() * 58;
+    const x2  = (CX + Math.cos(a) * len).toFixed(1);
+    const y2  = (CY + Math.sin(a) * len).toFixed(1);
+    const o   = (0.14 + Math.random() * 0.55).toFixed(2);
+    const td  = (Math.random() * 3.4).toFixed(2) + 's';
+    const sw  = (0.4 + Math.random() * 0.9).toFixed(2);
+    const zone = Math.floor(Math.random() * 3);   // random – no angular bands
+
+    /* per-ray gradient: pale "generation" colour held through the centre,
+       then a smooth ramp to the zone colour out toward the tip */
+    const gid = 'rg' + i;
+    const lg = document.createElementNS(NS, 'linearGradient');
+    lg.setAttribute('id', gid);
+    lg.setAttribute('gradientUnits', 'userSpaceOnUse');
+    lg.setAttribute('x1', CX); lg.setAttribute('y1', CY);
+    lg.setAttribute('x2', x2); lg.setAttribute('y2', y2);
+    [['0%', '#dce9ff'], ['40%', '#dce9ff'], ['100%', 'currentColor']].forEach(function (s) {
+      const st = document.createElementNS(NS, 'stop');
+      st.setAttribute('offset', s[0]);
+      st.setAttribute('stop-color', s[1]);
+      lg.appendChild(st);
+    });
+    zones[zone].appendChild(lg);
+
+    const ln = document.createElementNS(NS, 'line');
+    ln.setAttribute('x1', CX); ln.setAttribute('y1', CY);
+    ln.setAttribute('x2', x2); ln.setAttribute('y2', y2);
+    ln.setAttribute('stroke', 'url(#' + gid + ')');
+    ln.setAttribute('stroke-width', sw);
+    ln.setAttribute('class', 'ray');
+    ln.style.setProperty('--o', o);
+    ln.style.setProperty('--td', td);
+    zones[zone].appendChild(ln);
+
+    const dot = document.createElementNS(NS, 'circle');
+    dot.setAttribute('cx', x2); dot.setAttribute('cy', y2);
+    dot.setAttribute('r', (0.55 + Math.random() * 1.15).toFixed(2));
+    dot.setAttribute('fill', 'currentColor');
+    dot.setAttribute('class', 'ray');
+    dot.style.setProperty('--o', o);
+    dot.style.setProperty('--td', td);
+    zones[zone].appendChild(dot);
+  }
+  svg.appendChild(g);
+  host.insertBefore(svg, host.firstChild);
+
+  /* rotation: gentle idle spin; on hover it follows the cursor at half speed */
+  if (reduce || !card) return;
+  const IDLE = 0.09, FOLLOW = 0.5;
+  let angle = 0, spin = IDLE, hovering = false, lastA = null;
+
+  function frame() {
+    if (!hovering) spin += (IDLE - spin) * 0.05;
+    angle += spin;
+    g.style.transform = 'rotate(' + angle.toFixed(2) + 'deg)';
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  card.addEventListener('mouseenter', function () { hovering = true; lastA = null; });
+  card.addEventListener('mouseleave', function () { hovering = false; lastA = null; });
+  card.addEventListener('mousemove', function (e) {
+    const r = card.getBoundingClientRect();
+    const a = Math.atan2(e.clientY - (r.top + r.height / 2),
+                         e.clientX - (r.left + r.width / 2)) * 180 / Math.PI;
+    if (lastA !== null) {
+      let d = a - lastA;
+      if (d > 180) d -= 360;
+      if (d < -180) d += 360;
+      angle += d * FOLLOW;
+      spin = Math.max(-3.5, Math.min(3.5, d * FOLLOW));
+    }
+    lastA = a;
+  });
+})();
+
+/* ── Card 3: glassy cash badges – random amounts, staggered, off-centre ── */
+;(function() {
+  const host = document.getElementById('rayBurst');
+  if (!host) return;
+  const card = host.closest('.bcard');
+  if (!card) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const badges = [];
+  for (let i = 0; i < 3; i++) {
+    const b = document.createElement('div');
+    b.className = 'cash-badge';
+    card.appendChild(b);
+    badges.push(b);
+  }
+  function amount() { return '+$' + (80 + Math.floor(Math.random() * 161)); }
+
+  function hits(x, y, bw, bh, self) {
+    return badges.some(function (o) {
+      if (o === self || !o.classList.contains('show')) return false;
+      const ox = parseFloat(o.style.left) || 0, oy = parseFloat(o.style.top) || 0;
+      const ow = o.offsetWidth, oh = o.offsetHeight, pad = 10;
+      return x < ox + ow + pad && x + bw + pad > ox &&
+             y < oy + oh + pad && y + bh + pad > oy;
+    });
+  }
+
+  function place(b) {
+    const W = card.clientWidth, H = card.clientHeight;
+    const bw = b.offsetWidth || 72, bh = b.offsetHeight || 30;
+    const m = 20;                              // keep 20px off the card edges
+    const ccx = W / 2, ccy = H / 2;
+    const excl = Math.min(W, H) * 0.30;        // stay out of the centre
+    let x = m, y = m;
+    for (let t = 0; t < 60; t++) {
+      x = m + Math.random() * Math.max(1, W - bw - 2 * m);
+      y = m + Math.random() * Math.max(1, H - bh - 2 * m);
+      if (Math.hypot(x + bw / 2 - ccx, y + bh / 2 - ccy) > excl &&
+          !hits(x, y, bw, bh, b)) break;
+    }
+    b.style.left = x + 'px';
+    b.style.top  = y + 'px';
+  }
+
+  function show(b) {
+    b.textContent = amount();
+    place(b);
+    b.classList.add('show');
+    clearTimeout(b._hide);
+    b._hide = setTimeout(function () { b.classList.remove('show'); }, 2300);
+  }
+
+  if (reduce) {
+    badges.forEach(function (b) { b.textContent = amount(); place(b); b.classList.add('show'); });
+    return;
+  }
+
+  let i = 0, started = false;
+  function tick() { show(badges[i]); i = (i + 1) % badges.length; }
+
+  const io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting && !started) {
+        started = true;
+        tick();
+        setInterval(tick, 2700);
+      }
+    });
+  }, { threshold: 0.3 });
+  io.observe(card);
+})();
+
 </script>
 <!-- ═══ HOW IT WORKS ═══ -->
 <section class="how-sec">
@@ -2967,19 +3546,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="store-marquee appear-scale d2">
     <div class="store-strip">
-      <div class="store-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/1.webp" alt="Store design example 1" width="1376" height="898"></div>
-      <div class="store-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/2.webp" alt="Store design example 2" width="1376" height="898"></div>
-      <div class="store-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/3.webp" alt="Store design example 3" width="1376" height="898"></div>
-      <div class="store-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/4.webp" alt="Store design example 4" width="1376" height="898"></div>
-      <div class="store-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/5.webp" alt="Store design example 5" width="1376" height="898"></div>
-      <div class="store-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/6.webp" alt="Store design example 6" width="1376" height="898"></div>
+      <div class="store-card"><img src="images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/1.webp" alt="Store design example 1" width="1376" height="898"></div>
+      <div class="store-card"><img src="images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/2.webp" alt="Store design example 2" width="1376" height="898"></div>
+      <div class="store-card"><img src="images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/3.webp" alt="Store design example 3" width="1376" height="898"></div>
+      <div class="store-card"><img src="images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/4.webp" alt="Store design example 4" width="1376" height="898"></div>
+      <div class="store-card"><img src="images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/5.webp" alt="Store design example 5" width="1376" height="898"></div>
+      <div class="store-card"><img src="images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/6.webp" alt="Store design example 6" width="1376" height="898"></div>
       <!-- Duplicate set for seamless loop -->
-      <div class="store-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/1.webp" alt="" aria-hidden="true" width="1376" height="898"></div>
-      <div class="store-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/2.webp" alt="" aria-hidden="true" width="1376" height="898"></div>
-      <div class="store-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/3.webp" alt="" aria-hidden="true" width="1376" height="898"></div>
-      <div class="store-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/4.webp" alt="" aria-hidden="true" width="1376" height="898"></div>
-      <div class="store-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/5.webp" alt="" aria-hidden="true" width="1376" height="898"></div>
-      <div class="store-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/6.webp" alt="" aria-hidden="true" width="1376" height="898"></div>
+      <div class="store-card"><img src="images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/1.webp" alt="" aria-hidden="true" width="1376" height="898"></div>
+      <div class="store-card"><img src="images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/2.webp" alt="" aria-hidden="true" width="1376" height="898"></div>
+      <div class="store-card"><img src="images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/3.webp" alt="" aria-hidden="true" width="1376" height="898"></div>
+      <div class="store-card"><img src="images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/4.webp" alt="" aria-hidden="true" width="1376" height="898"></div>
+      <div class="store-card"><img src="images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/5.webp" alt="" aria-hidden="true" width="1376" height="898"></div>
+      <div class="store-card"><img src="images-for-landings/free-online-store-plus-instagram-and-tiktok-store/stores/6.webp" alt="" aria-hidden="true" width="1376" height="898"></div>
     </div>
   </div>
 
@@ -3001,42 +3580,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="get-grid">
       <div class="get-card appear d1">
         <div class="get-icon">
-          <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/icons/shop.svg" alt="store" loading="lazy">
+          <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/icons/shop.svg" alt="store" loading="lazy">
         </div>
         <h3>Top-notch online store</h3>
         <p>A fully hosted standalone ecommerce website, domain name &amp; SSL included.</p>
       </div>
       <div class="get-card appear d2">
         <div class="get-icon">
-          <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/icons/designtools.svg" alt="design" loading="lazy">
+          <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/icons/designtools.svg" alt="design" loading="lazy">
         </div>
         <h3>Professional design</h3>
         <p>Switchable, mobile-friendly design with vibrant visuals that turn shoppers into buyers.</p>
       </div>
       <div class="get-card appear d3">
         <div class="get-icon">
-          <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/icons/shopping-bag.svg" alt="products" loading="lazy">
+          <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/icons/shopping-bag.svg" alt="products" loading="lazy">
         </div>
         <h3>Thousands of best-sellers</h3>
         <p>Access to handpicked collections of the trendiest items. Add as many products as you like.</p>
       </div>
       <div class="get-card appear d4">
         <div class="get-icon">
-          <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/icons/card.svg" alt="payment" loading="lazy">
+          <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/icons/card.svg" alt="payment" loading="lazy">
         </div>
         <h3>Payment system</h3>
         <p>Your store is fully ready to accept payments through credit cards, debit cards, PayPal, and more.</p>
       </div>
       <div class="get-card appear d5">
         <div class="get-icon">
-          <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/icons/profile-tick.svg" alt="manager" loading="lazy">
+          <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/icons/profile-tick.svg" alt="manager" loading="lazy">
         </div>
         <h3>Personal manager</h3>
         <p>Your dedicated manager will guide you through all the steps of your business launch and growth.</p>
       </div>
       <div class="get-card appear d6">
         <div class="get-icon">
-          <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/icons/24-support.svg" alt="support" loading="lazy">
+          <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/icons/24-support.svg" alt="support" loading="lazy">
         </div>
         <h3>24/7 tech support</h3>
         <p>Feel free to contact our friendly support team whenever you have any technical issues.</p>
@@ -3060,27 +3639,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="wix-carousel appear d2">
     <div class="wix-track">
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/0-discover-your-next-big-business-idea.webp" alt="Discover Your Next Big Business Idea" width="600" height="730"></div>
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/1-critical-thinking-amp-problem-solving-ebook.webp" alt="Critical Thinking & Problem Solving eBook" width="600" height="730"></div>
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/2-5-days-to-unshakable-dating-confidence.webp" alt="5 Days to Unshakable Dating Confidence" width="600" height="730"></div>
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/3-top-10-must-see-u-s-national-parks-fast-facts.webp" alt="Top 10 Must-See U.S. National Parks + Fast Facts" width="600" height="730"></div>
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/4-first-time-parent-survival-guide.webp" alt="First-Time Parent Survival Guide" width="600" height="730"></div>
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/5-sleep-reset-guided-audio-course-for-restful-nights.webp" alt="Sleep Reset: Guided Audio Course for Restful Nights" width="600" height="730"></div>
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/6-pet-travel-essentials-checklist-for-safe-trips.webp" alt="Pet Travel Essentials Checklist for Safe Trips" width="600" height="730"></div>
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/7-the-empowered-budgeting-toolkit.webp" alt="The Empowered Budgeting Toolkit" width="600" height="730"></div>
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/8-healthy-meal-plan-amp-recipe-collection.webp" alt="Healthy Meal Plan & Recipe Collection" width="600" height="730"></div>
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/9-step-by-step-career-development-guide.webp" alt="Step-by-Step Career Development Guide" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/0-discover-your-next-big-business-idea.webp" alt="Discover Your Next Big Business Idea" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/1-critical-thinking-amp-problem-solving-ebook.webp" alt="Critical Thinking & Problem Solving eBook" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/2-5-days-to-unshakable-dating-confidence.webp" alt="5 Days to Unshakable Dating Confidence" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/3-top-10-must-see-u-s-national-parks-fast-facts.webp" alt="Top 10 Must-See U.S. National Parks + Fast Facts" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/4-first-time-parent-survival-guide.webp" alt="First-Time Parent Survival Guide" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/5-sleep-reset-guided-audio-course-for-restful-nights.webp" alt="Sleep Reset: Guided Audio Course for Restful Nights" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/6-pet-travel-essentials-checklist-for-safe-trips.webp" alt="Pet Travel Essentials Checklist for Safe Trips" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/7-the-empowered-budgeting-toolkit.webp" alt="The Empowered Budgeting Toolkit" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/8-healthy-meal-plan-amp-recipe-collection.webp" alt="Healthy Meal Plan & Recipe Collection" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/9-step-by-step-career-development-guide.webp" alt="Step-by-Step Career Development Guide" width="600" height="730"></div>
       <!-- Duplicate for seamless loop -->
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/0-discover-your-next-big-business-idea.webp" alt="Discover Your Next Big Business Idea" width="600" height="730"></div>
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/1-critical-thinking-amp-problem-solving-ebook.webp" alt="Critical Thinking & Problem Solving eBook" width="600" height="730"></div>
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/2-5-days-to-unshakable-dating-confidence.webp" alt="5 Days to Unshakable Dating Confidence" width="600" height="730"></div>
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/3-top-10-must-see-u-s-national-parks-fast-facts.webp" alt="Top 10 Must-See U.S. National Parks + Fast Facts" width="600" height="730"></div>
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/4-first-time-parent-survival-guide.webp" alt="First-Time Parent Survival Guide" width="600" height="730"></div>
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/5-sleep-reset-guided-audio-course-for-restful-nights.webp" alt="Sleep Reset: Guided Audio Course for Restful Nights" width="600" height="730"></div>
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/6-pet-travel-essentials-checklist-for-safe-trips.webp" alt="Pet Travel Essentials Checklist for Safe Trips" width="600" height="730"></div>
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/7-the-empowered-budgeting-toolkit.webp" alt="The Empowered Budgeting Toolkit" width="600" height="730"></div>
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/8-healthy-meal-plan-amp-recipe-collection.webp" alt="Healthy Meal Plan & Recipe Collection" width="600" height="730"></div>
-      <div class="wix-card"><img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/products/9-step-by-step-career-development-guide.webp" alt="Step-by-Step Career Development Guide" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/0-discover-your-next-big-business-idea.webp" alt="Discover Your Next Big Business Idea" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/1-critical-thinking-amp-problem-solving-ebook.webp" alt="Critical Thinking & Problem Solving eBook" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/2-5-days-to-unshakable-dating-confidence.webp" alt="5 Days to Unshakable Dating Confidence" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/3-top-10-must-see-u-s-national-parks-fast-facts.webp" alt="Top 10 Must-See U.S. National Parks + Fast Facts" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/4-first-time-parent-survival-guide.webp" alt="First-Time Parent Survival Guide" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/5-sleep-reset-guided-audio-course-for-restful-nights.webp" alt="Sleep Reset: Guided Audio Course for Restful Nights" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/6-pet-travel-essentials-checklist-for-safe-trips.webp" alt="Pet Travel Essentials Checklist for Safe Trips" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/7-the-empowered-budgeting-toolkit.webp" alt="The Empowered Budgeting Toolkit" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/8-healthy-meal-plan-amp-recipe-collection.webp" alt="Healthy Meal Plan & Recipe Collection" width="600" height="730"></div>
+      <div class="wix-card"><img src="images-for-landings/free-ecommerce-store-plus-amazon-package/products/9-step-by-step-career-development-guide.webp" alt="Step-by-Step Career Development Guide" width="600" height="730"></div>
     </div>
   </div>
 
@@ -3101,13 +3680,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="awards-grid">
       <article class="award-card appear d1">
-        <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-online-store-plus-instagram-and-tiktok-store/Awards/1.webp" alt="Hermes Creative Awards – Gold Winner, Best IT Product 2025-2026" loading="lazy" width="586" height="399">
+        <img src="images-for-landings/free-online-store-plus-instagram-and-tiktok-store/Awards/1.webp" alt="Hermes Creative Awards – Gold Winner, Best IT Product 2025-2026" loading="lazy" width="586" height="399">
       </article>
       <article class="award-card appear d2">
-        <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-online-store-plus-instagram-and-tiktok-store/Awards/2.webp" alt="Titan Business Awards – Platinum Winner, Best Ecommerce Platform" loading="lazy" width="586" height="399">
+        <img src="images-for-landings/free-online-store-plus-instagram-and-tiktok-store/Awards/2.webp" alt="Titan Business Awards – Platinum Winner, Best Ecommerce Platform" loading="lazy" width="586" height="399">
       </article>
       <article class="award-card appear d3">
-        <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-online-store-plus-instagram-and-tiktok-store/Awards/3.webp" alt="dotCOMM Awards – Gold Winner, Best Ecommerce Ecosystem" loading="lazy" width="586" height="399">
+        <img src="images-for-landings/free-online-store-plus-instagram-and-tiktok-store/Awards/3.webp" alt="dotCOMM Awards – Gold Winner, Best Ecommerce Ecosystem" loading="lazy" width="586" height="399">
       </article>
     </div>
   </div>
@@ -3118,36 +3697,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="sec-label" style="color:rgba(255,255,255,0.35);text-align:center;margin-bottom:24px">FEATURED ON:</div>
   <div class="featured-marquee">
     <div class="featured-strip">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/forbes.svg" alt="Forbes">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/entrepreneur.svg" alt="Entrepreneur">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/inc.svg" alt="Inc.">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/nbc.svg" alt="NBC">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/business-com.svg" alt="Business.com">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/fox-news.svg" alt="Fox News">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/forbes.svg" alt="Forbes">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/entrepreneur.svg" alt="Entrepreneur">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/inc.svg" alt="Inc.">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/nbc.svg" alt="NBC">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/business-com.svg" alt="Business.com">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/fox-news.svg" alt="Fox News">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/forbes.svg" alt="Forbes">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/entrepreneur.svg" alt="Entrepreneur">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/inc.svg" alt="Inc.">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/nbc.svg" alt="NBC">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/business-com.svg" alt="Business.com">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/fox-news.svg" alt="Fox News">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/forbes.svg" alt="Forbes">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/entrepreneur.svg" alt="Entrepreneur">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/inc.svg" alt="Inc.">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/nbc.svg" alt="NBC">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/business-com.svg" alt="Business.com">
-      <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/featured/fox-news.svg" alt="Fox News">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/forbes.svg" alt="Forbes">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/entrepreneur.svg" alt="Entrepreneur">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/inc.svg" alt="Inc.">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/nbc.svg" alt="NBC">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/business-com.svg" alt="Business.com">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/fox-news.svg" alt="Fox News">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/forbes.svg" alt="Forbes">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/entrepreneur.svg" alt="Entrepreneur">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/inc.svg" alt="Inc.">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/nbc.svg" alt="NBC">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/business-com.svg" alt="Business.com">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/fox-news.svg" alt="Fox News">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/forbes.svg" alt="Forbes">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/entrepreneur.svg" alt="Entrepreneur">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/inc.svg" alt="Inc.">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/nbc.svg" alt="NBC">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/business-com.svg" alt="Business.com">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/fox-news.svg" alt="Fox News">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/forbes.svg" alt="Forbes">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/entrepreneur.svg" alt="Entrepreneur">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/inc.svg" alt="Inc.">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/nbc.svg" alt="NBC">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/business-com.svg" alt="Business.com">
+      <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/featured/fox-news.svg" alt="Fox News">
     </div>
   </div>
   <div class="ratings-inner">
-    <div class="rat-card appear d1"><img class="rat-logo" src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-online-store-plus-instagram-and-tiktok-store/ratings/sitejabber.svg" alt="Sitejabber" loading="lazy"><div class="rat-stars">★★★★★</div><div class="rat-score">4.8</div><div class="rat-count">924 reviews</div></div>
-    <div class="rat-card appear d2"><img class="rat-logo" src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-online-store-plus-instagram-and-tiktok-store/ratings/facebook.svg" alt="Facebook" loading="lazy"><div class="rat-stars">★★★★★</div><div class="rat-score">96%</div><div class="rat-count">516 reviews</div></div>
-    <div class="rat-card appear d3"><img class="rat-logo" src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-online-store-plus-instagram-and-tiktok-store/ratings/g2.svg" alt="G2" loading="lazy"><div class="rat-stars">★★★★★</div><div class="rat-score">4.8</div><div class="rat-count">249 reviews</div></div>
+    <div class="rat-card appear d1"><img class="rat-logo" src="images-for-landings/free-online-store-plus-instagram-and-tiktok-store/ratings/sitejabber.svg" alt="Sitejabber" loading="lazy"><div class="rat-stars">★★★★★</div><div class="rat-score">4.8</div><div class="rat-count">924 reviews</div></div>
+    <div class="rat-card appear d2"><img class="rat-logo" src="images-for-landings/free-online-store-plus-instagram-and-tiktok-store/ratings/facebook.svg" alt="Facebook" loading="lazy"><div class="rat-stars">★★★★★</div><div class="rat-score">96%</div><div class="rat-count">516 reviews</div></div>
+    <div class="rat-card appear d3"><img class="rat-logo" src="images-for-landings/free-online-store-plus-instagram-and-tiktok-store/ratings/g2.svg" alt="G2" loading="lazy"><div class="rat-stars">★★★★★</div><div class="rat-score">4.8</div><div class="rat-count">249 reviews</div></div>
   </div>
 </div>
 
@@ -3161,8 +3740,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="test-grid">
       <div class="test-card appear d1">
-        <div class="test-thumb" data-video="https://sellvia.com/wp-content/uploads/reviews/ruby_review%20(1080p).mp4" data-poster="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/ruby.webp">
-          <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/ruby.webp" alt="Ruby" loading="lazy" width="394" height="393">
+        <div class="test-thumb" data-video="https://sellvia.com/wp-content/uploads/reviews/ruby_review%20(1080p).mp4" data-poster="images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/ruby.webp">
+          <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/ruby.webp" alt="Ruby" loading="lazy" width="394" height="393">
           <div class="test-play"><div class="play-ring"><div class="play-tri"></div></div></div>
         </div>
         <div class="test-body">
@@ -3173,8 +3752,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="test-card appear d2">
-        <div class="test-thumb" data-video="https://sellvia.com/wp-content/uploads/reviews/christina_review%20(1080p).mp4" data-poster="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/christina.webp">
-          <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/christina.webp" alt="Christina" loading="lazy" width="394" height="393">
+        <div class="test-thumb" data-video="https://sellvia.com/wp-content/uploads/reviews/christina_review%20(1080p).mp4" data-poster="images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/christina.webp">
+          <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/christina.webp" alt="Christina" loading="lazy" width="394" height="393">
           <div class="test-play"><div class="play-ring"><div class="play-tri"></div></div></div>
         </div>
         <div class="test-body">
@@ -3185,8 +3764,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="test-card appear d3">
-        <div class="test-thumb" data-video="https://sellvia.com/wp-content/uploads/reviews/rodney_review_2_(1080p).mp4" data-poster="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/rodney.webp">
-          <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/rodney.webp" alt="Rodney" loading="lazy" width="394" height="393">
+        <div class="test-thumb" data-video="https://sellvia.com/wp-content/uploads/reviews/rodney_review_2_(1080p).mp4" data-poster="images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/rodney.webp">
+          <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/rodney.webp" alt="Rodney" loading="lazy" width="394" height="393">
           <div class="test-play"><div class="play-ring"><div class="play-tri"></div></div></div>
         </div>
         <div class="test-body">
@@ -3197,8 +3776,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="test-card appear d1">
-        <div class="test-thumb" data-video="https://sellvia.com/wp-content/uploads/reviews/jack_review%20(1080p).mp4" data-poster="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/jack.webp">
-          <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/jack.webp" alt="Jack" loading="lazy" width="394" height="393">
+        <div class="test-thumb" data-video="https://sellvia.com/wp-content/uploads/reviews/jack_review%20(1080p).mp4" data-poster="images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/jack.webp">
+          <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/jack.webp" alt="Jack" loading="lazy" width="394" height="393">
           <div class="test-play"><div class="play-ring"><div class="play-tri"></div></div></div>
         </div>
         <div class="test-body">
@@ -3209,8 +3788,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="test-card appear d2">
-        <div class="test-thumb" data-video="https://sellvia.com/wp-content/uploads/reviews/ksenia_review%20(1080p).mp4" data-poster="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/ksenia.webp">
-          <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/ksenia.webp" alt="Ksenia" loading="lazy" width="394" height="393">
+        <div class="test-thumb" data-video="https://sellvia.com/wp-content/uploads/reviews/ksenia_review%20(1080p).mp4" data-poster="images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/ksenia.webp">
+          <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/ksenia.webp" alt="Ksenia" loading="lazy" width="394" height="393">
           <div class="test-play"><div class="play-ring"><div class="play-tri"></div></div></div>
         </div>
         <div class="test-body">
@@ -3221,8 +3800,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="test-card appear d3">
-        <div class="test-thumb" data-video="https://sellvia.com/wp-content/uploads/reviews/miandra_review%20(1080p).mp4" data-poster="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/miandra.webp">
-          <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/miandra.webp" alt="Miandra" loading="lazy" width="394" height="393">
+        <div class="test-thumb" data-video="https://sellvia.com/wp-content/uploads/reviews/miandra_review%20(1080p).mp4" data-poster="images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/miandra.webp">
+          <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/reviews/miandra.webp" alt="Miandra" loading="lazy" width="394" height="393">
           <div class="test-play"><div class="play-ring"><div class="play-tri"></div></div></div>
         </div>
         <div class="test-body">
@@ -3377,7 +3956,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="faq-cta appear d2">
           <h3>Ready to start your online business?</h3>
           <p>Take the best option to achieve financial independence and move your life forward!</p>
-          <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="btn btn-filled" style="height:60px;font-size:17px">Get my free store + Amazon Kit</a>
+          <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="btn btn-filled" style="height:60px;font-size:17px">Get my free store + Bonus</a>
           <p class="faq-cta-fine">Get started in less than 60 seconds • Cancel anytime</p>
           <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;gap:8px">
             <span style="width:8px;height:8px;border-radius:50%;background:#30d158;flex-shrink:0;animation:pulse 2s infinite"></span>
@@ -3396,7 +3975,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="final-h2 appear">Your store is<br>waiting for you.</h2>
     <p class="final-sub appear d1">Your site, your products, your Amazon business – ready to go.</p>
     <div class="final-btns appear d2">
-      <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="btn btn-filled">Get my free store + Amazon Kit</a>
+      <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="btn btn-filled">Get my free store + Bonus</a>
     </div>
     <p class="final-fine appear d3">Get started in less than 60 seconds • Cancel anytime</p>
           <button type="button" onclick="SellviaChat.open()" class="hero-link-cta" style="margin-top: 15px;">
@@ -3418,7 +3997,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ═══ STICKY CTA (all screens) ═══ -->
 <div class="sticky-cta" id="stickyCta">
-  <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting">Get my free store + Amazon Kit</a>
+  <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting">Get my free store + Bonus</a>
 </div>
 
 
@@ -3530,6 +4109,21 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
 document.querySelectorAll('.appear, .appear-l, .appear-r, .appear-scale').forEach(el => io.observe(el));
 
+// ── FREEBASIC screen auto-scroll: start only when the section is reached ──
+(function () {
+  const fb = document.querySelector('.freebasic-section');
+  if (!fb) return;
+  const fbObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        fb.classList.add('pv-in-view');
+        fbObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
+  fbObserver.observe(fb);
+})();
+
 // ── HERO PARALLAX (removed – now using slideshow) ──
 
 
@@ -3570,7 +4164,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 ;(function(){
   var wrap = document.querySelector('.hero-tiles');
   if (!wrap) return;
-  var DIR = 'file:///D:/Work/sellvia-auto-promotion/images-for-landings/sellvia-auto-promotion/hero/';
+  var DIR = 'images-for-landings/sellvia-auto-promotion/hero/';
   var logos = ['a', 'f', 'g', 'i', 't'];
   var BRAND = { a: '255 154 46', f: '45 123 244', g: '76 166 255', i: '232 67 147', t: '38 224 224' };
   function build(){
