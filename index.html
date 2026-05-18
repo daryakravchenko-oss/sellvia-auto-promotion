@@ -180,6 +180,9 @@ button { cursor: pointer; font-family: var(--font); outline: none; border: none;
 /* Apple-style hero: full viewport, centered text, image below (or behind with overlay) */
 .hero {
   background: #0b0b0d;
+  --bx: 15%;
+  --by: 30%;
+  animation: hero-blob-path 30s linear infinite;
   min-height: 80svh;
   display: flex;
   flex-direction: column;
@@ -192,6 +195,75 @@ button { cursor: pointer; font-family: var(--font); outline: none; border: none;
 }
 @media(max-width:1200px) { .hero { padding: 100px 24px; } }
 @media(max-width:860px)  { .hero { padding: 72px 24px; } }
+
+/* ── Tiled-logo background: hidden grid revealed by a moving neon blob ── */
+@property --bx { syntax: '<percentage>'; inherits: true; initial-value: 50%; }
+@property --by { syntax: '<percentage>'; inherits: true; initial-value: 50%; }
+@keyframes hero-blob-path {
+  0%   { --bx: 15%; --by: 30%; }
+  14%  { --bx: 50%; --by: 13%; }
+  28%  { --bx: 85%; --by: 27%; }
+  43%  { --bx: 91%; --by: 62%; }
+  57%  { --bx: 70%; --by: 88%; }
+  71%  { --bx: 33%; --by: 89%; }
+  86%  { --bx: 9%;  --by: 63%; }
+  100% { --bx: 15%; --by: 30%; }
+}
+/* tile grid — invisible except where the moving mask reveals it */
+.hero-tiles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(circle 300px at var(--bx) var(--by), #000 0%, rgba(0,0,0,0.42) 60%, transparent 100%);
+          mask-image: radial-gradient(circle 300px at var(--bx) var(--by), #000 0%, rgba(0,0,0,0.42) 60%, transparent 100%);
+}
+/* each tile glows in its logo's brand colour — --c (an "r g b" triple) is set per tile by JS */
+.hero-tile {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  border: 1.5px solid rgb(var(--c));
+  background: rgb(var(--c) / 0.1);
+  box-shadow:
+    0 0 5px rgb(var(--c)),
+    0 0 22px -3px rgb(var(--c)),
+    0 0 66px 4px rgb(var(--c) / 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-tile img {
+  width: 40%;
+  height: 40%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 7px rgb(var(--c) / 0.7));
+}
+/* soft central darkening under the hero content */
+.hero-textshield {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(46% 44% at 50% 47%, #0b0b0d 0%, #0b0b0d 40%, rgba(11,11,13,0) 82%);
+}
+/* dark backdrop directly behind the hero text + buttons so they never get lost on the tiles (desktop + mobile) */
+.hero-inner::before {
+  content: '';
+  position: absolute;
+  inset: -52px -76px;
+  z-index: -1;
+  border-radius: 60px;
+  background: rgba(9, 9, 11, 0.92);
+  filter: blur(48px);
+}
+@media (max-width: 600px) {
+  .hero-tiles { gap: 11px; padding: 11px; }
+  .hero-tile { border-radius: 13px; }
+}
 /* Animated edge glows – very blurred orange blobs at left & right edges
    that gently pulse in/out opacity; center stays dark so the H1 reads clean */
 .hero-glows {
@@ -547,7 +619,7 @@ button { cursor: pointer; font-family: var(--font); outline: none; border: none;
 }
 .hero-inner {
   position: relative;
-  z-index: 2; /* above hero-overlay */
+  z-index: 3; /* above hero-blob / hero-tiles / hero-textshield */
   max-width: 840px;
   margin: 0 auto;
   text-align: center;
@@ -1804,6 +1876,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ═══ HERO ═══ -->
 <section class="hero" id="hero">
+  <div class="hero-tiles" aria-hidden="true"></div>
+  <div class="hero-textshield" aria-hidden="true"></div>
   <div class="hero-inner">
     <p class="hero-eyebrow"><span class="eyebrow-l1">Free for 14 days</span><span class="eyebrow-sep"> · </span><span class="eyebrow-l2">No experience needed</span></p>
     <h1 class="hero-h1">Claim your <em>FREE</em><br>store with<br>auto-promotion!</h1>
@@ -2264,7 +2338,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Phone -->
         <div class="pv-phone">
           <div class="pv-phone-screen">
-            <img class="pv-screen-img" src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/freebasic/screen2.webp" alt="Mobile store screen" width="1200" height="3011" loading="lazy">
+            <img class="pv-screen-img" src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/sellvia-auto-promotion/freebasic/screen2.webp" alt="Mobile store screen" width="1200" height="3011" loading="lazy">
           </div>
         </div>
 
@@ -3491,6 +3565,39 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
+
+// ── HERO TILE GRID (every tile a logo; revealed by the moving spot) ──
+;(function(){
+  var wrap = document.querySelector('.hero-tiles');
+  if (!wrap) return;
+  var DIR = 'file:///D:/Work/sellvia-auto-promotion/images-for-landings/sellvia-auto-promotion/hero/';
+  var logos = ['a', 'f', 'g', 'i', 't'];
+  var BRAND = { a: '255 154 46', f: '45 123 244', g: '76 166 255', i: '232 67 147', t: '38 224 224' };
+  function build(){
+    var W = wrap.clientWidth, H = wrap.clientHeight;
+    if (!W || !H) return;
+    var cell = W < 600 ? 122 : 172;
+    var cols = Math.max(3, Math.round(W / cell));
+    var rows = Math.ceil(H / (W / cols)) + 1;
+    var total = cols * rows;
+    wrap.style.gridTemplateColumns = 'repeat(' + cols + ', 1fr)';
+    var placed = [];
+    var html = '';
+    for (var i = 0; i < total; i++){
+      var left = (i % cols !== 0) ? placed[i - 1] : null;
+      var up = (i >= cols) ? placed[i - cols] : null;
+      var pool = logos.filter(function(k){ return k !== left && k !== up; });
+      var k = pool[Math.floor(Math.random() * pool.length)];
+      placed[i] = k;
+      html += '<div class="hero-tile" style="--c:' + BRAND[k] + '"><img src="' + DIR + k + '.svg" alt=""></div>';
+    }
+    wrap.innerHTML = html;
+  }
+  build();
+  window.addEventListener('load', build);
+  var rt;
+  window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(build, 220); });
+})();
 
 // ── LIVE SOCIAL PROOF (hero glass card + FAQ – same number on both) ──
 ;(function() {
