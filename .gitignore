@@ -1,0 +1,12 @@
+# Local dev tooling — Node deps + Playwright/Chromium binaries used to
+# rasterise the storefront mockup. Not needed at runtime.
+_imgtools/
+
+# Claude Code project config (local preview launch settings)
+.claude/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.tmp
+*.tmp.webp

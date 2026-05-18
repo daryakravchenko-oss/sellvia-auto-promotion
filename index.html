@@ -1,0 +1,4268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get A Free Online Store – Sellvia</title>
+	<! Google Tag Manager >
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PWCP7QD');</script>
+<! End Google Tag Manager >
+<style>
+/* ════════════════════════════════════════
+   APPLE DESIGN SYSTEM
+   Colors, type scale, spacing — exact Apple.com
+   ════════════════════════════════════════ */
+:root {
+  /* Apple color palette */
+  --c-black:    #000000;
+  --c-near:     #1d1d1f;
+  --c-gray1:    #424245;
+  --c-gray2:    #6e6e73;
+  --c-gray3:    #86868b;
+  --c-gray4:    #d2d2d7;
+  --c-gray5:    #e8e8ed;
+  --c-lightbg:  #f5f5f7;   /* Apple's signature light gray */
+  --c-white:    #ffffff;
+  --c-blue:     #0071e3;   /* Apple CTA blue */
+  --c-amber:    #f5a623;   /* Sellvia brand accent (replaces Apple blue where brand needed) */
+  --c-amber-d:  #d4891a;
+  --c-green:    #30d158;   /* Apple green (success) */
+
+  /* Apple typography */
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Apple spacing rhythm */
+  --max: 1040px;
+  --max-wide: 1200px;
+
+  /* Transitions */
+  --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-out: cubic-bezier(0.0, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--c-white);
+  color: var(--c-near);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; font-family: var(--font); outline: none; border: none; background: none; }
+
+/* ════ LINEAR-STYLE NAV ════ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  height: 52px;
+  background: #000;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+}
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 28px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* LEFT: logo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  line-height: 0;
+}
+.nav-logo:hover { opacity: 0.85; }
+
+/* CENTER: main links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: auto;
+}
+.nav-links li a {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  padding: 0 14px;
+  line-height: 52px;
+  display: block;
+  text-decoration: none;
+  transition: color 0.15s;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+}
+.nav-links li a:hover { color: rgba(255,255,255,0.92); }
+/* RIGHT: divider + log in + sign up */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-shrink: 0;
+}
+.nav-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(255,255,255,0.12);
+  margin: 0 16px;
+}
+.nav-login {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  padding: 0 14px;
+  line-height: 52px;
+  transition: color 0.15s;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+}
+.nav-login:hover { color: rgba(255,255,255,0.92); }
+.nav-signup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding: 0 20px;
+  background: #f5a623;
+  border: none;
+  border-radius: 980px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  letter-spacing: -0.005em;
+  transition: background 0.15s, transform 0.15s;
+  white-space: nowrap;
+  padding: 0 26px;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.nav-signup:hover {
+  background: #d4891a;
+  transform: scale(1.02);
+}
+@media(max-width:860px) {
+  .nav-links { display: none; }
+  .nav-inner { grid-template-columns: 1fr auto; }
+}
+@media(max-width:480px) {
+  .nav-login { display: none; }
+  .nav-divider { display: none; }
+}
+
+/* ════ HERO ════ */
+/* Apple-style hero: full viewport, centered text, image below (or behind with overlay) */
+.hero {
+  background: linear-gradient(180deg, #1d1d1f 0%, #0f0f10 100%);
+  min-height: 80svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  /* no z-index: we don't want hero to create a stacking context — otherwise
+     it would overlay later sections (awards/why/etc.) whose z-index is auto.
+     amzkit-sec (z:10) and stat-bar (z:20) still stack above hero via their
+     own explicit z-index. */
+  overflow: hidden;
+  text-align: center;
+  /* Extended bottom padding gives a "dead zone" of scroll (~500px, about
+     5 wheel clicks) where hero is sticky and amzkit-sec is still below
+     viewport — position of amzkit-sec visually doesn't change yet. */
+  padding: 48px 24px 644px;
+}
+/* Animated edge glows — very blurred orange blobs at left & right edges
+   that gently pulse in/out opacity; center stays dark so the H1 reads clean */
+.hero-glows {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.hero-glow {
+  position: absolute;
+  width: 32%;
+  height: 70%;
+  top: 15%;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0;
+  will-change: opacity, transform;
+}
+/* Orange glows — left & right edge, appear & fade on their own cycle */
+.glow-left {
+  left: -12%;
+  background: #F8A54D;
+  animation: glow-pulse-left 10s ease-in-out infinite;
+}
+.glow-right {
+  right: -12%;
+  background: #F8A54D;
+  animation: glow-pulse-right 12s ease-in-out infinite;
+  animation-delay: -6s;
+}
+/* Dark glows — offset from the orange ones (different position + different
+   timing), pulse in opposite seconds so something is always fading in/out */
+.glow-dark-left {
+  left: -16%;
+  top: 32%;
+  background: #000;
+  animation: glow-pulse-dark-left 11s ease-in-out infinite;
+  animation-delay: -5s;
+}
+.glow-dark-right {
+  right: -16%;
+  top: 32%;
+  background: #000;
+  animation: glow-pulse-dark-right 13s ease-in-out infinite;
+  animation-delay: -3s;
+}
+@keyframes glow-pulse-left {
+  0%, 100% { opacity: 0;    transform: translateY(0)    scale(1); }
+  50%      { opacity: 0.55; transform: translateY(30px) scale(1.08); }
+}
+@keyframes glow-pulse-right {
+  0%, 100% { opacity: 0;    transform: translateY(0)     scale(1); }
+  50%      { opacity: 0.55; transform: translateY(-30px) scale(1.08); }
+}
+@keyframes glow-pulse-dark-left {
+  0%, 100% { opacity: 0;   transform: translateY(0)     scale(1); }
+  50%      { opacity: 0.6; transform: translateY(-25px) scale(1.1); }
+}
+@keyframes glow-pulse-dark-right {
+  0%, 100% { opacity: 0;   transform: translateY(0)    scale(1); }
+  50%      { opacity: 0.6; transform: translateY(25px) scale(1.1); }
+}
+
+/* ── Portraits behind the floating glass cards ── */
+.hero-portrait {
+  position: absolute;
+  z-index: 1;            /* below .hero-float (z-index:2) so glass card overlaps */
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 24px;
+}
+.hero-portrait > img:not(.hp-amz) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Circular Amazon badge (already a round image with its own soft edges) */
+.hp-amz {
+  position: absolute;
+  width: 15%;                        /* +15% bigger */
+  aspect-ratio: 1 / 1;
+  left: 20%;
+  top: calc(38% - 30px);             /* raised 30px higher */
+  object-fit: contain;
+  opacity: 0;                        /* starts hidden */
+  animation:
+    amz-in 0.6s ease 1s both,                      /* appears at 1s, rises up */
+    float-card 6s ease-in-out -2s infinite,        /* gentle hover bob */
+    amz-out 0.6s ease 2s forwards;                 /* fades out at 2s, drifts up */
+}
+@keyframes amz-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes amz-out {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-14px); }
+}
+
+/* RIGHT-side Amazon badge — same timing as the left one */
+.hp-amz-right {
+  left: auto;                      /* override left positioning from .hp-amz */
+  right: 20%;
+  animation:
+    amz-in 0.6s ease 1s both,                     /* appears at 1s, rises up */
+    float-card 6s ease-in-out -3s infinite,       /* gentle hover bob */
+    amz-out 0.6s ease 2s forwards;                /* fades out at 2s, drifts up */
+}
+.hero-portrait-left {
+  left: calc(3% - 50px);
+  top: calc(12% - 50px);
+  width: 760px;
+  aspect-ratio: 1921 / 1432;   /* matches actual image — 4:3-ish landscape */
+  animation: float-card 9s ease-in-out infinite;
+  animation-delay: -1.5s;
+}
+.hero-portrait-right {
+  right: calc(3% - 50px);
+  top: calc(12% - 50px);
+  width: 760px;
+  aspect-ratio: 1921 / 1432;
+  animation: float-card 10s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+/* ── Floating glass cards on left/right of hero (framer.com style) ── */
+.hero-float {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  font-family: var(--font);
+  color: #fff;
+}
+.hero-float-left {
+  left: calc(3% + 330px);   /* 150px shift + overlaps bottom-right of portrait */
+  top: 38%;
+  opacity: 0;               /* hidden until Amazon badge fades out */
+  animation:
+    float-card 7s ease-in-out infinite,
+    fl-in 0.72s ease 2s both;      /* appears at 2s, rises up, stays */
+}
+@keyframes fl-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@property --fade-y {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 24px;
+}
+.hero-float-right {
+  right: calc(5% + 50px);   /* shifted 50px further left */
+  top: 50%;
+  /* centering offset (-50% - 120px) + fade-in offset (24px → 0) — raised 50px */
+  transform: translateY(calc(-50% - 120px + var(--fade-y)));
+  opacity: 0;
+  animation:
+    float-card 8s ease-in-out -3s infinite,
+    fl-in-right 0.72s ease 2s both;
+}
+@keyframes fl-in-right {
+  from { opacity: 0; --fade-y: 24px; }
+  to   { opacity: 1; --fade-y: 0px;  }
+}
+@keyframes float-card {
+  0%, 100% { translate: 0 0; }
+  50%      { translate: 0 -10px; }
+}
+
+/* At narrower desktops (≤1500px, e.g. 1440 laptops) the 3% side gap shrinks
+   to ~43px — pull portraits + glass cards further inward to keep breathing
+   room from the viewport edges. */
+@media (max-width: 1500px) {
+  /* Shrink portraits and push them outward so the center heading
+     doesn't cover the people. */
+  .hero-portrait-left,
+  .hero-portrait-right { width: 540px; }
+  .hero-portrait-left  { left:  -40px; }
+  .hero-portrait-right { right: -40px; }
+  .hero-float-left     { left:  calc(3% + 140px); }
+  .hero-float-right    { right: calc(5% + 60px); }
+}
+
+/* Matte glass card — common base for all hero-float cards */
+.hf-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(22px) saturate(1.4);
+  -webkit-backdrop-filter: blur(22px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 18px 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* LEFT: snapshot card */
+.hf-card-snap {
+  width: 180px;
+}
+.hf-snap-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.hf-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.8);
+  animation: hf-pulse 1.6s ease-in-out infinite;
+}
+@keyframes hf-pulse {
+  0%, 100% { opacity: 1;   transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(0.85); }
+}
+.hf-snap-lbl {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.7);
+}
+.hf-snap-val {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-align: left;
+  margin-left: -2px;      /* align optical left-edge with the LIVE dot */
+  margin-bottom: 2px;
+}
+.hf-snap-sub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 10px;
+  text-align: left;
+  margin-left: -2px;
+}
+.hf-spark {
+  height: 30px;
+  opacity: 0.9;
+  overflow: visible;
+}
+.hf-spark svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+  transform-origin: 0 100%;          /* grow from bottom-left */
+  animation: spark-grow linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0 70vh;
+}
+.hf-spark polyline {
+  animation: spark-color linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0 70vh;
+}
+@keyframes spark-grow {
+  from { transform: scaleY(1); }
+  to   { transform: scaleY(1.5); }
+}
+@keyframes spark-color {
+  from { stroke: #F8A54D; }
+  to   { stroke: #22c55e; }
+}
+
+/* RIGHT: dashboard card with chart */
+.hf-card-dash {
+  width: 240px;
+}
+.hf-dash-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.hf-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.14);
+  padding: 3px 8px;
+  border-radius: 8px;
+  letter-spacing: 0.02em;
+}
+.hf-dash-val {
+  font-size: 30px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.hf-dash-sub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+.hf-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 54px;
+}
+.hf-bar {
+  flex: 1;
+  height: var(--h, 40%);
+  background: linear-gradient(to top, rgba(248, 165, 77, 0.3), #F8A54D);
+  border-radius: 3px 3px 2px 2px;
+}
+
+/* Hide floating cards on narrow screens so the hero text reads clean */
+@media (max-width: 960px) {
+  .hero-float,
+  .hero-portrait { display: none; }
+}
+ }
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(0,0,0,0.2) 0%,
+    rgba(0,0,0,0.1) 30%,
+    rgba(0,0,0,0.7) 75%,
+    rgba(0,0,0,0.95) 100%
+  );
+}
+.hero-inner {
+  position: relative;
+  z-index: 2; /* above hero-overlay */
+  max-width: 840px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--c-amber);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease-out) 0.2s forwards;
+}
+.hero-h1 {
+  font-size: clamp(52px, 8vw, 96px);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease-out) 0.35s forwards;
+}
+.hero-h1 em {
+  font-style: normal;
+  color: var(--c-amber);
+}
+.hero-sub {
+  font-size: clamp(19px, 2.5vw, 24px);
+  font-weight: 400;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+  max-width: 620px;
+  margin: 0 auto 40px;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease-out) 0.5s forwards;
+}
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease-out) 0.65s forwards;
+  width: 100%;
+}
+@media(max-width:600px) {
+  .hero { padding: 56px 16px; }
+  .hero-h1 { font-size: clamp(36px, 10vw, 52px); }
+  .hero-inner { width: 100%; align-items: center; text-align: center; }
+  .hero-actions { padding: 0 8px; }
+}
+.hero-fine {
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease-out) 0.8s forwards;
+  line-height: 1.5;
+}
+.hero-scroll-hint {
+  display: none;
+}
+.scroll-chevron {
+  width: 24px;
+  height: 24px;
+}
+@keyframes bounce { 0%,100%{transform:rotate(45deg) translateY(0)} 50%{transform:rotate(45deg) translateY(5px)} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn  { from{opacity:0} to{opacity:1} }
+
+/* ════ APPLE BUTTONS ════ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font);
+  font-size: 19px;
+  font-weight: 600;
+  border-radius: 980px;
+  padding: 0 22px;
+  height: 44px;
+  transition: all 0.2s var(--ease);
+  cursor: pointer;
+  border: none;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+.btn-filled { background: var(--c-amber); color: #000; font-weight: 600; width: 358px; max-width: 100%; height: 60px; font-size: 19px; will-change: transform; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.faq-cta .btn-filled { width: 100%; font-size: 17px; }
+.btn-filled:hover { background: var(--c-amber-d); transform: scale(1.02); }
+.btn-pulse { animation: ctaPulse 3s ease-in-out 2s infinite; }
+@keyframes ctaPulse { 0%,100%{box-shadow:0 0 0 0 rgba(245,166,35,0.4)} 50%{box-shadow:0 0 0 12px rgba(245,166,35,0)} }
+.btn-outline-w { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.5); }
+.btn-outline-w:hover { border-color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.08); }
+.btn-text-amber { background: none; color: var(--c-amber); font-size: 17px; font-weight: 400; padding: 0; height: auto; }
+.btn-text-amber:hover { opacity: 0.75; }
+.btn-text-amber::after { content: ' ›'; }
+
+/* Dark bg button */
+.btn-dark-filled { background: var(--c-amber); color: #000; }
+.btn-dark-filled:hover { background: var(--c-amber-d); }
+.btn-filled-dark { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+.btn-filled-dark:hover { background: rgba(255,255,255,0.2); }
+
+/* ════ STAT BAR ════ */
+/* Apple-style full-width stat strip between sections */
+.stat-bar {
+  background: #1d1d1f;
+  padding: 40px 24px;
+  /* Slight overlap with amzkit-sec for a smooth hand-off */
+  position: relative;
+  z-index: 20;
+  margin-top: -50px;
+}
+.stat-bar-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.stat-item {
+  background: #1d1d1f;
+  padding: 32px 24px;
+  text-align: center;
+}
+.stat-n {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--c-amber);
+  line-height: 1;
+  display: block;
+}
+.stat-l {
+  font-size: 14px;
+  color: var(--c-gray3);
+  margin-top: 8px;
+  display: block;
+}
+@media(max-width:600px){ .stat-bar-inner { grid-template-columns:1fr; } .stat-bar { padding: 56px 16px; } }
+
+/* ════ SECTIONS ════ */
+section { padding: 120px 24px; }
+@media(max-width:1200px) { section { padding: 100px 24px; } }
+@media(max-width:860px)  { section { padding: 72px 24px; } }
+@media(max-width:480px)  { section { padding: 56px 16px; } }
+.sec-in { max-width: var(--max); margin: 0 auto; }
+.sec-in-wide { max-width: var(--max-wide); margin: 0 auto; }
+
+/* Apple section label */
+.sec-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--c-amber);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+/* Apple title sizing */
+.sec-title-xl {
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.06;
+  margin-bottom: 20px;
+}
+.sec-title-lg {
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 20px;
+}
+.sec-title-md {
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.sec-body {
+  font-size: clamp(17px, 2vw, 21px);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: var(--c-gray2);
+}
+.sec-body.light { color: rgba(255,255,255,0.65); }
+/* Text colors for dark sections */
+.on-dark { color: #fff; }
+.on-light { color: var(--c-near); }
+
+/* ════ SCROLL ANIMATIONS ════ */
+.appear {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+  will-change: opacity, transform;
+}
+.appear.in { opacity: 1; transform: none; }
+/* why-sec: fade-only, no translateY to avoid clipping artifacts */
+.why-sec .appear {
+  transform: none;
+}
+.why-sec .appear.in {
+  transform: none;
+}
+.appear-l { opacity:0; transform:translateX(-40px); transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out); }
+.appear-r { opacity:0; transform:translateX(40px);  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out); }
+.appear-l.in, .appear-r.in { opacity:1; transform:none; }
+.appear-scale { opacity:0; transform:scale(0.94); transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out); }
+.appear-scale.in { opacity:1; transform:none; }
+.d1{transition-delay:0.1s} .d2{transition-delay:0.2s} .d3{transition-delay:0.3s}
+.d4{transition-delay:0.4s} .d5{transition-delay:0.5s} .d6{transition-delay:0.6s}
+
+/* ════ SECTION 1: WHY ════ */
+/* Apple-style: light bg, 3 features in a row */
+.why-sec { background: #f5f5f7; text-align: center; position: relative; }
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 72px;
+  background: #f5f5f7;
+}
+.why-card {
+  background: #f5f5f7;
+  padding: 52px 44px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.why-card + .why-card { border-left: 1px solid rgba(0,0,0,0.06); }
+.why-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 28px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #1d1d1f 0%, #2d2d2f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.why-icon img { width: 28px; height: 28px; filter: invert(1) brightness(0) invert(1); }
+.why-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--c-near);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.why-card p { font-size: 15px; color: var(--c-gray2); line-height: 1.6; }
+@media(max-width:760px) {
+  .why-grid { grid-template-columns: 1fr; }
+  .why-card + .why-card { border-left: none; border-top: 1px solid var(--c-gray5); }
+}
+
+/* ════ SECTION 2: WHAT WILL I SELL (scroll-pinned) ════ */
+.sell-sec { background: #000; position: relative; }
+.sell-sec .sec-title-xl { color: #fff; }
+.sell-sec .sec-body { color: rgba(255,255,255,0.6); }
+
+/* ── Product marquee ── */
+.wix-carousel {
+  position: relative;
+  margin-top: 56px;
+  overflow: hidden;
+}
+.wix-carousel::before,
+.wix-carousel::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.wix-carousel::before { left: 0; background: linear-gradient(to right, #000, transparent); }
+.wix-carousel::after  { right: 0; background: linear-gradient(to left, #000, transparent); }
+.wix-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  cursor: grab;
+  user-select: none;
+  will-change: transform;
+}
+.wix-track.dragging { cursor: grabbing; }
+.wix-card {
+  flex-shrink: 0;
+  width: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+}
+.wix-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+@media(max-width:760px) {
+  .wix-card { width: 240px; }
+  .wix-track { gap: 14px; }
+}
+.prod-card {
+  flex: 0 0 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  position: relative;
+  aspect-ratio: 3/4;
+  background: #111;
+}
+.prod-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease);
+}
+.prod-card:hover img { transform: scale(1.12); }
+.prod-card-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 60px 20px 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+}
+.prod-card-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.prod-card-profit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+}
+.prod-profit-pill {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+/* Scroll indicator dots */
+
+@media(max-width:760px) { .prod-card { flex: 0 0 220px; } }
+
+/* ════ SECTION 3: HOW IT WORKS ════ */
+.how-sec { background: var(--c-lightbg); position: relative; }
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 72px;
+  background: #f5f5f7;
+}
+.how-step {
+  background: #f5f5f7;
+  padding: 52px 44px 48px;
+  position: relative;
+}
+.how-step + .how-step { border-left: 1px solid rgba(0,0,0,0.06); }
+.how-step-num {
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--c-amber);
+  opacity: 0.25;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.how-step h3 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--c-near);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.how-step p { font-size: 15px; color: var(--c-gray2); line-height: 1.65; }
+.how-step-tag {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--c-amber);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+@media(max-width:760px) {
+  .how-steps { grid-template-columns: 1fr; margin-top: 18px; }
+  .how-step + .how-step { border-left: none; border-top: 1px solid rgba(0,0,0,0.06); }
+}
+
+/* ════ SECTION 4: WHAT DO I GET (features) ════ */
+.get-sec { background: #000; position: relative; overflow: hidden; }
+.get-sec .sec-in { position: relative; z-index: 2; }
+.get-sec .sec-title-xl { color: #fff; }
+.get-sec .sec-body { color: rgba(255,255,255,0.6); }
+
+/* Cursor glow orb */
+.glow-orb {
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,166,35,0.7) 0%, rgba(245,166,35,0.25) 35%, rgba(245,166,35,0) 70%);
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  will-change: left, top, width, height, opacity;
+}
+.glow-orb.visible { opacity: 1; }
+/* Absorb into button */
+.glow-orb.btn-absorb {
+  transition: width 2s cubic-bezier(0.4,0,0.2,1),
+              height 2s cubic-bezier(0.4,0,0.2,1),
+              opacity 2s cubic-bezier(0.4,0,0.2,1),
+              left 0.15s ease, top 0.15s ease;
+}
+
+.get-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 72px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+.get-card {
+  background: rgba(22,22,23,0.85);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  padding: 44px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: background 0.3s;
+}
+.get-card:hover { background: rgba(29,29,31,0.85); }
+.get-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(245, 166, 35, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.get-icon img { width: 26px; height: 26px; filter: invert(72%) sepia(60%) saturate(600%) hue-rotate(3deg) brightness(105%); }
+.get-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+.get-card p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.65; }
+@media(max-width:800px) { .get-grid { grid-template-columns: 1fr 1fr; } }
+@media(max-width:500px) { .get-grid { grid-template-columns: 1fr; } }
+
+/* ════ SECTION 5: BONUS (Amazon) ════ */
+.bonus-sec { background: var(--c-lightbg); }
+.bonus-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.bonus-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--c-amber);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(245,166,35,0.1);
+  border: 1px solid rgba(245,166,35,0.25);
+  border-radius: 100px;
+  padding: 4px 12px;
+  margin-bottom: 20px;
+}
+.bonus-label::before { content:''; width:6px;height:6px;border-radius:50%;background:var(--c-amber); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
+.bonus-sec .sec-title-lg { color: var(--c-near); }
+.bonus-sec .sec-title-lg .am { font-style: italic; color: var(--c-amber); }
+.bonus-price-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--c-gray2);
+  margin: 16px 0 24px;
+}
+.bonus-price-tag del { color: var(--c-gray3); }
+.bonus-price-tag .free-badge {
+  background: var(--c-near);
+  color: var(--c-amber);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+.bonus-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
+.bonus-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 17px;
+  color: var(--c-near);
+  line-height: 1.5;
+}
+.bonus-list li::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: url('https://www.figma.com/api/mcp/asset/43ca848c-084e-4267-aea1-8a0ce6f17da8') no-repeat center/16px;
+  background-color: rgba(245,166,35,0.1);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.bonus-visual {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.15), 0 8px 24px rgba(0,0,0,0.08);
+  aspect-ratio: 16/10;
+}
+.bonus-visual img { width: 100%; height: 100%; object-fit: cover; }
+@media(max-width:760px) { .bonus-layout { grid-template-columns: 1fr; gap: 48px; } }
+
+/* ════ FEATURE STORY SECTION (MacBook) ════ */
+/* Apple-style: full-width image with caption */
+.story-sec { background: #000; padding: 0; }
+.story-img-wrap { position: relative; overflow: hidden; }
+.story-img-wrap img { width: 100%; display: block; }
+.story-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  padding: 80px 64px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: end;
+}
+.story-caption h3 {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+.story-caption p { font-size: 17px; color: rgba(255,255,255,0.65); line-height: 1.55; }
+@media(max-width:700px) {
+  .story-caption { grid-template-columns: 1fr; padding: 40px 24px 32px; }
+}
+
+/* ════ AWARDS ════ */
+.awards-sec { background: var(--c-lightbg); text-align: center; position: relative; }
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 64px;
+  background: #f5f5f7;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.award-card {
+  background: #fff;
+  padding: 44px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.award-card + .award-card { border-left: 1px solid rgba(0,0,0,0.06); }
+.award-logo { height: 72px; margin-bottom: 18px; object-fit: contain; }
+
+/* Featured logos marquee */
+.featured-marquee {
+  margin-bottom: 83px;
+  overflow: hidden;
+  position: relative;
+  padding: 0 24px;
+}
+.featured-marquee::before,
+.featured-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+.featured-marquee::before { left: 0; background: linear-gradient(to right, #1d1d1f, transparent); }
+.featured-marquee::after  { right: 0; background: linear-gradient(to left, #1d1d1f, transparent); }
+.featured-strip {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  width: max-content;
+  animation: featuredScroll 21s linear infinite;
+}
+.featured-strip img {
+  height: 31px;
+  opacity: 0.35;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.3s;
+}
+.featured-strip img:hover { opacity: 0.6; }
+@keyframes featuredScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
+}
+.award-medal {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-top: 14px;
+  display: inline-block;
+}
+.gold { background: #fff8e6; color: #7a5200; position: relative; overflow: hidden; }
+.plat { background: #f0f0ff; color: #3a2fa0; position: relative; overflow: hidden; }
+.award-medal::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0) 30%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 70%, transparent 100%);
+  animation: pillShine 6s ease-in-out 2s infinite;
+}
+@keyframes pillShine {
+  0%   { left: -100%; }
+  40%  { left: 150%; }
+  100% { left: 150%; }
+}
+.award-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--c-near);
+  letter-spacing: -0.015em;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+.award-card p { font-size: 14px; color: var(--c-gray2); }
+.press-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 60px;
+  padding-top: 56px;
+  border-top: 1px solid var(--c-gray4);
+}
+.press-item {
+  font-size: 14px;
+  color: var(--c-gray2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.press-item strong { color: var(--c-near); }
+@media(max-width:700px) {
+  .awards-grid { grid-template-columns: 1fr; }
+  .award-card + .award-card { border-left: none; border-top: 1px solid rgba(0,0,0,0.06); }
+  @keyframes featuredScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+}
+
+/* ════ RATINGS ════ */
+.ratings-sec { background: var(--c-near); padding: 120px 24px; }
+@media(max-width:1200px) { .ratings-sec { padding: 100px 24px; } }
+@media(max-width:860px)  { .ratings-sec { padding: 72px 24px; } }
+@media(max-width:480px)  { .ratings-sec { padding: 56px 16px; } }
+.ratings-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.rat-card {
+  background: transparent;
+  padding: 44px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rat-card + .rat-card { border-left: 1px solid rgba(255,255,255,0.08); }
+.rat-plat { font-size: 18px; font-weight: 600; color: rgba(255,255,255,0.6); margin-bottom: 11px; letter-spacing:0.01em; }
+.rat-logo { height: 31px; margin-bottom: 11px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.85; }
+.rat-stars { color: #ffcc00; font-size: 21px; letter-spacing: 2px; margin-bottom: 11px; }
+.rat-score { font-size: 56px; font-weight: 700; color: #fff; letter-spacing: -0.03em; }
+.rat-count { font-size: 17px; color: rgba(255,255,255,0.4); margin-top: 8px; }
+@media(max-width:680px) {
+  .ratings-inner { grid-template-columns: 1fr 1fr; }
+  .rat-card:nth-child(3) { border-left: none; }
+  .rat-card:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,0.08); }
+}
+
+/* ════ TESTIMONIALS ════ */
+.test-sec { background: var(--c-lightbg); position: relative; }
+.test-sec .sec-label { text-align: center; }
+.test-sec .sec-title-lg { color: var(--c-near); text-align: center; }
+.test-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 64px;
+}
+.test-card {
+  background: var(--c-white);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.test-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.1);
+}
+.test-thumb {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: var(--c-near);
+  overflow: hidden;
+  cursor: pointer;
+}
+.test-thumb img { width:100%;height:100%;object-fit:cover;transition:transform 0.5s; }
+.test-card:hover .test-thumb img { transform:scale(1.05); }
+.test-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.25);
+  transition: background 0.2s;
+}
+.test-play:hover { background: rgba(0,0,0,0.4); }
+.play-ring {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  transition: transform 0.2s var(--ease-spring);
+}
+.test-play:hover .play-ring { transform: scale(1.1); }
+.play-tri { width:0; border-top:8px solid transparent; border-bottom:8px solid transparent; border-left:14px solid #1d1d1f; margin-left:3px; }
+.test-body { padding: 20px 20px 22px; }
+.test-stars { color: #FA8221; font-size: 13px; letter-spacing: 2px; margin-bottom: 10px; }
+.test-quote {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--c-near);
+  font-style: italic;
+  margin-bottom: 12px;
+  letter-spacing: -0.005em;
+}
+.test-author { font-size: 13px; font-weight: 600; color: var(--c-gray2); }
+.test-ctx { font-size: 12px; color: var(--c-amber); font-weight: 500; margin-top: 10px; }
+@media(max-width:820px) { .test-grid { grid-template-columns: 1fr 1fr; } }
+@media(max-width:520px) { .test-grid { grid-template-columns: 1fr; } }
+
+/* ════ FAQ ════ */
+.faq-sec { background: #000; position: relative; }
+.faq-sec .sec-title-lg { color: #fff; }
+.faq-layout { display: grid; grid-template-columns: 60fr 40fr; gap: 80px; margin-top: 72px; }
+.faq-list { display: flex; flex-direction: column; }
+.faq-item { border-bottom: 1px solid rgba(255,255,255,0.1); }
+.faq-item:first-child { border-top: 1px solid rgba(255,255,255,0.1); }
+.faq-q {
+  width: 100%;
+  padding: 20px 0;
+  font-size: 17px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  background: transparent;
+  border: none;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+.faq-q:hover { color: #fff; }
+.faq-q.open { color: var(--c-amber); }
+.faq-chevron {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0;
+  color: rgba(255,255,255,0.5);
+  transition: all 0.3s;
+  position: relative;
+}
+.faq-chevron::before,
+.faq-chevron::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  background: rgba(255,255,255,0.5);
+  border-radius: 1px;
+}
+.faq-chevron::before { width: 10px; height: 1.5px; transform: translate(-50%, -50%); }
+.faq-chevron::after  { width: 1.5px; height: 10px; transform: translate(-50%, -50%); }
+.faq-q.open .faq-chevron {
+  transform: rotate(45deg);
+  border-color: var(--c-amber);
+}
+.faq-q.open .faq-chevron::before,
+.faq-q.open .faq-chevron::after { background: var(--c-amber); }
+.faq-a {
+  display: none;
+  padding: 0 0 20px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: -0.005em;
+}
+.faq-a.open { display: block; }
+.faq-a strong { color: rgba(255,255,255,0.8); font-weight: 500; }
+/* FAQ sticky CTA card */
+.faq-cta {
+  background: #1d1d1f;
+  border-radius: 20px;
+  padding: 40px 32px;
+  align-self: flex-start;
+  position: sticky;
+  top: 72px;
+}
+.faq-cta h3 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+.faq-cta p { font-size: 15px; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 28px; }
+.faq-cta .btn { width: 100%; }
+.faq-cta .faq-cta-fine { font-size: 13px; color: rgba(255,255,255,0.3); text-align: center; margin-top: 14px; margin-bottom: 0; }
+@media(max-width:820px) { .faq-layout { grid-template-columns: 1fr; } .faq-cta { position: static; } .faq-cta h3, .faq-cta p { text-align: center; } }
+
+/* ════ FINAL CTA ════ */
+.final-sec {
+  background: linear-gradient(180deg, #1d1d1f 0%, #000 100%);
+  padding: 120px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.final-glow {
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 400px;
+  background: radial-gradient(ellipse at center top, rgba(245,166,35,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.final-in { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+.final-h2 {
+  font-size: clamp(44px, 7vw, 80px);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  margin-bottom: 20px;
+}
+.final-sub {
+  font-size: clamp(19px, 2.5vw, 24px);
+  color: rgba(255,255,255,0.65);
+  line-height: 1.5;
+  margin-bottom: 44px;
+  letter-spacing: -0.01em;
+}
+.final-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.final-fine { font-size: 13px; color: rgba(255,255,255,0.25); margin-top: 24px; }
+@media(max-width:480px) { .final-sec { padding: 56px 16px; } }
+
+/* ════ FOOTER ════ */
+footer { background: #000; border-top: 1px solid rgba(255,255,255,0.08); }
+.footer-top {
+  max-width: var(--max-wide);
+  margin: 0 auto;
+  padding: 52px 24px 40px;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 80px;
+}
+.footer-brand-name { font-size: 19px; font-weight: 600; color: rgba(255,255,255,0.55); margin-bottom: 10px; }
+.footer-tagline { font-size: 13px; color: rgba(255,255,255,0.3); line-height: 1.6; max-width: 220px; }
+.footer-cols { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+.footer-col h4 { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.4); margin-bottom: 12px; letter-spacing: 0.01em; }
+.footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.25); margin-bottom: 8px; transition: color 0.2s; }
+.footer-col a:hover { color: rgba(255,255,255,0.7); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 20px 24px;
+  max-width: var(--max-wide);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); }
+.footer-disc { font-size: 11px; color: rgba(255,255,255,0.15); max-width: 560px; line-height: 1.5; }
+@media(max-width:740px) {
+  .footer-top { grid-template-columns: 1fr; gap: 40px; }
+  .footer-cols { grid-template-columns: 1fr 1fr; }
+}
+
+/* ════ STICKY CTA (all screens) ════ */
+.sticky-cta {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 888;
+  background: rgba(0,0,0,0.88);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.sticky-cta.visible { transform: translateY(0); }
+.sticky-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 358px;
+  max-width: 100%;
+  height: 60px;
+  background: var(--c-amber);
+  color: #000;
+  font-family: var(--font);
+  font-size: 19px;
+  font-weight: 600;
+  border-radius: 980px;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.15s;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.sticky-cta a:hover { background: var(--c-amber-d); transform: scale(1.02); }
+
+
+/* ════ SCROLL PROGRESS ════ */
+#spbar { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 9999; pointer-events: none; }
+#spfill { height: 100%; width: 0; background: linear-gradient(90deg, var(--c-amber), #ff9f0a); }
+
+/* ════ SMALL SCREEN FIX (≤389px, down to 320px) ════ */
+@media (max-width: 389px) {
+  /* Allow button text to wrap and fill available width */
+  .final-fine{
+      font-size: 12px;
+  }
+  .faq-cta .faq-cta-fine{
+      font-size: 11px;
+  }
+  .btn {
+    white-space: normal;
+    text-align: center;
+    line-height: 1.25;
+  }
+  .btn-filled {
+    width: 100%;
+    font-size: 16px;
+    height: 56px;
+    padding: 12px 18px;
+  }
+
+  /* FAQ CTA card: reduce padding so content fits */
+  .faq-cta {
+    padding: 28px 18px;
+  }
+  .faq-cta h3 {
+    font-size: 22px;
+  }
+  /* Override inline style="height:60px;font-size:17px" on FAQ CTA button */
+  .faq-cta .btn.btn-filled {
+    font-size: 15px !important;
+    height: 52px !important;
+  }
+
+  /* Sticky CTA: reduce side padding */
+  .sticky-cta {
+    padding: 12px 12px;
+  }
+  .sticky-cta a {
+    width: 100%;
+    font-size: 16px;
+    height: 52px;
+    padding: 12px 16px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.25;
+  }
+
+  /* Nav signup button */
+  .nav-signup {
+    font-size: 14px;
+    padding: 0 16px;
+    height: 34px;
+  }
+
+  /* Topbar: prevent overflow */
+  .topbar {
+    padding: 10px 12px;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  /* Bonus section CTA */
+  .cta-btn {
+    font-size: 16px;
+    padding: 12px 20px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.25;
+  }
+
+  /* Final CTA section */
+  .final-btns .btn-filled {
+    width: 100%;
+  }
+  .store-cta{
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+
+  /* Why section: remove top gap and last card bottom padding */
+  .why-grid {
+    margin-top: 0;
+  }
+  .why-card:last-child {
+    padding-bottom: 0;
+  }
+
+  /* Ratings section: compact for narrow screens */
+  .ratings-sec {
+    padding: 40px 10px;
+  }
+  .featured-marquee {
+    margin-bottom: 40px;
+  }
+  .rat-card {
+    padding: 24px 14px;
+  }
+  .rat-score {
+    font-size: 40px;
+  }
+  .rat-count {
+    font-size: 14px;
+  }
+  .rat-stars {
+    font-size: 17px;
+  }
+  .rat-logo {
+    height: 24px;
+  }
+}
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWCP7QD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="spbar"><div id="spfill"></div></div>
+
+<!-- ═══ TOPBAR ═══ -->
+<style>
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: linear-gradient(90deg, #ff6820, #f5a623);
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+.topbar:hover { opacity: 0.95; }
+.topbar-badge {
+  background: #fff;
+  color: #FA8221;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.topbar-text {
+  color: #fff;
+}
+.topbar-arrow {
+  display: inline-block;
+  margin-left: 4px;
+  animation: arrowPulse 4s ease-in-out infinite;
+}
+@keyframes arrowPulse {
+  0%   { transform: translateX(0); }
+  10%  { transform: translateX(6px); }
+  20%  { transform: translateX(0); }
+  100% { transform: translateX(0); }
+}
+@media(max-width:600px) {
+  .topbar { justify-content: flex-start; text-align: left; }
+}
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+</style>
+<a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="topbar">
+  <span class="topbar-badge">Special Offer</span>
+  <span class="topbar-text">Get your FREE store + Amazon business!<span class="topbar-arrow">→</span></span>
+</a>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <!-- LEFT: logo -->
+    <a href="/" class="nav-logo" aria-label="Sellvia">
+      <svg viewBox="0 0 400 89" style="height:22px;width:auto;display:block;flex-shrink:0" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M114.623 57.583L123.608 56.7843C123.608 57.2502 123.641 57.7161 123.707 58.1819C123.774 58.5812 123.84 59.0471 123.907 59.5795C124.04 60.1119 124.173 60.6776 124.306 61.2766C124.439 61.809 124.606 62.3414 124.805 62.8738C124.805 62.9404 124.805 63.0069 124.805 63.0735C124.872 63.1401 124.939 63.1733 125.005 63.1733C125.005 63.2399 125.005 63.3064 125.005 63.373C125.072 63.4395 125.105 63.5061 125.105 63.5726C125.105 63.6392 125.105 63.7057 125.105 63.7723C125.172 63.8388 125.238 63.8721 125.305 63.8721C125.305 63.9387 125.305 64.0052 125.305 64.0718C125.371 64.1383 125.438 64.2049 125.504 64.2714C126.037 65.3363 126.669 66.3013 127.401 67.1664C128.2 68.0316 129.065 68.7637 129.997 69.3627C130.928 70.0282 131.893 70.5939 132.892 71.0597C133.89 71.459 134.921 71.8251 135.986 72.1578C136.386 72.2909 136.785 72.424 137.184 72.5571C137.583 72.6903 137.983 72.7901 138.382 72.8566C138.715 72.9232 139.081 72.9897 139.48 73.0563C139.879 73.1228 140.279 73.1894 140.678 73.2559C141.41 73.3225 142.109 73.389 142.775 73.4556C143.44 73.4556 144.072 73.4556 144.671 73.4556C147.134 73.4556 149.396 73.2227 151.46 72.7568C153.589 72.2244 155.519 71.4258 157.25 70.3609C158.98 69.3627 160.278 68.0982 161.143 66.5675C162.008 65.0368 162.441 63.2732 162.441 61.2766C162.441 59.6128 162.141 58.1819 161.542 56.984C161.01 55.7195 160.178 54.688 159.046 53.8893C157.915 53.0907 156.484 52.3586 154.754 51.6931C153.09 50.9611 151.093 50.2623 148.764 49.5967C148.165 49.4636 147.533 49.3305 146.867 49.1974C146.268 48.9978 145.636 48.7981 144.971 48.5985C144.305 48.4654 143.606 48.3323 142.874 48.1992C142.209 47.9995 141.51 47.7998 140.778 47.6002C140.179 47.4671 139.547 47.334 138.881 47.2009C138.282 47.0678 137.65 46.9014 136.984 46.7017C136.319 46.5686 135.653 46.4022 134.988 46.2026C134.389 46.0029 133.757 45.77 133.091 45.5038C131.095 44.9048 129.198 44.1062 127.401 43.1079C125.604 42.1097 123.907 40.9783 122.31 39.7138C120.646 38.3827 119.415 36.7522 118.616 34.8222C117.818 32.8257 117.418 30.4963 117.418 27.8343C117.418 25.1056 117.951 22.5767 119.015 20.2474C120.147 17.8515 121.811 15.7218 124.007 13.8584C126.203 11.9284 128.832 10.4975 131.893 9.56578C134.955 8.5675 138.482 8.06836 142.475 8.06836C146.335 8.06836 149.829 8.53422 152.957 9.46595C156.151 10.3977 158.98 11.762 161.442 13.5589C163.971 15.3558 165.868 17.5853 167.132 20.2474C168.464 22.9094 169.196 26.0041 169.329 29.5313L160.244 30.0305C160.178 29.7643 160.111 29.4648 160.045 29.132C160.045 28.7327 159.978 28.3334 159.845 27.9341C159.779 27.5348 159.679 27.1355 159.546 26.7362C159.479 26.2703 159.379 25.8044 159.246 25.3386C158.78 24.2072 158.148 23.1424 157.349 22.1441C156.551 21.1458 155.552 20.2141 154.355 19.3489C153.157 18.4172 151.593 17.7184 149.663 17.2525C147.799 16.7867 145.536 16.5537 142.874 16.5537C142.675 16.5537 142.442 16.5537 142.176 16.5537C141.976 16.5537 141.743 16.5537 141.477 16.5537C141.211 16.6203 140.944 16.6536 140.678 16.6536C140.478 16.6536 140.246 16.6536 139.979 16.6536C139.713 16.6536 139.447 16.6868 139.181 16.7534C138.914 16.7534 138.682 16.7867 138.482 16.8532C138.216 16.9198 137.949 16.9863 137.683 17.0529C137.417 17.0529 137.151 17.0861 136.885 17.1527C135.62 17.4189 134.389 17.8182 133.191 18.3506C131.993 18.8165 130.828 19.4155 129.697 20.1475C128.632 20.9461 127.8 21.9444 127.201 23.1424C126.669 24.2737 126.403 25.6381 126.403 27.2353C126.403 28.5663 126.602 29.7643 127.002 30.8291C127.468 31.8274 128.133 32.6926 128.998 33.4246C129.93 34.1567 131.194 34.8888 132.792 35.6208C134.389 36.2864 136.352 36.9186 138.682 37.5176C138.881 37.5841 139.048 37.6507 139.181 37.7172C139.38 37.7172 139.58 37.7172 139.78 37.7172C139.979 37.7838 140.179 37.8503 140.379 37.9169C140.578 37.9169 140.778 37.9502 140.978 38.0167C141.377 38.0833 141.776 38.1831 142.176 38.3162C142.575 38.3827 143.007 38.4826 143.473 38.6157C143.673 38.6822 143.839 38.7488 143.972 38.8153C144.172 38.8153 144.372 38.8153 144.571 38.8153C144.705 38.8819 144.871 38.9484 145.071 39.015C145.27 39.015 145.47 39.0483 145.67 39.1148C145.869 39.1814 146.036 39.2479 146.169 39.3145C146.368 39.3145 146.568 39.3145 146.768 39.3145C146.967 39.381 147.167 39.4476 147.367 39.5141C147.566 39.5141 147.766 39.5474 147.966 39.614C150.894 40.2795 153.689 41.1447 156.351 42.2095C159.08 43.2743 161.675 44.5055 164.138 45.9031C166.6 47.3007 168.43 49.2307 169.628 51.6931C170.893 54.089 171.525 57.0506 171.525 60.5778C171.525 63.5726 170.926 66.3345 169.728 68.8635C168.53 71.3259 166.733 73.5887 164.337 75.6518C161.941 77.7149 159.146 79.2456 155.952 80.2439C152.757 81.2422 149.13 81.7413 145.071 81.7413C140.811 81.7413 137.051 81.4085 133.79 80.743C130.529 80.0775 127.834 79.0127 125.704 77.5485C123.508 76.0844 121.644 74.4539 120.114 72.657C118.583 70.7935 117.352 68.7637 116.42 66.5675C116.021 65.6357 115.688 64.7373 115.422 63.8721C115.222 63.0069 115.056 62.2083 114.923 61.4763C114.856 60.7442 114.789 60.0787 114.723 59.4797C114.656 58.8142 114.623 58.2485 114.623 57.7826V57.583Z" fill="white"/>
+<path d="M219.042 63.8721L228.027 64.9702C227.361 67.4992 226.396 69.7952 225.132 71.8584C223.934 73.8549 222.403 75.6185 220.54 77.1492C218.676 78.7465 216.48 79.9111 213.951 80.6432C211.422 81.3753 208.56 81.7413 205.366 81.7413C201.306 81.7413 197.746 81.1756 194.684 80.0442C191.623 78.8463 189.027 77.0161 186.898 74.5537C184.835 72.1578 183.271 69.3627 182.206 66.1682C181.141 62.9071 180.608 59.28 180.608 55.2869C180.608 51.3604 181.108 47.7666 182.106 44.5055C183.171 41.1779 184.735 38.2164 186.798 35.6208C188.861 33.0253 191.39 31.0953 194.385 29.8308C197.38 28.4998 200.807 27.8343 204.667 27.8343C205.133 27.8343 205.599 27.8675 206.065 27.9341C206.597 27.9341 207.096 27.9674 207.562 28.0339C208.094 28.1005 208.594 28.167 209.059 28.2336C209.592 28.2336 210.091 28.3001 210.557 28.4332C212.753 28.8991 214.883 29.7976 216.946 31.1286C219.009 32.3931 220.972 34.0236 222.836 36.0202C224.699 38.0833 226.063 40.7453 226.929 44.0064C227.86 47.2674 228.326 51.1607 228.326 55.6862C228.326 55.7528 228.326 55.8193 228.326 55.8859C228.326 55.9524 228.326 56.019 228.326 56.0856C228.326 56.1521 228.326 56.2187 228.326 56.2852C228.326 56.2852 228.326 56.3185 228.326 56.385C228.326 56.4516 228.326 56.5181 228.326 56.5847C228.326 56.6512 228.326 56.7178 228.326 56.7843C228.326 56.8509 228.326 56.9175 228.326 56.984C228.326 56.984 228.326 57.0173 228.326 57.0838L189.593 56.8842C189.726 60.0787 190.225 62.8073 191.09 65.0701C191.956 67.3328 193.187 69.163 194.784 70.5606C196.381 71.9582 198.045 73.023 199.775 73.7551C201.572 74.4206 203.436 74.7534 205.366 74.7534C206.896 74.7534 208.261 74.6203 209.459 74.354C210.723 74.0213 211.788 73.5554 212.653 72.9565C213.585 72.3575 214.384 71.7252 215.049 71.0597C215.781 70.3277 216.38 69.5956 216.846 68.8635C217.112 68.3977 217.345 67.9651 217.545 67.5658C217.744 67.0999 217.944 66.6673 218.144 66.268C218.343 65.8687 218.51 65.4694 218.643 65.0701C218.843 64.6707 218.976 64.338 219.042 64.0718V63.8721ZM190.092 49.6966H219.342C219.275 48.6317 219.142 47.6002 218.942 46.6019C218.743 45.6036 218.477 44.6719 218.144 43.8067C217.811 42.875 217.378 42.0431 216.846 41.311C216.38 40.579 215.848 39.8802 215.249 39.2146C214.65 38.6157 213.984 38.0833 213.252 37.6174C212.52 37.085 211.688 36.6191 210.756 36.2198C209.825 35.8205 208.86 35.521 207.861 35.3214C206.863 35.1217 205.832 35.0219 204.767 35.0219C202.704 35.0219 200.84 35.3546 199.176 36.0202C197.513 36.6191 196.115 37.5508 194.984 38.8153C193.786 40.0798 192.821 41.3776 192.089 42.7086C191.357 44.0397 190.824 45.4705 190.491 47.0012C190.425 47.2674 190.358 47.5336 190.292 47.7998C190.225 48.066 190.192 48.299 190.192 48.4986C190.125 48.7648 190.092 49.0311 190.092 49.2973C190.092 49.4969 190.092 49.6966 190.092 49.8962V49.6966Z" fill="white"/>
+<path d="M238.874 80.5434V9.06664H247.659V80.5434H238.874Z" fill="white"/>
+<path d="M261.004 80.5434V9.06664H269.789V80.5434H261.004Z" fill="white"/>
+<path d="M297.409 80.5434L277.743 28.8326H287.027L298.108 59.7792C298.574 61.1102 298.973 62.3082 299.306 63.373C299.639 64.4378 299.938 65.3695 300.205 66.1682C300.404 67.0333 300.604 67.832 300.804 68.564C301.003 69.2296 301.17 69.8618 301.303 70.4608L301.502 70.2611C301.635 69.9283 301.735 69.5623 301.802 69.163C301.935 68.7637 302.035 68.3644 302.101 67.9651C302.234 67.5658 302.368 67.1664 302.501 66.7671C302.634 66.3678 302.767 65.9685 302.9 65.5692C303.033 65.1033 303.166 64.6707 303.299 64.2714C303.499 63.8056 303.665 63.3397 303.798 62.8738C303.931 62.4745 304.065 62.0752 304.198 61.6759C304.397 61.2766 304.564 60.9106 304.697 60.5778L316.177 28.8326H325.162L305.595 80.5434H297.409Z" fill="white"/>
+<path d="M333.048 80.5434V28.8326H341.833V80.5434H333.048ZM333.048 19.0494V9.06664H341.833V19.0494H333.048Z" fill="white"/>
+<path d="M362.365 44.7052L353.78 43.6071C353.913 43.2743 354.013 42.875 354.08 42.4091C354.213 41.8767 354.379 41.2778 354.579 40.6122C354.712 40.0133 354.912 39.381 355.178 38.7155C355.511 38.05 355.91 37.3845 356.376 36.719C357.041 35.5876 357.906 34.5227 358.971 33.5245C360.103 32.5262 361.467 31.5612 363.064 30.6295C364.595 29.6977 366.525 28.9989 368.854 28.5331C371.25 28.0672 374.012 27.8343 377.14 27.8343C381.532 27.8343 385.093 28.2669 387.821 29.132C390.617 29.9307 392.547 31.1619 393.611 32.8257C394.743 34.4895 395.608 36.2531 396.207 38.1165C396.806 39.98 397.139 41.91 397.205 43.9066C397.205 44.0397 397.205 44.1728 397.205 44.3059C397.205 44.439 397.205 44.5721 397.205 44.7052C397.205 44.9048 397.205 45.0712 397.205 45.2043C397.205 45.3374 397.205 45.4705 397.205 45.6036C397.205 45.8698 397.205 46.1693 397.205 46.5021C397.205 46.7683 397.205 47.0345 397.205 47.3007V58.8807C397.205 61.809 397.205 64.338 397.205 66.4676C397.272 68.5973 397.338 70.3277 397.405 71.6587C397.471 72.9897 397.638 74.2542 397.904 75.4522C398.17 76.6501 398.536 77.7482 399.002 78.7465C399.069 78.9461 399.135 79.1458 399.202 79.3454C399.268 79.4785 399.335 79.6116 399.401 79.7447C399.535 79.9444 399.634 80.1108 399.701 80.2439C399.834 80.377 399.934 80.4768 400 80.5434H390.816C390.484 80.011 390.217 79.4453 390.018 78.8463C389.818 78.2473 389.652 77.6484 389.519 77.0494C389.452 76.517 389.352 76.0178 389.219 75.552C389.152 75.0861 389.086 74.6868 389.019 74.354C387.156 75.9513 385.359 77.2491 383.629 78.2473C381.965 79.2456 380.368 79.9777 378.837 80.4435C377.24 80.8429 375.709 81.1423 374.245 81.342C372.781 81.6082 371.35 81.7413 369.952 81.7413C367.091 81.7413 364.562 81.4085 362.365 80.743C360.236 80.0775 358.406 79.046 356.875 77.6484C355.344 76.2508 354.179 74.6868 353.381 72.9565C352.649 71.1596 352.283 69.1963 352.283 67.0666C352.283 64.937 352.549 63.0735 353.081 61.4763C353.68 59.879 354.579 58.548 355.777 57.4831C356.975 56.3518 358.206 55.3868 359.47 54.5881C360.801 53.7895 362.166 53.1573 363.563 52.6914C364.428 52.4252 365.26 52.1923 366.059 51.9926C366.924 51.793 367.756 51.6266 368.555 51.4935C369.353 51.3604 370.085 51.2605 370.751 51.194C371.483 51.0609 372.115 50.9611 372.648 50.8945C372.847 50.8945 373.213 50.8612 373.746 50.7947C374.345 50.6616 375.11 50.5617 376.042 50.4952C376.973 50.3621 377.938 50.229 378.937 50.0959C379.935 49.8962 380.967 49.6966 382.031 49.4969C382.564 49.3638 383.096 49.264 383.629 49.1974C384.228 49.0643 384.827 48.9312 385.426 48.7981C385.958 48.665 386.457 48.5319 386.923 48.3988C387.455 48.2657 387.955 48.0993 388.42 47.8997C388.42 47.7666 388.42 47.6335 388.42 47.5004C388.42 47.3007 388.42 47.101 388.42 46.9014C388.42 46.7683 388.42 46.6685 388.42 46.6019C388.42 46.5354 388.42 46.4355 388.42 46.3024C388.42 46.2359 388.42 46.1693 388.42 46.1028C388.42 45.9697 388.42 45.8698 388.42 45.8033C388.42 45.7367 388.42 45.7035 388.42 45.7035C388.42 45.6369 388.42 45.5704 388.42 45.5038C388.42 45.4372 388.42 45.3707 388.42 45.3041C388.42 45.2376 388.42 45.2043 388.42 45.2043C388.42 45.1378 388.42 45.0712 388.42 45.0047C388.42 44.9381 388.42 44.8716 388.42 44.805C388.354 43.6071 388.088 42.4424 387.622 41.311C387.222 40.1796 386.657 39.1148 385.925 38.1165C385.193 37.1183 383.961 36.3529 382.231 35.8205C380.567 35.2881 378.438 35.0219 375.842 35.0219C373.579 35.0219 371.683 35.2215 370.152 35.6208C368.621 36.0202 367.423 36.5858 366.558 37.3179C365.693 38.1165 364.961 38.9484 364.362 39.8136C363.829 40.6122 363.397 41.4774 363.064 42.4091C362.998 42.4757 362.931 42.5755 362.864 42.7086C362.864 42.8417 362.864 42.9416 362.864 43.0081C362.798 43.1412 362.731 43.2743 362.665 43.4074C362.665 43.474 362.665 43.5738 362.665 43.7069C362.598 43.9066 362.532 44.1062 362.465 44.3059C362.465 44.5055 362.432 44.7052 362.365 44.9048V44.7052ZM388.42 57.7826V54.5881C387.888 54.9209 387.289 55.1871 386.624 55.3868C385.958 55.5864 385.259 55.7861 384.527 55.9857C383.729 56.1854 382.93 56.385 382.131 56.5847C381.333 56.7843 380.534 56.9507 379.735 57.0838C379.27 57.1504 378.77 57.2502 378.238 57.3833C377.772 57.4499 377.273 57.5497 376.741 57.6828C376.275 57.7493 375.776 57.8159 375.243 57.8825C374.777 57.949 374.345 58.0156 373.945 58.0821C373.679 58.1487 373.413 58.2152 373.147 58.2818C372.947 58.2818 372.714 58.2818 372.448 58.2818C372.182 58.3483 371.916 58.4149 371.649 58.4814C371.45 58.4814 371.217 58.5147 370.951 58.5812C369.753 58.7809 368.621 59.0804 367.556 59.4797C366.492 59.879 365.493 60.3449 364.562 60.8773C363.563 61.4763 362.831 62.2749 362.365 63.2732C361.899 64.2714 361.667 65.4694 361.667 66.867C361.667 67.0001 361.667 67.1664 361.667 67.3661C361.667 67.4992 361.667 67.6323 361.667 67.7654C361.667 67.8985 361.667 68.0316 361.667 68.1647C361.733 68.2978 361.8 68.4309 361.866 68.564C361.999 69.3627 362.299 70.128 362.765 70.8601C363.231 71.5921 363.863 72.3242 364.661 73.0563C365.46 73.7218 366.458 74.2209 367.656 74.5537C368.921 74.8865 370.385 75.0528 372.049 75.0528C372.448 75.0528 372.914 75.0196 373.446 74.953C374.045 74.8865 374.677 74.8199 375.343 74.7534C376.075 74.6203 376.807 74.4539 377.539 74.2542C378.271 74.0546 379.037 73.7884 379.835 73.4556C380.235 73.3225 380.634 73.1561 381.033 72.9565C381.432 72.6902 381.832 72.424 382.231 72.1578C382.431 72.0247 382.63 71.8916 382.83 71.7585C383.03 71.5589 383.229 71.3925 383.429 71.2594C383.562 71.0597 383.729 70.8933 383.928 70.7602C384.128 70.5606 384.327 70.3609 384.527 70.1613C385.392 69.2295 386.091 68.2645 386.624 67.2663C387.156 66.268 387.522 65.2697 387.722 64.2714C387.921 63.2732 388.088 62.2416 388.221 61.1768C388.354 60.1119 388.42 59.0471 388.42 57.9823V57.7826Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3587 8.20492C10.9601 8.20492 8.20492 10.9601 8.20492 14.3587V74.1826C8.20492 77.5813 10.96 80.3364 14.3587 80.3364H34.3396C36.6053 80.3364 38.442 82.1731 38.442 84.4388C38.442 86.7046 36.6053 88.5413 34.3396 88.5413H14.3587C6.42859 88.5413 0 82.1127 0 74.1826V14.3587C0 6.42861 6.42859 0 14.3587 0H72.9274C80.8575 0 87.2861 6.42859 87.2861 14.3587V74.1826C87.2861 82.1127 80.8575 88.5413 72.9274 88.5413H57.0686C53.6046 88.5413 50.232 87.2959 47.6095 84.9661C41.3797 79.4317 33.8467 72.3631 27.8527 64.7375C21.9613 57.2424 17.0063 48.5318 17.0063 39.7731C17.0063 33.0028 19.059 26.3576 23.6268 21.3589C28.253 16.2963 35.0851 13.3346 43.7838 13.3346C52.5718 13.3346 59.2102 16.5142 63.5805 21.7139C67.8557 26.8003 69.6166 33.4038 69.6166 39.7731C69.6166 46.0607 67.0584 51.8731 64.0651 56.8267C61.7326 60.6869 58.9113 64.3655 56.5027 67.506C55.8389 68.3716 55.2064 69.1963 54.6241 69.9726C53.2647 71.7852 50.6933 72.1526 48.8807 70.7931C47.0681 69.4337 46.7008 66.8623 48.0602 65.0497C48.7454 64.1361 49.4488 63.2183 50.1584 62.2922C52.5288 59.199 54.97 56.0135 57.0427 52.5833C59.7182 48.1557 61.4116 43.8781 61.4116 39.7731C61.4116 34.8048 60.0288 30.2403 57.2995 26.9931C54.6655 23.8592 50.4387 21.5395 43.7838 21.5395C37.0397 21.5395 32.5343 23.7742 29.6837 26.8937C26.7746 30.0773 25.2112 34.6 25.2112 39.7731C25.2112 45.6578 28.6777 52.51 34.3033 59.667C39.8264 66.6935 46.9061 73.3662 53.0588 78.8321C54.1469 79.7988 55.5691 80.3364 57.0686 80.3364H72.9274C76.326 80.3364 79.0811 77.5813 79.0811 74.1826V14.3587C79.0811 10.96 76.326 8.20492 72.9274 8.20492H14.3587Z" fill="#0075CF"/>
+<circle cx="43.6432" cy="37.7262" r="7.60902" fill="#FFB200"/>
+</svg>
+    </a>
+    <!-- CENTER: links -->
+    <ul class="nav-links">
+      <li><a href="#why">Why Sellvia</a></li>
+      <li><a href="#get">What's included</a></li>
+      <li><a href="#bonus">Bonus</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <!-- RIGHT: actions -->
+    <div class="nav-right">
+      <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="nav-signup">Start for free</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+  <!-- Edge glows — orange + dark blurred blobs pulsing out of phase at left & right -->
+  <div class="hero-glows" aria-hidden="true">
+    <span class="hero-glow glow-left"></span>
+    <span class="hero-glow glow-right"></span>
+    <span class="hero-glow glow-dark-left"></span>
+    <span class="hero-glow glow-dark-right"></span>
+  </div>
+
+  <!-- LEFT: portrait behind the glass snapshot card -->
+  <div class="hero-portrait hero-portrait-left" aria-hidden="true">
+    <img src="img/Hero/1_man.webp" alt="">
+    <img class="hp-amz" src="img/Hero/Amazon_round.webp" alt="">
+  </div>
+
+  <!-- LEFT: framer-dlsv5 style — glass card with mini stats snapshot -->
+  <div class="hero-float hero-float-left" aria-hidden="true">
+    <div class="hf-card hf-card-snap">
+      <div class="hf-snap-head">
+        <span class="hf-dot"></span>
+        <span class="hf-snap-lbl">Live</span>
+      </div>
+      <div class="hf-snap-val">$247</div>
+      <div class="hf-snap-sub">shoppers today</div>
+      <div class="hf-spark">
+        <svg viewBox="0 0 100 30" preserveAspectRatio="none">
+          <polyline points="0,22 12,18 24,20 36,14 48,16 60,8 72,10 84,4 100,6" fill="none" stroke="#F8A54D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: portrait behind the glass dashboard card -->
+  <div class="hero-portrait hero-portrait-right" aria-hidden="true">
+    <img src="img/Hero/1_woman.webp" alt="">
+    <img class="hp-amz hp-amz-right" src="img/Hero/Amazon_round.webp" alt="">
+  </div>
+
+  <!-- RIGHT: framer-afolnn style — dashboard card with chart -->
+  <div class="hero-float hero-float-right" aria-hidden="true">
+    <div class="hf-card hf-card-dash">
+      <div class="hf-dash-head">
+        <span class="hf-snap-lbl">Your Amazon store</span>
+        <span class="hf-badge">↑ 43%</span>
+      </div>
+      <div class="hf-dash-val">$8,240</div>
+      <div class="hf-dash-sub">earned this month</div>
+      <div class="hf-chart">
+        <span class="hf-bar" style="--h: 22%"></span>
+        <span class="hf-bar" style="--h: 38%"></span>
+        <span class="hf-bar" style="--h: 32%"></span>
+        <span class="hf-bar" style="--h: 58%"></span>
+        <span class="hf-bar" style="--h: 76%"></span>
+        <span class="hf-bar" style="--h: 96%"></span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Free for 14 days · No experience needed</p>
+    <h1 class="hero-h1">Start your<br>online business<br>for <em>FREE</em> today.</h1>
+    <p class="hero-sub">Claim your perfect ecommerce store with hot-selling products. It will run on autopilot and generate profits for years to come.</p>
+    <div class="hero-actions">
+      <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="btn btn-filled btn-pulse">Get my free store</a>
+    </div>
+    <p class="hero-fine">Get started in less than 60 seconds • Cancel anytime</p>
+  </div>
+  <div class="hero-scroll-hint">
+    <div class="scroll-chevron"></div>
+  </div>
+</section>
+
+<section class="amzkit-sec" id="amazon-kit">
+  <div class="amzkit-inner">
+    <div class="amzkit-head">
+      <span class="bonus-pill amzkit-pill appear">BONUS · $399 VALUE · FREE</span>
+      <h2 class="amzkit-h2 appear">What's inside your<br>Amazon Seller Kit</h2>
+      <p class="amzkit-sub appear d1">Everything real sellers used to launch, scale and earn — yours free when you start your store today.</p>
+    </div>
+
+    <div class="amzkit-grid">
+      <article class="amzkit-card appear d1">
+        <div class="amzkit-visual amzkit-anim-launch">
+          <img class="amzkit-preview" src="img/AmazonKit/Launch.webp?v=2" alt="" aria-hidden="true" loading="lazy">
+          <img src="img/AmazonKit/amazon_store.png" alt="Amazon seller storefront preview" loading="lazy">
+          <div class="launch-checklist">
+            <div class="lc-header">
+              <span class="lc-title">SETUP COMPLETE</span>
+              <span class="lc-done-badge" aria-hidden="true">
+                <svg class="lc-progress-ring" viewBox="0 0 36 36">
+                  <circle class="lc-ring-fg" cx="18" cy="18" r="16" pathLength="100"></circle>
+                </svg>
+              </span>
+            </div>
+            <ul class="lc-items">
+              <li class="lc-item lc-item-1">
+                <span class="lc-num">1</span>
+                <span class="lc-text">Create account</span>
+                <span class="lc-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              </li>
+              <li class="lc-item lc-item-2">
+                <span class="lc-num">2</span>
+                <span class="lc-text">List your products</span>
+                <span class="lc-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              </li>
+              <li class="lc-item lc-item-3">
+                <span class="lc-num">3</span>
+                <span class="lc-text">Store published</span>
+                <span class="lc-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="amzkit-body">
+          <h3 class="amzkit-card-h3">Launch on Amazon in days, not months</h3>
+          <p class="amzkit-card-p">Step-by-step setup walks you from zero to a published seller account — no guesswork, no Amazon paperwork rabbit holes.</p>
+        </div>
+      </article>
+
+      <article class="amzkit-card appear d2">
+        <div class="amzkit-visual amzkit-anim-buyers" aria-label="Pet care guide reaching shoppers worldwide">
+          <img class="amzkit-preview" src="img/AmazonKit/Buyers.webp?v=2" alt="" aria-hidden="true" loading="lazy">
+
+          <!-- View A: product card on solid background -->
+          <div class="anim-view view-product">
+            <div class="prod-card">
+              <div class="prod-hero"><img src="img/AmazonKit/dog-guide.jpg" alt=""></div>
+              <div class="prod-info">
+                <div class="prod-title">Dog Care Made Simple</div>
+                <div class="prod-desc">Train, feed and love your pup with confidence.</div>
+                <div class="prod-rating">
+                  <span class="rating-stars" aria-label="5 out of 5 stars">★★★★★</span>
+                  <span class="rating-count">(214 reviews)</span>
+                </div>
+                <div class="prod-price">US $24.00</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- View B: world map + dog pins + floating panel with avatar row -->
+          <div class="anim-view view-globe">
+            <div class="map-bg"></div>
+            <div class="map-pin pin-1"><div class="pin-dot"></div><div class="pin-thumb"><img src="img/AmazonKit/amazon_logo.webp" alt="Amazon" loading="lazy"></div></div>
+            <div class="map-pin pin-2"><div class="pin-dot"></div><div class="pin-thumb"><img src="img/AmazonKit/amazon_logo.webp" alt="Amazon" loading="lazy"></div></div>
+            <div class="map-pin pin-3"><div class="pin-dot"></div><div class="pin-thumb"><img src="img/AmazonKit/amazon_logo.webp" alt="Amazon" loading="lazy"></div></div>
+            <div class="map-pin pin-4"><div class="pin-dot"></div><div class="pin-thumb"><img src="img/AmazonKit/amazon_logo.webp" alt="Amazon" loading="lazy"></div></div>
+
+            <div class="globe-panel">
+              <div class="gp-avatars">
+                <img src="img/AmazonKit/avatar-1.jpg" alt="">
+                <img src="img/AmazonKit/avatar-2.jpg" alt="">
+                <img src="img/AmazonKit/avatar-3.jpg" alt="">
+                <img src="img/AmazonKit/avatar-4.jpg" alt="">
+                <img src="img/AmazonKit/avatar-5.jpg" alt="">
+              </div>
+              <div class="gp-headline">Your product just got noticed</div>
+              <div class="gp-bar"><div class="gp-bar-fill"></div></div>
+              <div class="gp-status">+<span class="gp-count-num"></span> shoppers viewed today</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="amzkit-body">
+          <h3 class="amzkit-card-h3">Tap into 300M ready-to-buy shoppers</h3>
+          <p class="amzkit-card-p">Your products land in front of Amazon's existing audience — buyers already in checkout mode. No cold traffic to warm up.</p>
+        </div>
+      </article>
+
+      <article class="amzkit-card appear d3">
+        <div class="amzkit-visual amzkit-visual-revenue">
+          <img class="amzkit-preview" src="img/AmazonKit/Revenue.webp?v=3" alt="" aria-hidden="true" loading="lazy">
+          <img src="img/AmazonKit/revenue-man.jpg" alt="Amazon seller tracking earnings growth at home" loading="lazy">
+          <div class="revenue-card">
+            <div class="rc-title">This month's earnings</div>
+            <div class="rc-value"><span class="rc-num"></span></div>
+            <div class="rc-chart">
+              <span class="rc-bar rc-bar-1"></span>
+              <span class="rc-bar rc-bar-2"></span>
+              <span class="rc-bar rc-bar-3"></span>
+              <span class="rc-bar rc-bar-4"></span>
+              <span class="rc-bar rc-bar-5"></span>
+              <span class="rc-bar rc-bar-6"></span>
+            </div>
+            <div class="rc-delta">
+              <span class="rc-delta-badge">↑ 43%</span>
+              <span class="rc-delta-text">vs last month</span>
+            </div>
+          </div>
+        </div>
+        <div class="amzkit-body">
+          <h3 class="amzkit-card-h3">Earn from a $514B marketplace</h3>
+          <p class="amzkit-card-p">Get your share of the world's biggest online marketplace. Sellers using our kit see their first sales within weeks.</p>
+        </div>
+      </article>
+
+      <article class="amzkit-card appear d4">
+        <div class="amzkit-visual amzkit-anim-toolkits" aria-label="Sellvia storefront with 100+ AI toolkits">
+          <img class="amzkit-preview" src="img/AmazonKit/Toolkits.webp?v=3" alt="" aria-hidden="true" loading="lazy">
+          <div class="toolkit-slot toolkit-slot-left">
+            <img class="toolkit-img toolkit-left" src="img/AmazonKit/toolkits 1.png?v=3" alt="Sellvia storefront AI toolkit preview" loading="lazy">
+          </div>
+          <div class="toolkit-slot toolkit-slot-right">
+            <img class="toolkit-img toolkit-right" src="img/AmazonKit/toolkits 2.png?v=3" alt="Sellvia storefront AI toolkit preview" loading="lazy">
+          </div>
+        </div>
+        <div class="amzkit-body">
+          <h3 class="amzkit-card-h3">100+ AI toolkits, already in your store</h3>
+          <p class="amzkit-card-p">Your store opens pre-loaded with our top-converting AI toolkits — listed, designed, priced. Hit publish and customers can buy on day one.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="amzkit-cta appear d4">
+      <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="btn btn-filled">Get my free store + Amazon Kit</a>
+      <p class="amzkit-fine">$399 value · Yours free with any plan</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STAT BAR ═══ -->
+<div class="stat-bar">
+  <div class="stat-bar-inner">
+    <div class="stat-item">
+      <span class="stat-n"
+            data-countup
+            data-prefix=""
+            data-suffix="+"
+            data-from="700"
+            data-to="1500000"
+            data-decimals="0"
+            data-duration="1800">1,500,000+</span>
+      <span class="stat-l">Stores launched worldwide</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-n"
+            data-countup
+            data-prefix="$"
+            data-suffix="B+"
+            data-from="0"
+            data-to="1.5"
+            data-decimals="1"
+            data-duration="1800">$1.5B+</span>
+      <span class="stat-l">Earned by store owners</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-n"
+            data-countup
+            data-prefix=""
+            data-suffix="★"
+            data-from="0"
+            data-to="4.8"
+            data-decimals="1"
+            data-duration="1800">4.8★</span>
+      <span class="stat-l">Average customer rating</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ AWARDS (moved up for early social proof) ═══ -->
+<section class="awards-sec">
+  <div class="sec-in">
+    <div class="appear">
+      <div class="sec-label">Recognition</div>
+      <h2 class="sec-title-xl on-light">Award-winning quality.</h2>
+      <p class="sec-body" style="max-width:520px;margin:0 auto">Here's just a part of the industry rewards our turnkey stores and ecommerce platform have achieved.</p>
+    </div>
+    <div class="awards-grid">
+      <div class="award-card appear d1">
+        <img class="award-logo" src="img/Awards/1_logo_m.webp" alt="Hermes Awards">
+        <h3>Hermes Awards</h3>
+        <p>Best IT Product 2025–2026</p>
+        <span class="award-medal gold">Gold Winner</span>
+      </div>
+      <div class="award-card appear d2">
+        <img class="award-logo" src="img/Awards/2_logo_m.webp?v=2" alt="MarCom Awards">
+        <h3>MarCom Awards</h3>
+        <p>Best Ecommerce Platform</p>
+        <span class="award-medal plat">Platinum Winner</span>
+      </div>
+      <div class="award-card appear d3">
+        <img class="award-logo" src="img/Awards/3_logo_m.webp" alt="dotCOMM Awards">
+        <h3>dotCOMM Awards</h3>
+        <p>Best Ecommerce Ecosystem</p>
+        <span class="award-medal gold">Gold Winner</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RATINGS (moved up for early social proof) ═══ -->
+<div class="ratings-sec">
+  <div class="sec-label" style="color:rgba(255,255,255,0.35);text-align:center;margin-bottom:24px">FEATURED ON:</div>
+  <div class="featured-marquee">
+    <div class="featured-strip">
+      <img src="img/featured/forbes.svg" alt="Forbes">
+      <img src="img/featured/entrepreneur.svg" alt="Entrepreneur">
+      <img src="img/featured/inc.svg" alt="Inc.">
+      <img src="img/featured/nbc.svg" alt="NBC">
+      <img src="img/featured/business-com.svg" alt="Business.com">
+      <img src="img/featured/fox-news.svg" alt="Fox News">
+      <img src="img/featured/forbes.svg" alt="Forbes">
+      <img src="img/featured/entrepreneur.svg" alt="Entrepreneur">
+      <img src="img/featured/inc.svg" alt="Inc.">
+      <img src="img/featured/nbc.svg" alt="NBC">
+      <img src="img/featured/business-com.svg" alt="Business.com">
+      <img src="img/featured/fox-news.svg" alt="Fox News">
+      <img src="img/featured/forbes.svg" alt="Forbes">
+      <img src="img/featured/entrepreneur.svg" alt="Entrepreneur">
+      <img src="img/featured/inc.svg" alt="Inc.">
+      <img src="img/featured/nbc.svg" alt="NBC">
+      <img src="img/featured/business-com.svg" alt="Business.com">
+      <img src="img/featured/fox-news.svg" alt="Fox News">
+      <img src="img/featured/forbes.svg" alt="Forbes">
+      <img src="img/featured/entrepreneur.svg" alt="Entrepreneur">
+      <img src="img/featured/inc.svg" alt="Inc.">
+      <img src="img/featured/nbc.svg" alt="NBC">
+      <img src="img/featured/business-com.svg" alt="Business.com">
+      <img src="img/featured/fox-news.svg" alt="Fox News">
+    </div>
+  </div>
+  <div class="ratings-inner">
+    <div class="rat-card appear d1"><img class="rat-logo" src="img/ratings/sitejabber.svg" alt="Sitejabber"><div class="rat-stars">★★★★★</div><div class="rat-score">4.8</div><div class="rat-count">824 reviews</div></div>
+    <div class="rat-card appear d2"><img class="rat-logo" src="img/ratings/trustpilot.svg" alt="Trustpilot"><div class="rat-stars">★★★★★</div><div class="rat-score">4.6</div><div class="rat-count">1,115 reviews</div></div>
+    <div class="rat-card appear d3"><img class="rat-logo" src="img/ratings/facebook.svg" alt="Facebook"><div class="rat-stars">★★★★★</div><div class="rat-score">96%</div><div class="rat-count">510 reviews</div></div>
+    <div class="rat-card appear d4"><img class="rat-logo" src="img/ratings/g2.svg" alt="G2"><div class="rat-stars">★★★★★</div><div class="rat-score">4.7</div><div class="rat-count">249 reviews</div></div>
+  </div>
+</div>
+
+<!-- ═══ WHY ═══ -->
+<section class="why-sec" id="why">
+  <div class="sec-in">
+    <div class="appear" style="text-align:center">
+      <div class="sec-label">Why thousands choose us</div>
+      <h2 class="sec-title-xl on-light">Everything you need.<br>Nothing you don't.</h2>
+      <p class="sec-body" style="max-width:540px;margin:0 auto">Your business launch is organized by us – no inventory, no upfront costs, no shipping headaches.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card appear d1">
+        <div class="why-icon">
+          <img src="img/icons/shield-tick.svg" alt="check">
+        </div>
+        <h3>100% hassle-free</h3>
+        <p>We build, load, and launch your store for you. You focus on earning – we take care of the rest.</p>
+      </div>
+      <div class="why-card appear d2">
+        <div class="why-icon">
+          <img src="img/icons/user.svg" alt="user">
+        </div>
+        <h3>Start with zero experience</h3>
+        <p>Your store will bring profits on autopilot and the management is totally beginner friendly.</p>
+      </div>
+      <div class="why-card appear d3">
+        <div class="why-icon">
+          <img src="img/icons/trend-up.svg" alt="trend">
+        </div>
+        <h3>Financial freedom</h3>
+        <p>You get a stable source of income and a brilliant opportunity to change your life for the better.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHAT WILL I SELL ═══ -->
+<section class="sell-sec" id="sell">
+  <div class="sec-in-wide">
+    <div class="appear" style="text-align:center">
+      <div class="sec-label" style="color:var(--c-amber)">Your product catalog</div>
+      <h2 class="sec-title-xl" style="color:#fff">What will I sell?</h2>
+      <p class="sec-body" style="color:rgba(255,255,255,0.6);max-width:500px;margin:0 auto">Your store comes pre-loaded with 100+ best-selling AI toolkits! Check some examples.</p>
+    </div>
+  </div>
+
+  <div class="wix-carousel appear d2">
+    <div class="wix-track">
+      <div class="wix-card"><img src="img/products/0-discover-your-next-big-business-idea.webp" alt="Discover Your Next Big Business Idea"></div>
+      <div class="wix-card"><img src="img/products/1-critical-thinking-amp-problem-solving-ebook.webp" alt="Critical Thinking & Problem Solving eBook"></div>
+      <div class="wix-card"><img src="img/products/2-5-days-to-unshakable-dating-confidence.webp" alt="5 Days to Unshakable Dating Confidence"></div>
+      <div class="wix-card"><img src="img/products/3-top-10-must-see-u-s-national-parks-fast-facts.webp" alt="Top 10 Must-See U.S. National Parks + Fast Facts"></div>
+      <div class="wix-card"><img src="img/products/4-first-time-parent-survival-guide.webp" alt="First-Time Parent Survival Guide"></div>
+      <div class="wix-card"><img src="img/products/5-sleep-reset-guided-audio-course-for-restful-nights.webp" alt="Sleep Reset: Guided Audio Course for Restful Nights"></div>
+      <div class="wix-card"><img src="img/products/6-pet-travel-essentials-checklist-for-safe-trips.webp" alt="Pet Travel Essentials Checklist for Safe Trips"></div>
+      <div class="wix-card"><img src="img/products/7-the-empowered-budgeting-toolkit.webp" alt="The Empowered Budgeting Toolkit"></div>
+      <div class="wix-card"><img src="img/products/8-healthy-meal-plan-amp-recipe-collection.webp" alt="Healthy Meal Plan & Recipe Collection"></div>
+      <div class="wix-card"><img src="img/products/9-step-by-step-career-development-guide.webp" alt="Step-by-Step Career Development Guide"></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="wix-card"><img src="img/products/0-discover-your-next-big-business-idea.webp" alt="Discover Your Next Big Business Idea"></div>
+      <div class="wix-card"><img src="img/products/1-critical-thinking-amp-problem-solving-ebook.webp" alt="Critical Thinking & Problem Solving eBook"></div>
+      <div class="wix-card"><img src="img/products/2-5-days-to-unshakable-dating-confidence.webp" alt="5 Days to Unshakable Dating Confidence"></div>
+      <div class="wix-card"><img src="img/products/3-top-10-must-see-u-s-national-parks-fast-facts.webp" alt="Top 10 Must-See U.S. National Parks + Fast Facts"></div>
+      <div class="wix-card"><img src="img/products/4-first-time-parent-survival-guide.webp" alt="First-Time Parent Survival Guide"></div>
+      <div class="wix-card"><img src="img/products/5-sleep-reset-guided-audio-course-for-restful-nights.webp" alt="Sleep Reset: Guided Audio Course for Restful Nights"></div>
+      <div class="wix-card"><img src="img/products/6-pet-travel-essentials-checklist-for-safe-trips.webp" alt="Pet Travel Essentials Checklist for Safe Trips"></div>
+      <div class="wix-card"><img src="img/products/7-the-empowered-budgeting-toolkit.webp" alt="The Empowered Budgeting Toolkit"></div>
+      <div class="wix-card"><img src="img/products/8-healthy-meal-plan-amp-recipe-collection.webp" alt="Healthy Meal Plan & Recipe Collection"></div>
+      <div class="wix-card"><img src="img/products/9-step-by-step-career-development-guide.webp" alt="Step-by-Step Career Development Guide"></div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:48px;" class="appear">
+    <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="btn btn-filled">Get my free store</a>
+    <p style="margin-top:14px;font-size:12px;color:rgba(255,255,255,0.35)">All products are pre-loaded in your store – no extra cost</p>
+  </div>
+</section>
+
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section class="how-sec">
+  <div class="sec-in">
+    <div class="appear" style="text-align:center">
+      <div class="sec-label">How it works</div>
+      <h2 class="sec-title-xl on-light">From zero to sale<br>in 3 simple steps.</h2>
+      <p class="sec-body" style="max-width:540px;margin:0 auto">No experience, no tech skills, no inventory needed.</p>
+    </div>
+    <div class="how-steps">
+      <div class="how-step appear d1">
+        <div class="how-step-num">01</div>
+        <h3>We build your store</h3>
+        <p>Sign up free and we immediately set up a complete online store for you – loaded with digital products people actually buy. Your store is live in minutes, not months.</p>
+        <span class="how-step-tag">Done for you</span>
+      </div>
+      <div class="how-step appear d2">
+        <div class="how-step-num">02</div>
+        <h3>Turn on your ads</h3>
+        <p>With one click, your built-in ad system starts promoting your products. A free $40 ad coupon is included so your first campaign costs you nothing.</p>
+        <span class="how-step-tag">One click</span>
+      </div>
+      <div class="how-step appear d3">
+        <div class="how-step-num">03</div>
+        <h3>Get paid, keep 50–70%</h3>
+        <p>When a customer buys from your store, you keep 50–70% of every sale as your profit. Products deliver instantly – no shipping, no hassle from your side.</p>
+        <span class="how-step-tag">Your profit</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHAT DO I GET ═══ -->
+<section class="get-sec" id="get">
+  <div class="glow-orb" id="glowOrb"></div>
+  <div class="sec-in">
+    <div class="appear" style="text-align:center">
+      <div class="sec-label" style="color:var(--c-amber)">Included</div>
+      <h2 class="sec-title-xl" style="color:#fff">What do I get for free?</h2>
+      <p style="font-size:19px;color:rgba(255,255,255,0.55);line-height:1.5;max-width:500px;margin:0 auto">Everything you need to sell online and succeed!</p>
+    </div>
+    <div class="get-grid">
+      <div class="get-card appear d1">
+        <div class="get-icon">
+          <img src="img/icons/shop.svg" alt="store">
+        </div>
+        <h3>Top-notch online store</h3>
+        <p>A fully hosted standalone ecommerce website, domain name &amp; SSL included.</p>
+      </div>
+      <div class="get-card appear d2">
+        <div class="get-icon">
+          <img src="img/icons/designtools.svg" alt="design">
+        </div>
+        <h3>Professional design</h3>
+        <p>Switchable, mobile-friendly design with vibrant visuals that turn shoppers into buyers.</p>
+      </div>
+      <div class="get-card appear d3">
+        <div class="get-icon">
+          <img src="img/icons/shopping-bag.svg" alt="products">
+        </div>
+        <h3>Thousands of best-sellers</h3>
+        <p>Access to handpicked collections of the trendiest items. Add as many products as you like.</p>
+      </div>
+      <div class="get-card appear d4">
+        <div class="get-icon">
+          <img src="img/icons/card.svg" alt="payment">
+        </div>
+        <h3>Payment system</h3>
+        <p>Your store is fully ready to accept payments through credit cards, debit cards, PayPal, and more.</p>
+      </div>
+      <div class="get-card appear d5">
+        <div class="get-icon">
+          <img src="img/icons/profile-tick.svg" alt="manager">
+        </div>
+        <h3>Personal manager</h3>
+        <p>Your dedicated manager will guide you through all the steps of your business launch and growth.</p>
+      </div>
+      <div class="get-card appear d6">
+        <div class="get-icon">
+          <img src="img/icons/24-support.svg" alt="support">
+        </div>
+        <h3>24/7 tech support</h3>
+        <p>Feel free to contact our friendly support team whenever you have any technical issues.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:56px" class="appear">
+      <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="btn btn-filled" id="getCtaBtn">Get my free store</a>
+      <p style="margin-top:12px;font-size:13px;color:rgba(255,255,255,0.3)">Get started in less than 60 seconds • Cancel anytime</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BONUS ═══ -->
+<style>
+/* bonus-section fits naturally as a full-width page section */
+.bonus-section {
+  background: #f5f5f7;
+  padding: 120px 24px;
+  width: 100%;
+  position: relative;
+}
+
+.bonus-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── LEFT ── */
+.bonus-left { display: flex; flex-direction: column; }
+
+.bonus-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #1d1d1f;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 7px 18px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+  width: fit-content;
+  position: relative;
+  overflow: hidden;
+}
+.bonus-pill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.5) 50%, transparent 100%);
+  animation: pillShine 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes pillShine {
+  0% { left: -100%; }
+  100% { left: 150%; }
+}
+
+.bonus-heading {
+  font-size: 42px;
+  font-weight: 700;
+  color: #1d1d1f;
+  letter-spacing: -.028em;
+  line-height: 1.07;
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: fadeUp .55s ease .15s forwards;
+}
+
+.bonus-sub {
+  font-size: 19px;
+  color: #6e6e73;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp .55s ease .22s forwards;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: fadeUp .55s ease .3s forwards;
+}
+.price-label { font-size: 15px; color: #6e6e73; }
+.price-original {
+  font-size: 15px;
+  font-weight: 600;
+  color: #6e6e73;
+  text-decoration: line-through;
+  text-decoration-color: #ff3b30;
+  text-decoration-thickness: 1.5px;
+}
+
+.bullets { list-style: none; border-top: 1px solid #d2d2d7; margin-bottom: 36px; }
+
+.bullet-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid #d2d2d7;
+  cursor: pointer;
+  position: relative;
+  opacity: 0;
+  animation: fadeUp .45s ease forwards;
+}
+.bullet-item:nth-child(1) { animation-delay: .38s; }
+.bullet-item:nth-child(2) { animation-delay: .46s; }
+.bullet-item:nth-child(3) { animation-delay: .54s; }
+
+.bullet-item::before {
+  content: '';
+  position: absolute;
+  left: -65px; top: 0; bottom: 0;
+  width: 3px;
+  background: #1d1d1f;
+  border-radius: 0 2px 2px 0;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.bullet-item.active::before { opacity: 1; }
+
+.bullet-text {
+  font-size: 15px;
+  color: #1d1d1f;
+  line-height: 1.45;
+  font-weight: 400;
+  transition: font-weight .15s;
+}
+.bullet-item.active .bullet-text { font-weight: 600; }
+
+.bullet-arrow {
+  flex-shrink: 0;
+  width: 18px; height: 18px;
+  color: #1d1d1f;
+  opacity: .28;
+  transition: opacity .2s, transform .2s;
+}
+.bullet-item.active .bullet-arrow { opacity: 1; transform: translateX(2px); }
+
+.cta-wrap { opacity: 0; animation: fadeUp .55s ease .65s forwards; }
+.cta-btn {
+  display: inline-flex;
+  background: #1d1d1f;
+  color: #fff;
+  font-family: inherit;
+  font-size: 19px;
+  font-weight: 600;
+  padding: 14px 30px;
+  border-radius: 980px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .2s, transform .15s;
+}
+.cta-btn:hover { background: #3a3a3c; transform: scale(1.02); }
+
+/* ── RIGHT ── */
+.bonus-right {
+  position: relative;
+  height: 520px;
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeUp .6s ease .2s forwards;
+}
+
+.panel {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(.97) translateY(10px);
+  transition: opacity .55s cubic-bezier(.25,.46,.45,.94), transform .55s cubic-bezier(.25,.46,.45,.94);
+  pointer-events: none;
+}
+.panel.visible { opacity: 1; transform: scale(1) translateY(0); pointer-events: auto; }
+
+.panel-photo {
+  position: absolute;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block;
+  top: 0; left: 0;
+}
+
+/* ── WHITE FROSTED GLASS — очень прозрачные (35%) ── */
+.lcard {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.08), inset 0 1px 0 rgba(255,255,255,.7);
+  font-family: inherit;
+  color: #1d1d1f;
+  /* Броуновское движение через JS — transform будет перезаписан */
+  will-change: transform;
+}
+
+/* ── PANEL 0: Woman with laptop ── */
+.card-store {
+  top: 24px; right: 20px; width: 230px;
+  display: flex; gap: 11px; align-items: flex-start;
+}
+.cs-icon {
+  width: 34px; height: 34px; border-radius: 9px;
+  background: linear-gradient(135deg,#22c55e,#16a34a);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.cs-icon svg { width: 17px; height: 17px; }
+.cs-body { flex: 1; min-width: 0; }
+.cs-title { font-size: 12.5px; font-weight: 600; color: #1d1d1f; line-height: 1.3; margin-bottom: 2px; }
+.cs-sub   { font-size: 11px; color: rgba(0,0,0,.45); line-height: 1.3; }
+.cs-prog  { margin-top: 9px; height: 3px; background: rgba(0,0,0,.08); border-radius: 2px; overflow: hidden; }
+.cs-prog-bar { height: 100%; background: linear-gradient(90deg,#22c55e,#16a34a); animation: progressFill 2s ease-in-out infinite; }
+.cs-live { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; flex-shrink: 0; margin-top: 4px; box-shadow: 0 0 6px rgba(34,197,94,.7); animation: livePulse 1.8s ease-in-out infinite; }
+
+.card-steps {
+  bottom: 32px; right: 20px; width: 196px;
+}
+.card-label { font-size: 10px; color: rgba(0,0,0,.38); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px; }
+.step-row { display: flex; align-items: center; gap: 9px; padding: 5px 0; }
+.step-row + .step-row { border-top: 1px solid rgba(0,0,0,.07); margin-top: 1px; }
+.step-num { width: 20px; height: 20px; border-radius: 6px; background: rgba(22,163,74,.15); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: #15803d; flex-shrink: 0; }
+.step-text { font-size: 11.5px; color: rgba(0,0,0,.68); line-height: 1.3; flex: 1; }
+.step-check { color: #15803d; font-size: 13px; }
+
+/* ── PANEL 1: Man with phone — только ОДНА плашка внизу слева ── */
+.card-users {
+  bottom: 28px; right: 20px; width: 210px;
+}
+/* аватарки — фото без обводки */
+.av-row { display: flex; align-items: center; margin-bottom: 12px; }
+.av {
+  width: 34px; height: 34px; border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  /* NO border */
+}
+.av + .av { margin-left: -10px; }
+.av img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.av-divider { width: 100%; height: 1px; background: rgba(0,0,0,.1); margin-bottom: 10px; }
+.users-count { font-size: 22px; font-weight: 800; color: #1d1d1f; letter-spacing: -.04em; line-height: 1; }
+.users-label { font-size: 11px; color: rgba(0,0,0,.42); margin-top: 3px; }
+.online-row { display: flex; align-items: center; gap: 7px; margin-top: 10px; }
+.online-dot { width: 7px; height: 7px; border-radius: 50%; background: #16a34a; box-shadow: 0 0 5px rgba(22,163,74,.6); animation: livePulse 1.8s ease-in-out infinite; }
+.online-txt { font-size: 11px; color: rgba(0,0,0,.42); }
+.online-num { font-size: 11px; color: #15803d; font-weight: 700; margin-left: auto; }
+
+/* ── PANEL 2: Woman portrait ── */
+.card-rev {
+  top: 24px; right: 20px; width: 206px;
+}
+.rev-amount { font-size: 28px; font-weight: 800; color: #1d1d1f; letter-spacing: -.04em; line-height: 1; margin-bottom: 2px; }
+.rev-period { font-size: 11px; color: rgba(0,0,0,.38); margin-bottom: 12px; }
+.rev-chart { display: flex; align-items: flex-end; gap: 4px; height: 44px; margin-bottom: 9px; }
+.rbar { border-radius: 3px 3px 0 0; flex: 1; }
+.rbar.low { background: rgba(0,0,0,.1); }
+.rbar.mid { background: rgba(59,130,246,.35); }
+.rbar.hi  { background: #3b82f6; }
+.rbar.top { background: linear-gradient(180deg,#60a5fa,#2563eb); }
+.rev-trend { display: flex; align-items: center; gap: 8px; padding-top: 9px; border-top: 1px solid rgba(0,0,0,.08); }
+.trend-badge { background: rgba(22,163,74,.12); border: 1px solid rgba(22,163,74,.25); color: #15803d; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 6px; }
+.trend-lbl { font-size: 11px; color: rgba(0,0,0,.38); }
+
+.card-milestone {
+  bottom: 32px; left: 20px; width: 200px;
+}
+.ms-header { display: flex; align-items: center; gap: 9px; margin-bottom: 10px; }
+.ms-icon { width: 30px; height: 30px; border-radius: 9px; background: linear-gradient(135deg,#fbbf24,#f59e0b); display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+.ms-title { font-size: 12px; font-weight: 600; color: #1d1d1f; line-height: 1.2; }
+.ms-sub   { font-size: 11px; color: rgba(0,0,0,.42); line-height: 1.3; margin-top: 1px; }
+.ms-stat  { font-size: 26px; font-weight: 800; color: #d97706; letter-spacing: -.04em; }
+.ms-stat-label { font-size: 10px; color: rgba(0,0,0,.38); letter-spacing: .06em; text-transform: uppercase; margin-top: 1px; }
+
+/* dots */
+.dot-nav { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); display: flex; gap: 7px; z-index: 20; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(0,0,0,.2); transition: background .25s, width .25s; cursor: pointer; }
+.dot.active { background: #1d1d1f; width: 20px; border-radius: 3px; }
+
+/* ── KEYFRAMES ── */
+@keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+@keyframes progressFill { 0%{transform:translateX(-100%)} 100%{transform:translateX(0)} }
+@keyframes livePulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+
+@media(max-width:1200px){ .bonus-section{padding:100px 24px} }
+@media(max-width:860px){
+  .bonus-section{padding:72px 24px}
+  .bonus-inner{grid-template-columns:1fr;gap:48px}
+  .bonus-right{height:360px}
+  .bonus-heading{font-size:32px}
+}
+@media(max-width:760px){
+  .bonus-left { align-items: center; text-align: center; }
+  .bonus-pill { margin-left: auto; margin-right: auto; }
+  .bonus-heading { text-align: center; }
+  .bonus-sub { text-align: center; }
+  .bullets { text-align: left; }
+  .cta-wrap { text-align: center; }
+}
+@media(max-width:860px){
+  img.panel-2-photo { top: -50px !important; height: calc(100% + 50px) !important; }
+}
+@media(max-width:480px){ .bonus-section{padding:56px 16px} .bullet-item { gap: 10px; } }
+</style>
+
+<section class="bonus-section" id="bonus">
+  <div class="bonus-inner">
+
+    <!-- LEFT -->
+    <div class="bonus-left">
+      <span class="bonus-pill">BONUS</span>
+      <h2 class="bonus-heading">Get an Amazon<br>Seller Kit for FREE</h2>
+      <p class="bonus-sub">When you act here and now!</p>
+      <ul class="bullets" id="bulletList">
+        <li class="bullet-item active" data-panel="0">
+          <span class="bullet-text">Fast and easy start of your own Amazon store</span>
+          <svg class="bullet-arrow" viewBox="0 0 24 24" fill="none"><path d="M8.91 19.92l6.52-6.52c.77-.77.77-2.03 0-2.8L8.91 4.08" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </li>
+        <li class="bullet-item" data-panel="1">
+          <span class="bullet-text">Access to 300 million active marketplace users</span>
+          <svg class="bullet-arrow" viewBox="0 0 24 24" fill="none"><path d="M8.91 19.92l6.52-6.52c.77-.77.77-2.03 0-2.8L8.91 4.08" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </li>
+        <li class="bullet-item" data-panel="2">
+          <span class="bullet-text">A share of Amazon's $514 billion in revenue</span>
+          <svg class="bullet-arrow" viewBox="0 0 24 24" fill="none"><path d="M8.91 19.92l6.52-6.52c.77-.77.77-2.03 0-2.8L8.91 4.08" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </li>
+      </ul>
+      <div class="cta-wrap"><a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="btn btn-filled">Get my free store + Amazon Kit</a></div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="bonus-right" id="panelWrap">
+
+      <!-- PANEL 0 -->
+      <div class="panel visible" id="panel-0">
+        <img class="panel-photo" src="img/Bonus/2148.webp" alt="Woman with laptop" style="top:-100px; height:calc(100% + 100px); object-position:center top;">
+        <div class="lcard card-steps" data-brownian data-delay="0.7">
+          <div class="card-label">Setup complete</div>
+          <div class="step-row"><div class="step-num">1</div><div class="step-text">Create account</div><span class="step-check">✓</span></div>
+          <div class="step-row"><div class="step-num">2</div><div class="step-text">List your products</div><span class="step-check">✓</span></div>
+          <div class="step-row"><div class="step-num">3</div><div class="step-text">Store published</div><span class="step-check">✓</span></div>
+        </div>
+      </div>
+
+      <!-- PANEL 1 — ТОЛЬКО ОДНА ПЛАШКА (bottom-left), аватарки с реальными фото -->
+      <div class="panel" id="panel-1">
+        <img class="panel-photo" src="img/Bonus/2149.webp?v=3" alt="Man with phone" style="top:-60px; height:calc(100% + 60px); object-position:center top;">
+        <div class="lcard card-users" data-brownian data-delay="0.3">
+          <!-- Аватарки с реальными лицами, без обводок -->
+          <div class="av-row">
+            <div class="av"><img src="img/Bonus/2122.webp" alt=""></div>
+            <div class="av"><img src="img/Bonus/2125.webp" alt=""></div>
+            <div class="av"><img src="img/Bonus/2126.webp" alt=""></div>
+            <div class="av"><img src="img/Bonus/2127.webp" alt=""></div>
+            <div class="av"><img src="img/Bonus/2129.webp" alt=""></div>
+          </div>
+          <!-- Разделитель -->
+          <div class="av-divider"></div>
+          <!-- Всё что под чертой -->
+          <div class="users-count">300M</div>
+          <div class="users-label">Active buyers worldwide</div>
+          <div class="online-row">
+            <div class="online-dot"></div>
+            <span class="online-txt">Right now online</span>
+            <span class="online-num">2.4M</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 2 -->
+      <div class="panel" id="panel-2">
+        <img class="panel-photo panel-2-photo" src="img/Bonus/2119.webp" alt="Happy woman" style="top:-30px; height:calc(100% + 30px); object-position:center top;">
+        <div class="lcard card-rev" data-brownian style="top:auto;right:auto;bottom:32px;left:20px;width:206px;">
+          <div class="rev-amount">$8,240</div>
+          <div class="rev-period">This month's earnings</div>
+          <div class="rev-chart">
+            <div class="rbar low" style="height:24%"></div>
+            <div class="rbar low" style="height:38%"></div>
+            <div class="rbar mid" style="height:32%"></div>
+            <div class="rbar mid" style="height:55%"></div>
+            <div class="rbar hi"  style="height:48%"></div>
+            <div class="rbar hi"  style="height:72%"></div>
+            <div class="rbar top" style="height:100%"></div>
+          </div>
+          <div class="rev-trend">
+            <span class="trend-badge">↑ 43%</span>
+            <span class="trend-lbl">vs last month</span>
+          </div>
+        </div>
+      </div>
+
+      <!--<div class="dot-nav">-->
+      <!--  <div class="dot active" data-dot="0"></div>-->
+      <!--  <div class="dot" data-dot="1"></div>-->
+      <!--  <div class="dot" data-dot="2"></div>-->
+      <!--</div>-->
+    </div>
+
+  </div>
+</section>
+
+<script>
+/* ── Bonus block — isolated scope to avoid variable conflicts ── */
+;(function() {
+
+  /* ── Panel switching ── */
+  const bullets = document.querySelectorAll('.bullet-item');
+  const panels  = document.querySelectorAll('.panel');
+//   const bonusDots = document.querySelectorAll('.dot');
+
+  function activate(i) {
+    bullets.forEach(b => b.classList.remove('active'));
+    panels.forEach(p  => p.classList.remove('visible'));
+    // bonusDots.forEach(d => d.classList.remove('active'));
+    bullets[i].classList.add('active');
+    panels[i].classList.add('visible');
+    // bonusDots[i].classList.add('active');
+  }
+  bullets.forEach((b, i) => {
+    b.addEventListener('mouseenter', () => activate(i));
+    b.addEventListener('click', () => activate(i));
+  });
+//   bonusDots.forEach((d, i) => d.addEventListener('click', () => activate(i)));
+
+  /* ── Brownian motion ──
+     Each card gets its own independent Ornstein-Uhlenbeck process:
+     smooth random walk that keeps cards close to their anchor position.
+  */
+  class Brownian {
+    constructor(el) {
+      this.el = el;
+      this.delay = parseFloat(el.dataset.delay || 0);
+      this.vx = 0; this.vy = 0;
+      this.x  = 0; this.y  = 0;
+      this.theta = 0.002;
+      this.sigma = 0.09;
+      this.maxD  = 54;
+      this.lastT = null;
+      this.t = this.delay * 60;
+    }
+
+    tick(ts) {
+      if (!this.lastT) { this.lastT = ts; }
+      const dt = Math.min((ts - this.lastT) / 16.67, 3);
+      this.lastT = ts;
+      this.t += dt;
+      const noise = () => (Math.random() + Math.random() + Math.random() - 1.5) * 1.155;
+      this.vx += (-this.theta * this.x + this.sigma * noise()) * dt;
+      this.vy += (-this.theta * this.y + this.sigma * noise()) * dt;
+      this.vx *= 0.99;
+      this.vy *= 0.99;
+      this.x  += this.vx * dt;
+      this.y  += this.vy * dt;
+      const d = Math.sqrt(this.x * this.x + this.y * this.y);
+      if (d > this.maxD) { this.x *= this.maxD / d; this.y *= this.maxD / d; }
+      this.el.style.transform = `translate(${this.x.toFixed(2)}px, ${this.y.toFixed(2)}px)`;
+    }
+  }
+
+  const bonusCards = Array.from(document.querySelectorAll('[data-brownian]')).map(el => new Brownian(el));
+
+  function bonusLoop(ts) {
+    bonusCards.forEach(c => c.tick(ts));
+    requestAnimationFrame(bonusLoop);
+  }
+  requestAnimationFrame(bonusLoop);
+
+
+})();
+</script>
+
+<!-- ═══ STORE DESIGNS MARQUEE ═══ -->
+<style>
+.store-sec { background: #000; padding: 120px 0; overflow: hidden; }
+@media(max-width:1200px) { .store-sec { padding: 100px 0; } }
+@media(max-width:860px)  { .store-sec { padding: 72px 0; } }
+@media(max-width:480px)  { .store-sec { padding: 56px 0; } }
+.store-sec-head { text-align: center; padding: 0 24px; margin-bottom: 60px; }
+
+/* Horizontal infinite marquee — Wix Studio style */
+.store-marquee {
+  position: relative;
+  overflow: clip;
+  overflow-clip-margin: 20px;
+  padding: 20px 0;
+  margin: -20px 0;
+}
+.store-marquee::before,
+.store-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.store-marquee::before { left: 0; background: linear-gradient(to right, #000, transparent); }
+.store-marquee::after  { right: 0; background: linear-gradient(to left, #000, transparent); }
+
+.store-strip {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  cursor: grab;
+  user-select: none;
+  will-change: transform;
+}
+.store-strip.dragging { cursor: grabbing; }
+
+.store-card {
+  flex-shrink: 0;
+  width: 720px;
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.store-card:hover { transform: scale(1.03); }
+.store-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+.store-sec .store-cta { text-align: center; margin-top: 56px; }
+
+@media(max-width:760px) {
+  .store-card { width: 510px; }
+  .store-strip { gap: 14px; }
+  .store-marquee::before, .store-marquee::after { width: 60px; }
+}
+@media(max-width:480px) {
+  .store-card { width: 420px; }
+}
+</style>
+<div class="store-sec" id="stores">
+  <div class="store-sec-head">
+    <div style="font-size:12px;font-weight:600;color:var(--c-amber);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px" class="appear">Your store interface</div>
+    <div style="font-size:clamp(32px,5vw,52px);font-weight:700;color:#fff;letter-spacing:-0.03em;margin-bottom:16px;max-width:700px;margin-left:auto;margin-right:auto" class="appear d1">
+      What will my store look like?
+    </div>
+    <div style="font-size:19px;color:rgba(255,255,255,0.55);line-height:1.5;max-width:500px;margin-left:auto;margin-right:auto" class="appear d2">
+      Enjoy switchable professional designs that turn heads and look perfect on any device!
+    </div>
+  </div>
+
+  <div class="store-marquee appear-scale d2">
+    <div class="store-strip">
+      <div class="store-card"><img src="img/stores/2639.webp" alt="Dating store – Find Your Connection"></div>
+      <div class="store-card"><img src="img/stores/3934.webp" alt="Parenting store – Parenting Made Easier"></div>
+      <div class="store-card"><img src="img/stores/2635.webp" alt="Health & Wellness store – Your Wellness Journey"></div>
+      <div class="store-card"><img src="img/stores/2637.webp" alt="Business & Career store – Build Your Career"></div>
+      <div class="store-card"><img src="img/stores/3945.webp" alt="Self-improvement store – Unlock Your Best Self"></div>
+      <div class="store-card"><img src="img/stores/2638.webp" alt="Pet Care store – Happy Pets, Happy Life"></div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="store-card"><img src="img/stores/2639.webp" alt="Dating store – Find Your Connection"></div>
+      <div class="store-card"><img src="img/stores/3934.webp" alt="Parenting store – Parenting Made Easier"></div>
+      <div class="store-card"><img src="img/stores/2635.webp" alt="Health & Wellness store – Your Wellness Journey"></div>
+      <div class="store-card"><img src="img/stores/2637.webp" alt="Business & Career store – Build Your Career"></div>
+      <div class="store-card"><img src="img/stores/3945.webp" alt="Self-improvement store – Unlock Your Best Self"></div>
+      <div class="store-card"><img src="img/stores/2638.webp" alt="Pet Care store – Happy Pets, Happy Life"></div>
+    </div>
+  </div>
+
+  <div class="store-cta appear d3">
+    <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="btn btn-filled">Get my free store</a>
+  </div>
+</div>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="test-sec">
+  <div class="sec-in">
+    <div class="appear">
+      <div class="sec-label">Real stories</div>
+      <h2 class="sec-title-lg on-light">1,500,000+ store owners can't be wrong.</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card appear d1">
+        <div class="test-thumb" data-video="https://sellvia.com/wp-content/uploads/reviews/ruby_review%20(1080p).mp4" data-poster="img/reviews/ruby.webp">
+          <img src="img/reviews/ruby.webp" alt="Ruby" loading="lazy">
+          <div class="test-play"><div class="play-ring"><div class="play-tri"></div></div></div>
+        </div>
+        <div class="test-body">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">"You guys literally do everything. It's like having somebody hold your hand."</p>
+          <div class="test-author">Ruby, USA</div>
+          <div class="test-ctx">First sale within 2 weeks</div>
+        </div>
+      </div>
+      <div class="test-card appear d2">
+        <div class="test-thumb" data-video="https://sellvia.com/wp-content/uploads/reviews/christina_review%20(1080p).mp4" data-poster="img/reviews/christina.webp">
+          <img src="img/reviews/christina.webp" alt="Christina" loading="lazy">
+          <div class="test-play"><div class="play-ring"><div class="play-tri"></div></div></div>
+        </div>
+        <div class="test-body">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">"I thought it was such an innovative idea because it was just so easy."</p>
+          <div class="test-author">Christina, USA</div>
+          <div class="test-ctx">Turned $500 into a 6-figure business</div>
+        </div>
+      </div>
+      <div class="test-card appear d3">
+        <div class="test-thumb" data-video="https://sellvia.com/wp-content/uploads/reviews/rodney_review_2_(1080p).mp4" data-poster="img/reviews/rodney.webp">
+          <img src="img/reviews/rodney.webp" alt="Rodney" loading="lazy">
+          <div class="test-play"><div class="play-ring"><div class="play-tri"></div></div></div>
+        </div>
+        <div class="test-body">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">"I don't have to work for 'the man'. I have much more freedom."</p>
+          <div class="test-author">Rodney, USA</div>
+          <div class="test-ctx">$10K in 28 days with 2 stores</div>
+        </div>
+      </div>
+      <div class="test-card appear d1">
+        <div class="test-thumb" data-video="https://sellvia.com/wp-content/uploads/reviews/jack_review%20(1080p).mp4" data-poster="img/reviews/jack.webp">
+          <img src="img/reviews/jack.webp" alt="Jack" loading="lazy">
+          <div class="test-play"><div class="play-ring"><div class="play-tri"></div></div></div>
+        </div>
+        <div class="test-body">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">"It's really exciting and keeps me going on a daily basis."</p>
+          <div class="test-author">Jack, Australia</div>
+          <div class="test-ctx">Single dad turned ecommerce entrepreneur</div>
+        </div>
+      </div>
+      <div class="test-card appear d2">
+        <div class="test-thumb" data-video="https://sellvia.com/wp-content/uploads/reviews/ksenia_review%20(1080p).mp4" data-poster="img/reviews/ksenia.webp">
+          <img src="img/reviews/ksenia.webp" alt="Ksenia" loading="lazy">
+          <div class="test-play"><div class="play-ring"><div class="play-tri"></div></div></div>
+        </div>
+        <div class="test-body">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">"What's my rate from 1 to 10? I'd rate 11."</p>
+          <div class="test-author">Ksenia, USA</div>
+          <div class="test-ctx">$2,700 in 3 months as a new mom</div>
+        </div>
+      </div>
+      <div class="test-card appear d3">
+        <div class="test-thumb" data-video="https://sellvia.com/wp-content/uploads/reviews/miandra_review%20(1080p).mp4" data-poster="img/reviews/miandra.webp">
+          <img src="img/reviews/miandra.webp" alt="Miandra" loading="lazy">
+          <div class="test-play"><div class="play-ring"><div class="play-tri"></div></div></div>
+        </div>
+        <div class="test-body">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">"It's not just about the money. It feels like I bought a lifestyle."</p>
+          <div class="test-author">Miandra, New Zealand</div>
+          <div class="test-ctx">From burnout to freedom in 6 weeks</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq-sec" id="faq">
+  <div class="sec-in">
+    <div class="appear">
+      <h2 class="sec-title-lg" style="color:#fff">Frequently asked<br>questions.</h2>
+    </div>
+    <div class="faq-layout">
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q">What exactly do I get with this offer?<span class="faq-chevron">+</span></button>
+          <div class="faq-a">Here are just a few things you enjoy with this offer:<br><br>
+            <strong>✓</strong> A turnkey online store built according to your preferences<br>
+            <strong>✓</strong> A stunning switchable design to fit any device<br>
+            <strong>✓</strong> Your website is created and set up by professionals from A to Z<br>
+            <strong>✓</strong> Everything you need to expand your business to Amazon<br>
+            <strong>✓</strong> Access to a huge variety of high-demand products to sell<br>
+            <strong>✓</strong> 24/7 support from our team whenever you have questions<br><br>
+            And the best thing: you get all this <strong>completely FREE</strong>. The regular price of such a store is $1,199 but with this offer, you get it at no cost.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What is Sellvia?<span class="faq-chevron">+</span></button>
+          <div class="faq-a">Sellvia is an all-in-one ecommerce platform built for independent entrepreneurs to start, run, and grow their very own online businesses – <strong>with no experience needed</strong>.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What do I need to do to get my free store?<span class="faq-chevron">+</span></button>
+          <div class="faq-a">Just complete your order at checkout and fill out a short survey to let us know your preferences about your store's niche, design, and domain name. <strong>It takes about 3 minutes.</strong></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">How soon will I get my store?<span class="faq-chevron">+</span></button>
+          <div class="faq-a">Your free online store is <strong>ready immediately after your survey is finished.</strong> You will find all the access details in your inbox right away. You can also book a free training session with our team to launch your website with our help.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">How much does Sellvia cost?<span class="faq-chevron">+</span></button>
+          <div class="faq-a">You can try Sellvia for free for <strong>14 days</strong>, enjoying full business functionality. After your free trial expires, a monthly fee of <strong>$39 will be taken off your card automatically.</strong></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Is there a store setup fee?<span class="faq-chevron">+</span></button>
+          <div class="faq-a">No, there are <strong>no setup fees</strong> on any of our plans. You get a fully operating store with no need to set anything up.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Why do you need my credit card info?<span class="faq-chevron">+</span></button>
+          <div class="faq-a">When your free Sellvia trial is over, the price of your subscription will be taken off your card automatically. Despite the fact that <strong>you don't pay a cent</strong> at the moment of getting your store, we need to be sure your card is valid for future fees.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Can I cancel at any time?<span class="faq-chevron">+</span></button>
+          <div class="faq-a">Yes, you can quit anytime, <strong>no strings attached.</strong> If you ever decide that Sellvia isn't the best ecommerce platform for your business, simply cancel your subscription.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Do I need IT experience to manage my store?<span class="faq-chevron">+</span></button>
+          <div class="faq-a">No. Our software and the store dashboard are so handy and user-friendly that even a total newcomer can handle it all with no effort. <strong>You can operate from any place and any device: a PC, a laptop, a tablet or even a smartphone.</strong></div>
+        </div>
+
+      </div>
+      <div>
+        <div class="faq-cta appear d2">
+          <h3>Ready to start your online business?</h3>
+          <p>Take the best option to achieve financial independence and move your life forward!</p>
+          <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="btn btn-filled" style="height:60px;font-size:17px">Get my free store + Amazon Kit</a>
+          <p class="faq-cta-fine">Get started in less than 60 seconds • Cancel anytime</p>
+          <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;gap:8px">
+            <span style="width:8px;height:8px;border-radius:50%;background:#30d158;flex-shrink:0;animation:pulse 2s infinite"></span>
+            <span style="font-size:13px;color:rgba(255,255,255,0.45)" id="faqProof">847 people started their store today</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AMAZON KIT DEEP-DIVE ═══ -->
+<style>
+.amzkit-sec {
+  background: var(--c-lightbg);
+  padding: 120px 100px;
+  font-family: var(--font);
+  border-radius: 48px 48px 0 0;
+  position: relative;
+  z-index: 10;
+  /* Negative margin-top creates the scroll-jacking overlap with hero */
+  margin-top: -50px;
+}
+.amzkit-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.amzkit-head {
+  text-align: center;
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.amzkit-pill { margin-bottom: 22px; }
+.amzkit-h2 {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--c-near);
+  letter-spacing: -.028em;
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+.amzkit-sub {
+  font-size: 21px;
+  color: var(--c-gray2);
+  line-height: 1.45;
+  max-width: 640px;
+}
+.amzkit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.amzkit-card {
+  background: #fff;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 12px 40px rgba(0,0,0,0.06);
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+  display: flex;
+  flex-direction: column;
+}
+.amzkit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 22px 60px rgba(0,0,0,0.09);
+}
+.amzkit-visual {
+  aspect-ratio: 3/2;
+  background: #f0f0f3;
+  overflow: hidden;
+  position: relative;
+}
+.amzkit-visual-revenue {
+  /* aspect-ratio inherits 3/2 from .amzkit-visual to match the preview */
+  position: relative;
+}
+.revenue-card {
+  position: absolute;
+  left: 5%;
+  top: 44%;
+  transform: translateY(calc(-50% - 15px));
+  width: 42%;
+  max-width: 260px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 14px 32px rgba(15, 50, 95, 0.18);
+  padding: 26px 16px 27px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+.rc-title {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #1d1d1f;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+@counter-style rc-pad3 {
+  system: extends decimal;
+  pad: 3 '0';
+}
+@property --rc-k {
+  syntax: '<integer>';
+  initial-value: 0;
+  inherits: false;
+}
+@property --rc-r {
+  syntax: '<integer>';
+  initial-value: 0;
+  inherits: false;
+}
+.rc-value {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f1a2c;
+  line-height: 1.1;
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+}
+.rc-num {
+  counter-reset: rck var(--rc-k) rcr var(--rc-r);
+  animation: rc-count-k 6s ease-out infinite,
+             rc-count-r 6s ease-out infinite;
+}
+.rc-num::after {
+  content: "$" counter(rck) "," counter(rcr, rc-pad3);
+}
+@keyframes rc-count-k {
+  0%        { --rc-k: 0; }
+  35%, 92%  { --rc-k: 8; }
+  97%, 100% { --rc-k: 0; }
+}
+@keyframes rc-count-r {
+  0%        { --rc-r: 0; }
+  35%, 92%  { --rc-r: 240; }
+  97%, 100% { --rc-r: 0; }
+}
+.rc-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 58px;
+  margin-bottom: 9px;
+  overflow: hidden;
+}
+.rc-bar {
+  flex: 1;
+  height: 0;
+  min-height: 0;
+  border-radius: 3px 3px 2px 2px;
+  background: linear-gradient(to top, #CFE6F5 0%, #d1fae5 100%);
+  animation: rc-bar-grow 6s ease-out infinite;
+  will-change: height;
+  transform-origin: bottom;
+}
+.rc-bar-1 { --h: 22%; }
+.rc-bar-2 { --h: 38%; }
+.rc-bar-3 { --h: 32%; }
+.rc-bar-4 { --h: 58%; }
+.rc-bar-5 { --h: 76%; }
+.rc-bar-6 { --h: 96%; }
+@keyframes rc-bar-grow {
+  0%        { height: 0; }
+  35%, 92%  { height: var(--h); }
+  97%, 100% { height: 0; }
+}
+.rc-delta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.rc-delta-badge {
+  background: #d1fae5;
+  color: #059669;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 4px 6px;
+  border-radius: 5px;
+}
+.rc-delta-text {
+  font-size: 12px;
+  color: #6e6e73;
+  line-height: 1.35;
+}
+.amzkit-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.amzkit-body {
+  padding: 32px 36px 40px;
+}
+.amzkit-card-h3 {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -.02em;
+  color: var(--c-near);
+  line-height: 1.2;
+}
+.amzkit-card-p {
+  font-size: 17px;
+  color: var(--c-gray2);
+  line-height: 1.5;
+  margin-top: 12px;
+}
+.amzkit-cta {
+  text-align: center;
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.amzkit-fine {
+  font-size: 14px;
+  color: var(--c-gray3);
+}
+
+/* ── Buyers card: product → world map crossfade (8.16s loop, Shopify-style) ── */
+.amzkit-anim-buyers {
+  background: #eaf3fb;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font);
+}
+
+/* Two views layered, crossfade with subtle slide-up */
+.anim-view {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.view-product {
+  background: #cfe6f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  animation: viewA-fade 8.16s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.view-globe {
+  background: #eaf3fb;
+  animation: viewB-fade 8.16s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.map-bg {
+  position: absolute;
+  inset: 0;
+  background: url('img/AmazonKit/world-map.jpg') center/cover no-repeat;
+  transform: scale(2);
+  transform-origin: 22% 38%;
+  animation: map-zoom 8.16s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  z-index: 0;
+}
+@keyframes map-zoom {
+  0%, 46% { transform: scale(2); }
+  58%, 94% { transform: scale(1); }
+  100% { transform: scale(2); }
+}
+
+@keyframes viewA-fade {
+  0% { opacity: 0; transform: translateY(8px); }
+  3%, 21% { opacity: 1; transform: translateY(0); }
+  27%, 96% { opacity: 0; transform: translateY(-8px); }
+  100% { opacity: 0; transform: translateY(8px); }
+}
+@keyframes viewB-fade {
+  0%, 21% { opacity: 0; transform: translateY(8px); }
+  27%, 94% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-8px); }
+}
+
+/* ─ View A: product card (centered on solid background) ─ */
+.prod-card {
+  width: 64%;
+  max-width: 280px;
+  height: calc(100% - 20px);
+  max-height: 320px;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 32px rgba(15, 50, 95, 0.16);
+  display: flex;
+  flex-direction: column;
+}
+.prod-hero {
+  flex: 1 1 auto;
+  min-height: 90px;
+  background: #cfe6f5;
+  overflow: hidden;
+}
+.prod-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  transform: scale(1.22);
+  transform-origin: center 36%;
+  display: block;
+}
+.prod-info {
+  flex: 0 0 auto;
+  padding: 10px 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.prod-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1d1d1f;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.prod-desc {
+  font-size: 12px;
+  color: #6e6e73;
+  line-height: 1.35;
+}
+.prod-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+.rating-stars {
+  display: inline-flex;
+  gap: 1px;
+  color: #f5a623;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+.rating-count {
+  font-size: 11px;
+  color: #6e6e73;
+}
+.prod-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin-top: 2px;
+}
+
+/* ─ View B: pins on the map ─ */
+.map-pin {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  opacity: 0;
+}
+.pin-dot {
+  width: 100%;
+  height: 100%;
+  background: #f5a623;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.55);
+  position: relative;
+  z-index: 2;
+}
+.pin-thumb {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  transform-origin: bottom center;
+  color: #f5a623;
+}
+.pin-thumb svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+  fill: currentColor;
+}
+.pin-thumb img {
+  width: 92%;
+  height: 92%;
+  display: block;
+  object-fit: contain;
+}
+
+/* Pin positions — pin-1 at zoom origin (appears during close-up), others appear after zoom-out */
+.pin-1 { top: 38%; left: 22%; z-index: 1; animation: pin-1-show 8.16s ease-in-out infinite; }
+.pin-2 { top: 30%; left: 50%; z-index: 1; animation: pin-2-show 8.16s ease-in-out infinite; }
+.pin-3 { top: 46%; left: 70%; z-index: 1; animation: pin-3-show 8.16s ease-in-out infinite; }
+.pin-4 { top: 30%; left: 16%; z-index: 1; animation: pin-4-show 8.16s ease-in-out infinite; }
+
+.pin-1 .pin-thumb { animation: thumb-1-pop 8.16s ease-in-out infinite; }
+.pin-2 .pin-thumb { animation: thumb-2-pop 8.16s ease-in-out infinite; }
+.pin-3 .pin-thumb { animation: thumb-3-pop 8.16s ease-in-out infinite; }
+.pin-4 .pin-thumb { animation: thumb-4-pop 8.16s ease-in-out infinite; }
+
+.pin-1 .pin-dot { animation: dot-pulse 2.4s ease-out infinite; }
+.pin-2 .pin-dot { animation: dot-pulse 2.4s ease-out infinite 0.3s; }
+.pin-3 .pin-dot { animation: dot-pulse 2.4s ease-out infinite 0.6s; }
+.pin-4 .pin-dot { animation: dot-pulse 2.4s ease-out infinite 0.9s; }
+
+@keyframes dot-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.55); }
+  70% { box-shadow: 0 0 0 10px rgba(245, 166, 35, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 166, 35, 0); }
+}
+
+/* pin-1 appears during close-up (map at scale 2), stays through zoom-out */
+@keyframes pin-1-show {
+  0%, 45% { opacity: 0; }
+  48%, 93% { opacity: 1; }
+  96%, 100% { opacity: 0; }
+}
+@keyframes thumb-1-pop {
+  0%, 46% { transform: translateX(-50%) scale(0); }
+  52%, 93% { transform: translateX(-50%) scale(1); }
+  96%, 100% { transform: translateX(-50%) scale(0); }
+}
+
+/* pins 2-4 appear after zoom-out completes (~58%) */
+@keyframes pin-2-show {
+  0%, 61% { opacity: 0; }
+  64%, 93% { opacity: 1; }
+  96%, 100% { opacity: 0; }
+}
+@keyframes thumb-2-pop {
+  0%, 62% { transform: translateX(-50%) scale(0); }
+  68%, 93% { transform: translateX(-50%) scale(1); }
+  96%, 100% { transform: translateX(-50%) scale(0); }
+}
+
+@keyframes pin-3-show {
+  0%, 69% { opacity: 0; }
+  72%, 93% { opacity: 1; }
+  96%, 100% { opacity: 0; }
+}
+@keyframes thumb-3-pop {
+  0%, 70% { transform: translateX(-50%) scale(0); }
+  76%, 93% { transform: translateX(-50%) scale(1); }
+  96%, 100% { transform: translateX(-50%) scale(0); }
+}
+
+@keyframes pin-4-show {
+  0%, 77% { opacity: 0; }
+  80%, 93% { opacity: 1; }
+  96%, 100% { opacity: 0; }
+}
+@keyframes thumb-4-pop {
+  0%, 78% { transform: translateX(-50%) scale(0); }
+  84%, 93% { transform: translateX(-50%) scale(1); }
+  96%, 100% { transform: translateX(-50%) scale(0); }
+}
+
+/* Floating notification panel — overlay on map */
+.globe-panel {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  width: min(320px, 60%);
+  background: #fff;
+  padding: 16px 18px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 12px 32px rgba(15, 50, 95, 0.18);
+  z-index: 5;
+}
+
+/* Overlapping avatar row */
+.gp-avatars {
+  display: flex;
+  align-items: center;
+}
+.gp-avatars img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-left: -6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.gp-avatars img:first-child { margin-left: 0; }
+
+.gp-headline {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1d1d1f;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.gp-bar {
+  position: relative;
+  height: 6px;
+  background: #f0f0f3;
+  border-radius: 100px;
+  overflow: hidden;
+  margin-top: 2px;
+}
+.gp-bar-fill {
+  position: absolute;
+  inset: 0 100% 0 0;
+  background: linear-gradient(90deg, #4ade80, #16a34a);
+  border-radius: 100px;
+  animation: bar-fill 8.16s ease-out infinite;
+}
+@keyframes bar-fill {
+  0%, 44% { right: 100%; }
+  92%, 96% { right: 18%; }
+  100% { right: 100%; }
+}
+.gp-status {
+  font-size: 12px;
+  font-weight: 600;
+  color: #16a34a;
+  letter-spacing: 0.01em;
+}
+
+/* Counter using @property */
+@property --shop-count {
+  syntax: '<integer>';
+  initial-value: 0;
+  inherits: false;
+}
+.gp-count-num {
+  --shop-count: 0;
+  animation: count-up 8.16s ease-out infinite;
+  counter-reset: shopCount var(--shop-count);
+}
+.gp-count-num::after { content: counter(shopCount); }
+@keyframes count-up {
+  0%, 44% { --shop-count: 0; }
+  92%, 96% { --shop-count: 247; }
+  100% { --shop-count: 0; }
+}
+
+/* ── Launch card: #FAEFDE background, image pinned to bottom-left,
+   animated Setup Complete checklist on the right ── */
+.amzkit-anim-launch {
+  background: #FAEFDE;
+  position: relative;
+  overflow: hidden;
+}
+.amzkit-anim-launch > img:not(.amzkit-preview) {
+  position: absolute;
+  left: 30px;
+  bottom: 0;
+  width: auto;
+  height: 90%;
+  max-width: calc(100% - 30px);
+  object-fit: contain;
+  object-position: bottom left;
+  display: block;
+  will-change: transform;
+  animation: launch-slide-up 8s ease-out infinite;
+}
+/* Start with ~30% of image pushed below (70% visible), then slide smoothly
+   up to its resting position in sync with the checklist reveal */
+@keyframes launch-slide-up {
+  0%, 5%    { transform: translateY(30%); }
+  22%, 92%  { transform: translateY(0); }
+  97%, 100% { transform: translateY(30%); }
+}
+/* Checklist card — floats in the right area, white bg + soft shadow
+   matching the product card in "Tap into 300M ready-to-buy shoppers" */
+.launch-checklist {
+  position: absolute;
+  right: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44%;
+  max-width: 320px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 14px 32px rgba(15, 50, 95, 0.16);
+  padding: 16px 18px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+.lc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.lc-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #0f1a2c;
+}
+.lc-done-badge {
+  position: relative;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  flex-shrink: 0;
+  animation: lc-badge-fill 8s ease-out infinite;
+}
+.lc-progress-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+.lc-ring-fg {
+  fill: none;
+  stroke: #22c55e;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: lc-ring-fill 8s ease-out infinite;
+}
+.lc-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.lc-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 4px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  animation-duration: 8s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  will-change: opacity, max-height, padding;
+}
+.lc-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f59e0b;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.lc-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #0f1a2c;
+  flex: 1;
+}
+.lc-check {
+  color: #22c55e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.lc-check svg { width: 16px; height: 16px; }
+
+.lc-item-1 { animation-name: lc-item-1-show; }
+.lc-item-2 { animation-name: lc-item-2-show; }
+.lc-item-3 { animation-name: lc-item-3-show; }
+
+/* 8s loop, items appear sequentially (max-height animates so the card
+   itself grows in height as each item reveals), then badge pops, all
+   hold, then reset */
+@keyframes lc-item-1-show {
+  0%, 8%    { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; }
+  13%, 92%  { opacity: 1; max-height: 48px; padding-top: 8px; padding-bottom: 8px; }
+  97%, 100% { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; }
+}
+@keyframes lc-item-2-show {
+  0%, 22%   { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; }
+  27%, 92%  { opacity: 1; max-height: 48px; padding-top: 8px; padding-bottom: 8px; }
+  97%, 100% { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; }
+}
+@keyframes lc-item-3-show {
+  0%, 36%   { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; }
+  41%, 92%  { opacity: 1; max-height: 48px; padding-top: 8px; padding-bottom: 8px; }
+  97%, 100% { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; }
+}
+@keyframes lc-ring-fill {
+  0%, 8%    { stroke-dashoffset: 100; }
+  13%, 22%  { stroke-dashoffset: 66.67; }
+  27%, 36%  { stroke-dashoffset: 33.33; }
+  41%, 92%  { stroke-dashoffset: 0; }
+  97%, 100% { stroke-dashoffset: 100; }
+}
+@keyframes lc-badge-fill {
+  0%, 40%   { background: #e5e7eb; }
+  44%, 92%  { background: #22c55e; }
+  97%, 100% { background: #e5e7eb; }
+}
+
+/* ── Toolkits card: two images side-by-side, floating vertically (14s loop) ── */
+.amzkit-anim-toolkits {
+  /* aspect-ratio inherits 3/2 from .amzkit-visual to match the 806×537
+     preview — the div is cropped from the bottom. */
+  background: #FAEFDE;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  box-sizing: border-box;
+}
+/* Each slot is a sized container so cqh inside = slot height.
+   Image sits absolutely inside at natural aspect, translateY (GPU) pans it. */
+.amzkit-anim-toolkits .toolkit-slot {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  container-type: size;
+}
+.amzkit-anim-toolkits .toolkit-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+  will-change: transform;
+}
+/* Left image (toolkits 1): starts shifted up by 1/4 slot height (top 1/4
+   of image hidden above slot, bottom 3/4 visible), slides down — but
+   stops 15px before full coverage — then returns to start. */
+.amzkit-anim-toolkits .toolkit-left {
+  animation: tk-pan-left 13s ease-in-out infinite;
+}
+/* Right image (toolkits 2): starts shifted down by 1/4 slot height (bottom
+   1/4 of image hidden below slot, top 3/4 visible), slides up and stops
+   15px short of full coverage, returns. */
+.amzkit-anim-toolkits .toolkit-right {
+  animation: tk-pan-right 13s ease-in-out infinite;
+}
+@keyframes tk-pan-left {
+  0%   { transform: translateY(calc(100cqh * -1 / 4)); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(calc(100cqh * -1 / 4)); }
+}
+@keyframes tk-pan-right {
+  0%   { transform: translateY(calc(100cqh * 1 / 4)); }
+  50%  { transform: translateY(15px); }
+  100% { transform: translateY(calc(100cqh * 1 / 4)); }
+}
+
+@media (max-width: 480px) {
+  .prod-card { width: 70%; max-width: 240px; border-radius: 16px; }
+  .prod-title { font-size: 15px; }
+  .prod-price { font-size: 17px; }
+  .globe-panel { left: 14px; bottom: 14px; width: min(260px, 72%); padding: 12px 14px; border-radius: 14px; }
+  .gp-headline { font-size: 15px; }
+  .gp-avatars img { width: 26px; height: 26px; margin-left: -7px; }
+  .pin-thumb { width: 24px; height: 24px; }
+}
+
+/* ── Amzkit cards: pause inner animations until interaction ──
+   Desktop (hover-capable): animations run only while card is hovered
+   Mobile (no hover): animations run while card is in viewport (JS toggles .amzkit-active)
+   A static preview image (the "final/filled" screenshot) covers the live
+   animation by default and fades out on hover / .amzkit-active.
+   !important is required because many descendant rules use the `animation`
+   shorthand, which implicitly resets `animation-play-state` to `running`.
+   Without !important the shorthand declaration (same specificity tier,
+   earlier in the file) can win in some browsers' cascade paths. */
+.amzkit-grid .amzkit-card .amzkit-visual,
+.amzkit-grid .amzkit-card .amzkit-visual *,
+.amzkit-grid .amzkit-card .amzkit-visual *::before,
+.amzkit-grid .amzkit-card .amzkit-visual *::after {
+  animation-play-state: paused !important;
+}
+.amzkit-grid .amzkit-card .amzkit-preview {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  display: block !important;
+  z-index: 20 !important;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+@media (hover: hover) {
+  .amzkit-grid .amzkit-card:hover .amzkit-preview {
+    opacity: 0;
+  }
+  .amzkit-grid .amzkit-card:hover .amzkit-visual,
+  .amzkit-grid .amzkit-card:hover .amzkit-visual *,
+  .amzkit-grid .amzkit-card:hover .amzkit-visual *::before,
+  .amzkit-grid .amzkit-card:hover .amzkit-visual *::after {
+    animation-play-state: running !important;
+  }
+}
+.amzkit-grid .amzkit-card.amzkit-active .amzkit-preview {
+  opacity: 0;
+}
+.amzkit-grid .amzkit-card.amzkit-active .amzkit-visual,
+.amzkit-grid .amzkit-card.amzkit-active .amzkit-visual *,
+.amzkit-grid .amzkit-card.amzkit-active .amzkit-visual *::before,
+.amzkit-grid .amzkit-card.amzkit-active .amzkit-visual *::after {
+  animation-play-state: running !important;
+}
+
+@media (max-width: 1200px) {
+  .amzkit-sec { padding: 100px 72px; }
+  .amzkit-h2 { font-size: 48px; }
+}
+@media (max-width: 860px) {
+  .amzkit-sec { padding: 80px 40px; }
+  .amzkit-grid { grid-template-columns: 1fr; gap: 20px; }
+  .amzkit-h2 { font-size: 40px; }
+  .amzkit-sub { font-size: 19px; }
+  .amzkit-head { margin-bottom: 48px; }
+  .amzkit-body { padding: 28px 30px 34px; }
+  .amzkit-card-h3 { font-size: 24px; }
+}
+@media (max-width: 600px) {
+  .amzkit-sec { padding: 64px 24px; }
+  .amzkit-h2 { font-size: 34px; }
+  .amzkit-sub { font-size: 17px; }
+}
+@media (max-width: 480px) {
+  .amzkit-sec { padding: 56px 16px; border-radius: 20px 20px 0 0; }
+  .amzkit-h2 { font-size: 30px; }
+  .amzkit-card { border-radius: 22px; }
+  .amzkit-body { padding: 24px 22px 28px; }
+  .amzkit-card-h3 { font-size: 22px; }
+  .amzkit-card-p { font-size: 16px; }
+}
+</style>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section class="final-sec">
+  <div class="final-glow"></div>
+  <div class="final-in">
+    <h2 class="final-h2 appear">Your store is<br>waiting for you.</h2>
+    <p class="final-sub appear d1">Your site, your products, your Amazon business – ready to go.</p>
+    <div class="final-btns appear d2">
+      <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="btn btn-filled">Get my free store + Amazon Kit</a>
+    </div>
+    <p class="final-fine appear d3">Get started in less than 60 seconds • Cancel anytime</p>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-bottom" style="flex-direction:column;align-items:center;gap:6px;padding:28px 24px">
+    <div class="footer-copy">© 2026 sellvia.com · 2 Park Plaza Ste 680, Irvine, CA 92614</div>
+    <a href="https://sellvia.com/privacy-policy/" style="font-size:12px;color:rgba(255,255,255,0.25);transition:color 0.2s" onmouseover="this.style.color='rgba(255,255,255,0.5)'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">Privacy Policy</a>
+  </div>
+</footer>
+
+<!-- ═══ STICKY CTA (all screens) ═══ -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting">Get my free store</a>
+</div>
+
+
+<script>
+// ── HERO SLIDESHOW ──
+;(function() {
+  const slides = document.querySelectorAll('.hero-slide');
+  let cur = 0;
+  function nextSlide() {
+    slides[cur].classList.remove('active');
+    cur = (cur + 1) % slides.length;
+    slides[cur].classList.add('active');
+  }
+  setInterval(nextSlide, 4000);
+})();
+
+// ── STAT BAR COUNT-UP ──
+;(function() {
+  // Easing: ease out quad
+  function easeOutQuad(t) { return t * (2 - t); }
+
+  function animateCount(el) {
+    const from     = parseFloat(el.dataset.from)     || 0;
+    const to       = parseFloat(el.dataset.to)       || 0;
+    const duration = parseInt(el.dataset.duration)   || 1800;
+    const decimals = parseInt(el.dataset.decimals)   || 0;
+    const prefix   = el.dataset.prefix  || '';
+    const suffix   = el.dataset.suffix  || '';
+
+    // Special case: 1500 → displayed as "1,500,000+"
+    // suffix already contains ",000,000+" so we count 0→1500 and format without commas
+    const start = performance.now();
+
+    function tick(now) {
+      const elapsed  = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased    = easeOutQuad(progress);
+      const value    = from + (to - from) * eased;
+
+      // Format number
+      let formatted;
+      if (decimals === 0) {
+        formatted = Math.round(value).toLocaleString('en-US');
+      } else {
+        formatted = value.toFixed(decimals);
+      }
+      el.textContent = prefix + formatted + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        // Ensure exact final value
+        const finalVal = decimals === 0
+          ? Math.round(to).toLocaleString('en-US')
+          : to.toFixed(decimals);
+        el.textContent = prefix + finalVal + suffix;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // Trigger when stat-bar crosses 50% of viewport
+  const statEls = document.querySelectorAll('[data-countup]');
+  let triggered = false;
+
+  const countObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !triggered) {
+        triggered = true;
+        // Small stagger per element
+        statEls.forEach(function(el, i) {
+          setTimeout(function() { animateCount(el); }, i * 120);
+        });
+        countObserver.disconnect();
+      }
+    });
+  }, {
+    // Fires when stat-bar center crosses middle of viewport
+    rootMargin: '-25% 0px -25% 0px',
+    threshold: 0
+  });
+
+  // Observe the stat-bar container
+  const statBar = document.querySelector('.stat-bar');
+  if (statBar) countObserver.observe(statBar);
+})();
+
+// ── SCROLL PROGRESS ──
+const spf = document.getElementById('spfill');
+window.addEventListener('scroll', () => {
+  const p = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+  spf.style.width = Math.min(p * 100, 100) + '%';
+}, { passive: true });
+
+// ── STICKY CTA ──
+const stickyCta = document.getElementById('stickyCta');
+const heroEl = document.getElementById('hero');
+if (stickyCta && heroEl) {
+  const pageCtas = document.querySelectorAll('.btn-filled, .cta-btn');
+  window.addEventListener('scroll', () => {
+    const heroBottom = heroEl.getBoundingClientRect().bottom;
+    if (heroBottom >= 0) { stickyCta.classList.remove('visible'); return; }
+    let anyCtaVisible = false;
+    pageCtas.forEach(btn => {
+      if (btn.closest('.sticky-cta')) return;
+      const r = btn.getBoundingClientRect();
+      if (r.top < window.innerHeight - 80 && r.bottom > 80) anyCtaVisible = true;
+    });
+    stickyCta.classList.toggle('visible', !anyCtaVisible);
+  }, { passive: true });
+}
+
+// ── SCROLL REVEAL ──
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
+document.querySelectorAll('.appear, .appear-l, .appear-r, .appear-scale').forEach(el => io.observe(el));
+
+// ── Amzkit cards: play/pause animations on mobile based on viewport ──
+// (Desktop uses :hover via CSS; on touch devices IntersectionObserver toggles .amzkit-active)
+(() => {
+  const touchDevice = window.matchMedia('(hover: none)').matches;
+  if (!touchDevice) return;
+  const cards = document.querySelectorAll('.amzkit-grid .amzkit-card');
+  if (!cards.length || !('IntersectionObserver' in window)) return;
+  const amzkitIo = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      e.target.classList.toggle('amzkit-active', e.isIntersecting);
+    });
+  }, { threshold: 0.35 });
+  cards.forEach(c => amzkitIo.observe(c));
+})();
+
+// ── HERO PARALLAX (removed — now using slideshow) ──
+
+
+// ── FAQ ──
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const ans = item.querySelector('.faq-a');
+    const wasOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-q.open, .faq-a.open').forEach(el => el.classList.remove('open'));
+    if (!wasOpen) { btn.classList.add('open'); ans.classList.add('open'); }
+  });
+});
+
+
+// ── FAQ SOCIAL PROOF ──
+;(function() {
+  const el = document.getElementById('faqProof');
+  if (!el) return;
+  const base = 700 + Math.floor(Math.random() * 400);
+  el.textContent = base.toLocaleString('en-US') + ' people started their store today';
+})();
+
+// ── MARQUEE DRAG-TO-SCROLL (JS-driven) ──
+;(function() {
+  var configs = [
+    { selector: '.wix-track', speed: 0.12 },
+    { selector: '.store-strip', speed: 0.104 }
+  ];
+  configs.forEach(function(cfg) {
+    var track = document.querySelector(cfg.selector);
+    if (!track) return;
+    var offset = 0, isDragging = false, startX = 0, dragOffset = 0, lastTime = null;
+    function getHalf() { return track.scrollWidth / 2; }
+    function loop(ts) {
+      if (!lastTime) lastTime = ts;
+      if (!isDragging) {
+        offset -= cfg.speed * (ts - lastTime);
+        var half = getHalf();
+        if (half > 0 && Math.abs(offset) >= half) offset += half;
+        track.style.transform = 'translateX(' + offset + 'px)';
+      }
+      lastTime = ts;
+      requestAnimationFrame(loop);
+    }
+    function onStart(x) {
+      isDragging = true;
+      startX = x;
+      dragOffset = offset;
+      track.classList.add('dragging');
+    }
+    function onMove(x) {
+      if (!isDragging) return;
+      offset = dragOffset + (x - startX);
+      track.style.transform = 'translateX(' + offset + 'px)';
+    }
+    function onEnd() {
+      if (!isDragging) return;
+      isDragging = false;
+      track.classList.remove('dragging');
+      var half = getHalf();
+      if (half > 0) { offset = offset % half; if (offset > 0) offset -= half; }
+      lastTime = null;
+    }
+    track.addEventListener('mousedown', function(e) { e.preventDefault(); onStart(e.clientX); });
+    window.addEventListener('mousemove', function(e) { if (isDragging) onMove(e.clientX); });
+    window.addEventListener('mouseup', onEnd);
+    track.addEventListener('touchstart', function(e) { onStart(e.touches[0].clientX); }, { passive: true });
+    track.addEventListener('touchmove', function(e) { if (isDragging) onMove(e.touches[0].clientX); }, { passive: true });
+    track.addEventListener('touchend', onEnd);
+    requestAnimationFrame(loop);
+  });
+})();
+
+// ── VIDEO TESTIMONIALS ──
+;(function() {
+  const thumbs = document.querySelectorAll('.test-thumb[data-video]');
+  let activeCard = null;
+  let activeOriginal = null;
+
+  function resetActive() {
+    if (!activeCard) return;
+    const thumb = activeCard.querySelector('.test-thumb');
+    const video = thumb.querySelector('video');
+    if (video) { video.pause(); video.remove(); }
+    // Restore original content
+    thumb.innerHTML = activeOriginal.thumbHTML;
+    thumb.style.cssText = '';
+    activeCard.style.height = '';
+    activeCard.style.position = '';
+    activeCard.style.overflow = '';
+    // Show test-body
+    const body = activeCard.querySelector('.test-body');
+    if (body) body.style.display = '';
+    activeCard = null;
+    activeOriginal = null;
+  }
+
+  thumbs.forEach(function(thumb) {
+    thumb.addEventListener('click', function() {
+      const card = this.closest('.test-card');
+
+      // If clicking same card, just reset
+      if (card === activeCard) {
+        resetActive();
+        return;
+      }
+
+      // Reset previous
+      resetActive();
+
+      // Save original state
+      activeCard = card;
+      activeOriginal = { thumbHTML: this.innerHTML, cardHeight: card.offsetHeight };
+
+      // Lock card height before hiding body
+      card.style.height = card.offsetHeight + 'px';
+      card.style.position = 'relative';
+      card.style.overflow = 'hidden';
+
+      // Hide test-body
+      const body = card.querySelector('.test-body');
+      if (body) body.style.display = 'none';
+
+      // Expand thumb to fill card
+      this.style.cssText = 'position:absolute;inset:0;aspect-ratio:auto;width:100%;height:100%;z-index:1';
+
+      // Replace with video
+      const src = this.dataset.video;
+      const poster = this.dataset.poster;
+      const thumbEl = this;
+      thumbEl.innerHTML = '';
+      const video = document.createElement('video');
+      video.src = src;
+      video.poster = poster;
+      video.autoplay = true;
+      video.playsInline = true;
+      video.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:center;display:block;cursor:pointer';
+      thumbEl.appendChild(video);
+
+      // Click anywhere on video to toggle play/pause
+      video.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      });
+    });
+  });
+})();
+
+// ── GLOW ORB (Included section) ──
+;(function() {
+  const sec = document.getElementById('get');
+  const orb = document.getElementById('glowOrb');
+  const btn = document.getElementById('getCtaBtn');
+  if (!sec || !orb || !btn) return;
+
+  const ORB_SIZE = 600;
+  let onBtn = false;
+  let absorbed = false;
+
+  function resetOrb() {
+    orb.classList.remove('btn-absorb');
+    orb.style.width = ORB_SIZE + 'px';
+    orb.style.height = ORB_SIZE + 'px';
+    orb.style.opacity = '';
+    absorbed = false;
+  }
+
+  function moveOrb(cx, cy) {
+    if (absorbed) return;
+    const rect = sec.getBoundingClientRect();
+    const x = cx - rect.left;
+    const y = cy - rect.top;
+
+    orb.style.left = x + 'px';
+    orb.style.top = y + 'px';
+
+    if (!orb.classList.contains('visible')) {
+      orb.classList.add('visible');
+    }
+
+    // Check if over button
+    const btnRect = btn.getBoundingClientRect();
+    const overBtn = cx >= btnRect.left && cx <= btnRect.right &&
+                    cy >= btnRect.top && cy <= btnRect.bottom;
+
+    if (overBtn && !onBtn) {
+      onBtn = true;
+      absorbed = true;
+      orb.classList.add('btn-absorb');
+      const sr = sec.getBoundingClientRect();
+      orb.style.left = (btnRect.left - sr.left + btnRect.width / 2) + 'px';
+      orb.style.top = (btnRect.top - sr.top + btnRect.height / 2) + 'px';
+      orb.style.width = '0px';
+      orb.style.height = '0px';
+      orb.style.opacity = '0';
+    } else if (!overBtn && onBtn) {
+      onBtn = false;
+      resetOrb();
+    }
+  }
+
+  // Desktop: mouse
+  sec.addEventListener('mousemove', function(e) {
+    moveOrb(e.clientX, e.clientY);
+  });
+  sec.addEventListener('mouseleave', function() {
+    orb.classList.remove('visible');
+    onBtn = false;
+    resetOrb();
+  });
+
+  // Mobile: touch — follow finger
+  let touching = false;
+  sec.addEventListener('touchstart', function(e) {
+    const t = e.touches[0];
+    const rect = sec.getBoundingClientRect();
+    // Only activate if touch is within section bounds
+    if (t.clientY >= rect.top && t.clientY <= rect.bottom) {
+      touching = true;
+      resetOrb();
+      moveOrb(t.clientX, t.clientY);
+    }
+  }, { passive: true });
+  sec.addEventListener('touchmove', function(e) {
+    if (!touching) return;
+    const t = e.touches[0];
+    moveOrb(t.clientX, t.clientY);
+  }, { passive: true });
+  sec.addEventListener('touchend', function() {
+    touching = false;
+    // Keep visible briefly then fade
+    setTimeout(function() {
+      if (!touching) {
+        orb.classList.remove('visible');
+        onBtn = false;
+        resetOrb();
+      }
+    }, 600);
+  });
+
+  // Reset when section scrolls fully out of view and back
+  let wasOut = false;
+  const glowObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting) {
+        wasOut = true;
+        orb.classList.remove('visible');
+        onBtn = false;
+        resetOrb();
+      } else if (wasOut) {
+        wasOut = false;
+        resetOrb();
+      }
+    });
+  }, { threshold: 0 });
+  glowObs.observe(sec);
+})();
+document.addEventListener('DOMContentLoaded', function() {
+  var params = new URLSearchParams(window.location.search);
+  
+  // Добавляем текущий путь как external_source
+  var path = window.location.pathname.replace(/^\//, '').replace(/\.html$/, '');
+  params.set('external_source', path);
+
+  var paramsString = params.toString();
+
+  document.querySelectorAll('a[href]').forEach(function(link) {
+    var href = link.getAttribute('href');
+    
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+    link.href = href.includes('?') 
+      ? href + '&' + paramsString 
+      : href + '?' + paramsString;
+  });
+});
+</script>
+</body>
+</html>
