@@ -179,7 +179,7 @@ button { cursor: pointer; font-family: var(--font); outline: none; border: none;
 /* ════ HERO ════ */
 /* Apple-style hero: full viewport, centered text, image below (or behind with overlay) */
 .hero {
-  background: linear-gradient(180deg, #1d1d1f 0%, #0f0f10 100%);
+  background: #0b0b0d;
   min-height: 80svh;
   display: flex;
   flex-direction: column;
@@ -1804,73 +1804,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ═══ HERO ═══ -->
 <section class="hero" id="hero">
-  <!-- Edge glows – orange + dark blurred blobs pulsing out of phase at left & right -->
-  <div class="hero-glows" aria-hidden="true">
-    <span class="hero-glow glow-left"></span>
-    <span class="hero-glow glow-right"></span>
-    <span class="hero-glow glow-dark-left"></span>
-    <span class="hero-glow glow-dark-right"></span>
-  </div>
-
-  <!-- LEFT: portrait behind the glass snapshot card -->
-  <div class="hero-portrait hero-portrait-left" aria-hidden="true">
-    <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/Hero/1_man.webp" alt="" width="1400" height="1044">
-    <img class="hp-amz" src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/Hero/Amazon_round.webp" alt="" width="636" height="636">
-    <!-- Mobile-only mirrors (woman's portrait hidden on phone) -->
-    <img class="hp-amz hp-amz-mr2" src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/Hero/Amazon_round.webp" alt="" width="636" height="636">
-    <img class="hp-amz hp-amz-mr1" src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/Hero/Amazon_round.webp" alt="" width="636" height="636">
-  </div>
-
-  <!-- LEFT: glass card – live social proof (new stores started today) -->
-  <div class="hero-float hero-float-left">
-    <div class="hf-card hf-card-snap">
-      <div class="hf-snap-row">
-        <span class="hf-dot"></span>
-        <div class="hf-snap-info">
-          <div class="hf-snap-val"><span id="heroLiveCount">847</span> people</div>
-          <div class="hf-snap-sub">started their store today</div>
-        </div>
-      </div>
-      <div class="hf-spark">
-        <svg viewBox="0 0 100 40" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="hfSparkGrad" x1="0" y1="1" x2="0" y2="0">
-              <stop offset="0%"  stop-color="#F8A54D"/>
-              <stop offset="100%" stop-color="#22c55e"/>
-            </linearGradient>
-          </defs>
-          <polyline points="0,37 12,35 24,33 36,29 48,24 60,17 72,10 84,5 100,2" fill="none" stroke="url(#hfSparkGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-    </div>
-  </div>
-
-  <!-- RIGHT: portrait behind the glass dashboard card -->
-  <div class="hero-portrait hero-portrait-right" aria-hidden="true">
-    <img src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/Hero/1_woman.webp" alt="" width="1400" height="1044">
-    <img class="hp-amz hp-amz-right" src="file:///D:/Work/sellvia-auto-promotion/images-for-landings/free-ecommerce-store-plus-amazon-package/Hero/Amazon_round.webp" alt="" width="636" height="636">
-  </div>
-
-  <!-- RIGHT: dashboard card with chart -->
-  <div class="hero-float hero-float-right" aria-hidden="true">
-    <div class="hf-card hf-card-dash">
-      <div class="hf-dash-head">
-        <span class="hf-snap-lbl">Your Amazon store</span>
-      </div>
-      <div class="hf-dash-row">
-        <div class="hf-dash-val">$6,924</div>
-        <span class="hf-badge">↑ 43%</span>
-      </div>
-      <div class="hf-dash-sub">earned this month</div>
-      <div class="hf-chart">
-        <span class="hf-bar" style="--h: 38%"></span>
-        <span class="hf-bar" style="--h: 32%"></span>
-        <span class="hf-bar" style="--h: 58%"></span>
-        <span class="hf-bar" style="--h: 76%"></span>
-        <span class="hf-bar" style="--h: 96%"></span>
-      </div>
-    </div>
-  </div>
   <div class="hero-inner">
     <p class="hero-eyebrow"><span class="eyebrow-l1">Free for 14 days</span><span class="eyebrow-sep"> · </span><span class="eyebrow-l2">No experience needed</span></p>
     <h1 class="hero-h1">Claim your <em>FREE</em><br>store with<br>auto-promotion!</h1>
