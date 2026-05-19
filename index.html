@@ -1049,17 +1049,21 @@ section { padding: 120px 24px; }
 }
 
 /* ════ SECTION 4: WHAT DO I GET (features) ════ */
-.get-sec { background: #FAEFDE; position: relative; overflow: hidden; }
+.get-sec {
+  background:
+    linear-gradient(135deg, #d8dde2 0%, #ecf0f3 40%, #c5cad0 100%);
+  position: relative;
+  overflow: hidden;
+}
 .get-sec .sec-in { position: relative; z-index: 2; }
 .get-sec .sec-title-xl { color: var(--c-near); }
-.get-sec .sec-body { color: var(--c-gray2); }
 
-/* Cursor glow orb */
-.glow-orb {
+/* Cursor glow orb — slate-blue gray (a touch darker than the metallic bg) */
+.get-sec .glow-orb {
   position: absolute;
   width: 600px; height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(245,166,35,0.7) 0%, rgba(245,166,35,0.25) 35%, rgba(245,166,35,0) 70%);
+  background: radial-gradient(circle, rgba(120,142,178,0.65) 0%, rgba(120,142,178,0.22) 35%, rgba(120,142,178,0) 70%);
   pointer-events: none;
   z-index: 1;
   transform: translate(-50%, -50%);
@@ -1067,16 +1071,15 @@ section { padding: 120px 24px; }
   transition: opacity 0.4s ease;
   will-change: left, top, width, height, opacity;
 }
-.glow-orb.visible { opacity: 1; }
-/* Absorb into button */
-.glow-orb.btn-absorb {
+.get-sec .glow-orb.visible { opacity: 1; }
+.get-sec .glow-orb.btn-absorb {
   transition: width 2s cubic-bezier(0.4,0,0.2,1),
               height 2s cubic-bezier(0.4,0,0.2,1),
               opacity 2s cubic-bezier(0.4,0,0.2,1),
               left 0.15s ease, top 0.15s ease;
 }
 
-.get-grid {
+.get-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2px;
@@ -1087,7 +1090,7 @@ section { padding: 120px 24px; }
   position: relative;
   z-index: 2;
 }
-.get-card {
+.get-tile {
   background: rgba(255,255,255,0.82);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
@@ -1097,20 +1100,21 @@ section { padding: 120px 24px; }
   gap: 0;
   transition: background 0.3s;
 }
-.get-card:hover { background: rgba(255,255,255,0.72); }
-.get-icon {
+.get-tile:hover { background: rgba(255,255,255,0.72); }
+.get-tile-icon {
   width: 48px;
   height: 48px;
-  border-radius: 12px;
-  background: rgba(245, 166, 35, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 24px;
-  overflow: hidden;
+  pointer-events: none;
 }
-.get-icon img { width: 26px; height: 26px; filter: invert(72%) sepia(60%) saturate(600%) hue-rotate(3deg) brightness(105%); }
-.get-card h3 {
+.get-tile-icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  will-change: transform;
+  transition: transform .15s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.get-tile h3 {
   font-size: 20px;
   font-weight: 700;
   color: var(--c-near);
@@ -1118,9 +1122,9 @@ section { padding: 120px 24px; }
   margin-bottom: 10px;
   line-height: 1.25;
 }
-.get-card p { font-size: 14px; color: var(--c-gray2); line-height: 1.65; }
-@media(max-width:800px) { .get-grid { grid-template-columns: 1fr 1fr; } }
-@media(max-width:500px) { .get-grid { grid-template-columns: 1fr; } }
+.get-tile p { font-size: 14px; color: var(--c-gray2); line-height: 1.65; }
+@media(max-width:800px) { .get-list { grid-template-columns: 1fr 1fr; } }
+@media(max-width:500px) { .get-list { grid-template-columns: 1fr; } }
 
 /* ════ SECTION 5: BONUS (Amazon) ════ */
 .bonus-sec { background: var(--c-lightbg); }
@@ -1587,20 +1591,30 @@ section { padding: 120px 24px; }
 @media(max-width:720px) { .faq-list { grid-template-columns: minmax(0, 1fr); gap: 0; } }
 
 /* ════ FINAL CTA ════ */
-/* ════ FINAL CTA ════ */
 .final-sec {
-  background: linear-gradient(180deg, #1d1d1f 0%, #000 100%);
-  padding: 120px 24px;
+  background: #0b0b0d;
+  padding: 120px 24px clamp(150px, 22vw, 270px);
   text-align: center;
   position: relative;
   overflow: hidden;
 }
-.final-glow {
+/* gradient skyline bars along the bottom edge */
+.final-bars {
   position: absolute;
-  top: 0; left: 50%; transform: translateX(-50%);
-  width: 600px; height: 400px;
-  background: radial-gradient(ellipse at center top, rgba(245,166,35,0.12) 0%, transparent 65%);
+  left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  height: clamp(100px, 16vw, 190px);
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  padding: 0 5px;
   pointer-events: none;
+}
+.final-bar {
+  flex: 1;
+  height: var(--h, 30%);
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(to top, #3d9dff 0%, transparent 100%);
 }
 .final-in { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
 .final-h2 {
@@ -1620,7 +1634,7 @@ section { padding: 120px 24px; }
 }
 .final-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .final-fine { font-size: 13px; color: rgba(255,255,255,0.25); margin-top: 24px; }
-@media(max-width:480px) { .final-sec { padding: 56px 16px; } }
+@media(max-width:480px) { .final-sec { padding: 56px 16px clamp(130px, 32vw, 170px); } }
 
 /* ════ FOOTER ════ */
 footer { background: #000; border-top: 1px solid rgba(255,255,255,0.08); }
@@ -3046,9 +3060,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="bonus-section is-bento" id="bonus">
   <div class="sec-in">
     <div class="get-head appear">
-      <span class="bonus-pill">STEP 2 – ACCESSORY BUNDLE</span>
-      <h2 class="bonus-heading">1,000 Apple accessories. <em>Loaded on day one.</em></h2>
-      <p class="bonus-sub">Sell trendy must-haves for iPhone, iPad, and AirPods to 2.2 billion Apple fans.</p>
+      <span class="bonus-pill">STEP 2 – AUTO-PROMOTION</span>
+      <h2 class="bonus-heading">Enjoy <em>guaranteed sales</em> on full autopilot!</h2>
+      <p class="bonus-sub">Let the world's TOP 5 advertising giants promote your products to billions of ready-to-buy customers.</p>
     </div>
 
     <div class="bundle-grid">
@@ -3446,9 +3460,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="how-step appear d2">
         <div class="how-step-num">02</div>
-        <h3>Turn on your ads</h3>
-        <p>With one click, your built-in ad system starts promoting your products. A free $40 ad coupon is included so your first campaign costs you nothing.</p>
-        <span class="how-step-tag">One click</span>
+        <h3>We promote it for you</h3>
+        <p>The world's top 5 ad platforms – Amazon, Google, Facebook, TikTok and Instagram – promote your products automatically. No setup, no analysis, no stress.</p>
+        <span class="how-step-tag">On autopilot</span>
       </div>
       <div class="how-step appear d3">
         <div class="how-step-num">03</div>
@@ -3577,46 +3591,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 class="sec-title-xl">What do I get for free?</h2>
       <p style="font-size:19px;color:var(--c-gray2);line-height:1.5;max-width:500px;margin:0 auto">Everything you need to sell online and succeed!</p>
     </div>
-    <div class="get-grid">
-      <div class="get-card appear d1">
-        <div class="get-icon">
-          <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/icons/shop.svg" alt="store" loading="lazy">
-        </div>
+    <div class="get-list">
+      <div class="get-tile appear d1">
+        <div class="get-tile-icon"><img src="images-for-landings/sellvia-auto-promotion/what-do-i-get/shop_1x.webp" alt="store" loading="lazy"></div>
         <h3>Top-notch online store</h3>
         <p>A fully hosted standalone ecommerce website, domain name &amp; SSL included.</p>
       </div>
-      <div class="get-card appear d2">
-        <div class="get-icon">
-          <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/icons/designtools.svg" alt="design" loading="lazy">
-        </div>
+      <div class="get-tile appear d2">
+        <div class="get-tile-icon"><img src="images-for-landings/sellvia-auto-promotion/what-do-i-get/designtools_1x.webp" alt="design" loading="lazy"></div>
         <h3>Professional design</h3>
         <p>Switchable, mobile-friendly design with vibrant visuals that turn shoppers into buyers.</p>
       </div>
-      <div class="get-card appear d3">
-        <div class="get-icon">
-          <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/icons/shopping-bag.svg" alt="products" loading="lazy">
-        </div>
+      <div class="get-tile appear d3">
+        <div class="get-tile-icon"><img src="images-for-landings/sellvia-auto-promotion/what-do-i-get/shop.webp" alt="products" loading="lazy"></div>
         <h3>Thousands of best-sellers</h3>
         <p>Access to handpicked collections of the trendiest items. Add as many products as you like.</p>
       </div>
-      <div class="get-card appear d4">
-        <div class="get-icon">
-          <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/icons/card.svg" alt="payment" loading="lazy">
-        </div>
+      <div class="get-tile appear d4">
+        <div class="get-tile-icon"><img src="images-for-landings/sellvia-auto-promotion/what-do-i-get/card_1x.webp" alt="payment" loading="lazy"></div>
         <h3>Payment system</h3>
         <p>Your store is fully ready to accept payments through credit cards, debit cards, PayPal, and more.</p>
       </div>
-      <div class="get-card appear d5">
-        <div class="get-icon">
-          <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/icons/profile-tick.svg" alt="manager" loading="lazy">
-        </div>
+      <div class="get-tile appear d5">
+        <div class="get-tile-icon"><img src="images-for-landings/sellvia-auto-promotion/what-do-i-get/user_1x.webp" alt="manager" loading="lazy"></div>
         <h3>Personal manager</h3>
         <p>Your dedicated manager will guide you through all the steps of your business launch and growth.</p>
       </div>
-      <div class="get-card appear d6">
-        <div class="get-icon">
-          <img src="images-for-landings/free-ecommerce-store-plus-amazon-package/icons/24-support.svg" alt="support" loading="lazy">
-        </div>
+      <div class="get-tile appear d6">
+        <div class="get-tile-icon"><img src="images-for-landings/sellvia-auto-promotion/what-do-i-get/24-support_1x.webp" alt="support" loading="lazy"></div>
         <h3>24/7 tech support</h3>
         <p>Feel free to contact our friendly support team whenever you have any technical issues.</p>
       </div>
@@ -3627,6 +3629,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
+
+<script>
+// ── GET-SEC ICONS PARALLAX (mouse + scroll) ──
+;(function() {
+  if (window.matchMedia('(hover: none)').matches) return;
+
+  var sec = document.getElementById('get');
+  if (!sec) return;
+  var icons = sec.querySelectorAll('.get-tile-icon img');
+  if (!icons.length) return;
+
+  // Per-icon depth in px — varied so layers feel like they sit at different distances
+  var depth = [18, 26, 22, 30, 20, 24];
+  var mx = 0, my = 0, sy = 0;
+  var frame = null;
+
+  function apply() {
+    icons.forEach(function(icon, i) {
+      var f = depth[i % depth.length];
+      var tx = mx * f;
+      var ty = my * f + sy * f * 0.6;
+      icon.style.transform = 'translate3d(' + tx.toFixed(2) + 'px,' + ty.toFixed(2) + 'px,0)';
+    });
+    frame = null;
+  }
+  function req() { if (frame === null) frame = requestAnimationFrame(apply); }
+
+  sec.addEventListener('mousemove', function(e) {
+    var r = sec.getBoundingClientRect();
+    mx = ((e.clientX - r.left) / r.width  - 0.5) * 2;
+    my = ((e.clientY - r.top)  / r.height - 0.5) * 2;
+    req();
+  });
+  sec.addEventListener('mouseleave', function() { mx = 0; my = 0; req(); });
+
+  window.addEventListener('scroll', function() {
+    var r = sec.getBoundingClientRect();
+    var vh = window.innerHeight;
+    if (r.bottom < 0 || r.top > vh) return;
+    var progress = 1 - r.bottom / (vh + r.height);
+    sy = (progress - 0.5) * 2;
+    req();
+  }, { passive: true });
+})();
+</script>
 <!-- ═══ WHAT WILL I SELL ═══ -->
 <section class="sell-sec" id="sell">
   <div class="sec-in-wide">
@@ -3970,10 +4017,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ═══ FINAL CTA ═══ -->
 <section class="final-sec">
-  <div class="final-glow"></div>
   <div class="final-in">
-    <h2 class="final-h2 appear">Your store is<br>waiting for you.</h2>
-    <p class="final-sub appear d1">Your site, your products, your Amazon business – ready to go.</p>
+    <h2 class="final-h2 appear">Start selling<br>on full autopilot.</h2>
+    <p class="final-sub appear d1">Your store, your products, and hands-free promotion – ready to go.</p>
     <div class="final-btns appear d2">
       <a href="https://sellvia.com/checkout/?product=custom&type_custom=free_basic_hosting" class="btn btn-filled">Get my free store + Bonus</a>
     </div>
@@ -3985,7 +4031,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </svg>
       </button>
   </div>
+  <div class="final-bars" id="finalBars" aria-hidden="true"></div>
 </section>
+
+<script>
+// ── FINAL CTA — gradient skyline bars ──
+;(function(){
+  var box = document.getElementById('finalBars');
+  if (!box) return;
+  var H = [88,64,78,52,68,44,56,36,42,26,30,18,22,14,20,28,24,34,40,48,54,46,62,72,66,90];
+  box.innerHTML = H.map(function(h){ return '<span class="final-bar" style="--h:' + h + '%"></span>'; }).join('');
+})();
+</script>
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
