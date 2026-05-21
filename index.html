@@ -2336,6 +2336,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   .freebasic-section .pv-fc-3 { left:  -10px; }
   .freebasic-section .pv-fc-4 { left:  -10px; }
 }
+
+/* Mobile: cap image corners at ≤20px radius (floating stat shots, award cards, get-list panel) */
+@media (max-width: 768px) {
+  .get-list,
+  .award-card,
+  .freebasic-section .pv-stat-new,
+  .freebasic-section .pv-stat-today { border-radius: 20px; }
+}
 </style>
 
 <section class="freebasic-section" id="freebasic">
@@ -2920,7 +2928,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 }
 .bullet-item.active .bullet-arrow { opacity: 1; transform: translateX(2px); }
 
-.cta-wrap { opacity: 0; animation: fadeUp .55s ease .65s forwards; }
+.cta-wrap { width: 100%; opacity: 0; animation: fadeUp .55s ease .65s forwards; }
 .cta-btn {
   display: inline-flex;
   background: #1d1d1f;
